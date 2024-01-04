@@ -3,8 +3,8 @@
 <h2 id="线性变换的定义">线性变换的定义</h2>
 <p>如果我们将线性变换看作是一种对于向量的线性变换关系，这种关系是广义的，可以涉及很多方面。但是，在线性代数层面而不是抽象代数层面，我们当然希望这种变换
 是符合线性的，也就是说，我们希望一种变换<span
-class="math inline">\(\boldsymbol{L}\)</span>对于向量\( v_1 v_2
-)\满足以下关系：</p>
+class="math inline">\(\boldsymbol{L}\)</span>对于向量$ v_1 $ $$ $v_2
+$满足以下关系：</p>
 <p><span class="math display">\[ c
 \boldsymbol{L}\left(\boldsymbol{v}_1\right) =
 \boldsymbol{L}\left(\boldsymbol{v}_1\right) \]</span></p>
@@ -24,10 +24,11 @@ class="math inline">\(b\)</span>来说，存在一个矩阵 <span
 class="math inline">\(\boldsymbol{A}\)</span>使得<span
 class="math inline">\(\boldsymbol{A}a=
 b\)</span>成立，这也被称为线性变化的矩阵化表述。</p>
-<p>现在拓展到向量之外，如果一种函数或者任何抽象的代数形式，对于$
-(x_1)(x_2) $ 也满足上述的</p>
+<p>现在拓展到向量之外，如果一种函数或者任何抽象的代数形式，对于$f(x_1)f(x_2)
+$ 也满足上述的</p>
 <p>条件，那么，我们也说它是一种线性变换。</p>
-</div><div class="index-category-tag">  <hr></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2024-01-04  <a class="commentCountImg" href="/2024/01/04/Projections%20Matrix/#comment-container"><span class="display-none-class">/2024/01/04/Projections Matrix/</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="4a88bb257b5253c804729577e157557a">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>5 分钟  <i class="fas fa-pencil-alt"> </i>0.7 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/01/04/Projections%20Matrix/"> </a></h1><div class="content"><p><img src="\img\Wechat_20231226132959.jpg" /> ## 投影矩阵</p>
+</div><div class="index-category-tag">  <hr></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><i class="far fa-calendar-plus"> </i>2024-01-04  <a class="commentCountImg" href="/2024/01/04/Projections%20Matrix/#comment-container"><span class="display-none-class">/2024/01/04/Projections Matrix/</span><i class="far fa-comment-dots"></i> <span class="commentCount" id="4a88bb257b5253c804729577e157557a">99+</span>  </a><span class="level-item"><i class="far fa-clock"> </i>5 分钟  <i class="fas fa-pencil-alt"> </i>0.7 k</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2024/01/04/Projections%20Matrix/"> </a></h1><div class="content"><p><img src="\img\Wechat_20231226132959.jpg" /></p>
+<h2 id="投影矩阵">投影矩阵</h2>
 <p>对于任何矩阵<span class="math inline">\(\left( 即任意的
 \boldsymbol{M}\times N
 矩阵\right)\)</span>，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵
@@ -62,11 +63,14 @@ class="math inline">\(\hat{x}\)</span>不仅可以是最小二乘法的解，也
 class="math inline">\(\min\lvert\lvert
 b-\boldsymbol{A}x\rvert\rvert\)</span> 。</p>
 <h2 id="补充svd分解和最小二乘的关系">补充，SVD分解和最小二乘的关系</h2>
-<p>我们知道，任何矩阵都可以分解成$ =UV^{T} <span
-class="math inline">\(的形式，因此，矩阵的广义逆\)</span>A<sup>+<span
-class="math inline">\(可以表示为\)</span>V</sup>{+} U<sup>{T}<span
-class="math inline">\(的形式，其中V和U前面已经说明，而\)</span></sup>{+}
-$ 是$ $ 的一个广义逆，计算方法是将 <span
+<p>我们知道，任何矩阵都可以分解成<span
+class="math inline">\(A=U\)</span> <span
+class="math inline">\(\sigma\)</span> $V^{T} $
+的形式，因此，矩阵的广义逆$ A^+ $ 可以表示为<span
+class="math inline">\(V\sigma^+
+U^{T}\)</span>的形式，其中V和U前面已经说明，而<span
+class="math inline">\(\sigma^+\)</span> 是<span
+class="math inline">\(\sigma\)</span> 的一个广义逆，计算方法是将 <span
 class="math inline">\(\sigma\)</span>上的对角线元素取倒数后进行转置。由此可以算出矩阵的广义逆。</p>
 <p>接着往下讲，$ x=A^{+} b+y-A^{+} Ay $
 ，这是通过SVD变换和广义逆进行求解的方法。这个方法与上述所讲的<span
