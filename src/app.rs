@@ -230,6 +230,7 @@ impl Component for Model {
                     self.total_round += 1;
                     self.rounds = 0;
                     self.day = (self.day.parse::<usize>().unwrap() + 1).to_string();
+                    let answer_before = self.answer.clone();
                     self.answer = crate::resouces::get_useable_word_default(self.day.parse::<usize>().unwrap(), self.seed.parse::<u64>().unwrap());
                     self.result = String::from("");
                     self.input = String::from("");
@@ -237,7 +238,7 @@ impl Component for Model {
                     let link = ctx.link().clone();
                     let handle = move || {
                         link.send_message(Msg::Reset);
-                        web_sys::window().unwrap().alert_with_message("ざこお兄ちゃ～～ The game will reset.").unwrap();
+                        web_sys::window().unwrap().alert_with_message(format!("ざこお兄ちゃ～～ The answer is {}.The game will reset.", answer_before).as_str()).unwrap();
                     };
                     self.inputs = vec![vec![String::new(); 5]; 6]; 
                     self.colors = vec![vec!["".to_string(); 5]; 6];
