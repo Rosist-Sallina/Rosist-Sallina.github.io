@@ -1,0 +1,118 @@
+/* 全局样式 */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 顶部中心图片 */
+.header-image {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-image img {
+    width: 150px;
+    height: auto;
+}
+
+.header-image span {
+    position: absolute;
+    bottom: 10px;
+    right: -75px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    color: #000;
+}
+
+/* 主要输入框 */
+.main-input {
+    position: fixed;
+    top: 150px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1500;
+}
+
+/* 键盘容器 */
+.keyboard-container {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    padding: 10px;
+}
+
+.keyboard-container button {
+    width: 136px;
+    font-size: 28px;
+    height: 68px;
+    background-color: gray;
+    color: black;
+    border: none;
+    border-radius: 5px;
+}
+
+/* 图片容器 */
+.image-container {
+    position: fixed;
+    bottom: 10px;
+    right: 0;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+.image-container img {
+    width: 50px;
+    height: auto;
+    transform: rotate(5deg);
+}
+
+/* 媒体查询 */
+@media (max-width: 768px) {
+    .main-input {
+        top: 100px; /* 调整主要输入框位置 */
+    }
+
+    .keyboard-container {
+        width: 75%;
+        bottom: 150px; /* 上移键盘 */
+    }
+
+    .image-container img {
+        width: 20px; /* 调整图片大小 */
+        z-index: 500;
+    }
+
+    input {
+        width: 50px; /* 调整方框大小 */
+        height: 50px; /* 调整方框大小 */
+        font-size: 20px; /* 调整字体大小 */
+    }
+}
+
+@media (min-width: 769px) {
+    .keyboard-container {
+        bottom: 50px; /* 桌面端键盘位置 */
+    }
+
+    input {
+        width: 60px; /* 方框大小 */
+        height: 60px; /* 方框大小 */
+        font-size: 28px; /* 字体大小 */
+    }
+}
