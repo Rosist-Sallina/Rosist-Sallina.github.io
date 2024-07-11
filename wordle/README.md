@@ -41,12 +41,13 @@ Crate下的各种模块（除builtin_words）为CLI独有，app下的模块为GU
 
 #### GUI
 本项目的GUI部分是基于Yew框架的Web应用，通过编译到WebAssembly的方式应用。目前本项目被部署在[这里](https://rosist-sallina.github.io/wordle/)。
-通过键盘输入，一行输入完成后点击屏幕上的Enter键即可提交答案。对于无法提交的情况，请检查单词的合法性
+通过键盘输入，一行输入完成后点击屏幕上的Enter键即可提交答案。对于无法提交的情况，请检查单词的合法性。
 
 左上角的设置面板提供了困难模式的切换设置和种子的参数设置。
 
 左边的统计面板会输出当前胜利局数和总局数，以及使用频率最高的5个单词。
 
+值得注意的是，本项目实现了原Wordle游戏中单词翻转的动画，使变化效果更加美观圆滑。
 #### 提高要求实现
 采用[Yew](https://yew.rs/)框架以及极少量JavaScript（主要是为了实现界面的监听效果）实现。
 并使用[Trunk](https://trunkrs.dev/)将编译完成的WebAssembly打包后，部署到Github Pages上。
