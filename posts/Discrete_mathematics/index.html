@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://vip.helloimg.com/i/2024/04/23/6627c8e8e8ca5.png">
 <meta property="og:image" content="https://vip.helloimg.com/i/2024/04/23/6627c8e88e5bf.jpg">
 <meta property="article:published_time" content="2024-11-12T09:44:26.099Z">
-<meta property="article:modified_time" content="2024-11-12T12:44:26.549Z">
+<meta property="article:modified_time" content="2024-11-12T13:36:14.427Z">
 <meta property="article:author" content="Sallina">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="theme">
@@ -131,25 +131,47 @@
                                 
                                     <li>
                                         
-                                            <a href="/wordle/">
+                                            <a href="/links/">
                                         
                                             
-                                                <i class="fa fa-wordle"></i>
+                                                <i class="fa fa-link"></i>
                                             
-                                            Wordle
+                                            友たち
                                         </a>
                                         
                                     </li>
                                 
                                     <li>
                                         
-                                            <a href="/links/">
+                                            <a>
                                         
                                             
-                                                <i class="fa fa-link"></i>
+                                                <i class="fa fa-game"></i>
                                             
-                                            友链
+                                            Game
                                         </a>
+                                        
+                                            <ul class="sub-menu">
+                                                
+                                                    <li>
+                                                        <a href="/wordle/">
+                                                            
+                                                                <i class="fa fa-game"></i>
+                                                            
+                                                            Wordle
+                                                        </a>
+                                                    </li>
+                                                
+                                                    <li>
+                                                        <a target="_blank" rel="noopener" href="https://www.saiblo.net/">
+                                                            
+                                                                <i class="fa fa-game"></i>
+                                                            
+                                                            Saiblo
+                                                        </a>
+                                                    </li>
+                                                
+                                            </ul>
                                         
                                     </li>
                                 
@@ -211,7 +233,7 @@
                         <i class="fa fa-edit"></i> 
                         
                         
-                            ~2.37K
+                            ~2.31K
                         
                         字
                     </li>
@@ -237,13 +259,7 @@
 <li>方法：利用第二类斯特林数计算</li>
 <li>过程：N = S(4,1) + S(4,2) + S(4,3) + S(4,4) = 1=7+6+1 = 15<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e813295.jpg" alt=""><h4 id="6元集等价关系计算"><a href="#6元集等价关系计算" class="headerlink" title="6元集等价关系计算"></a>6元集等价关系计算</h4></li>
 <li>方法：利用第二类斯特林数计算</li>
-<li>过程:<script type="math/tex">S(6 ,1) = 1</script><pre><code> $$ S(6 ,2) = 2^&#123;5&#125; - 1 = 31$$
- $$ S(6, 3) = 3S(5 , 3) + S(5 ,2)= 3(3S(4 ,3） + S(4,2) ))+ 2^5 -1 = 3(3(C(4,2) + 2^4) - 1) + 31 = 90 $$
- $$ S(6,4) = 4S(5 ,4) + S(5,3) = 4C(5,2) + 25 = 65$$
- $$ S(6,5) = C(6 , 2) = 15 $$
- $$ S(6,6) = 1 $$
- $$ N = S(6,1) + S(6,2) + S(6,3) + S(6,4) + S(6,5) + S(6,6) = 1 + 31 + 90 + 65 + 15 + 1 = 203 $$
-</code></pre></li>
+<li>过程:<script type="math/tex">S(6 ,1) = 1</script> <script type="math/tex">S(6 ,2) = 2^{5} - 1 = 31</script> <script type="math/tex">S(6, 3) = 3S(5 , 3) + S(5 ,2)= 3(3S(4 ,3） + S(4,2) ))+ 2^5 -1 = 3(3(C(4,2) + 2^4) - 1) + 31 = 90</script> <script type="math/tex">S(6,4) = 4S(5 ,4) + S(5,3) = 4C(5,2) + 25 = 65</script> <script type="math/tex">S(6,5) = C(6 , 2) = 15</script> <script type="math/tex">S(6,6) = 1</script> <script type="math/tex">N = S(6,1) + S(6,2) + S(6,3) + S(6,4) + S(6,5) + S(6,6) = 1 + 31 + 90 + 65 + 15 + 1 = 203</script></li>
 </ol>
 <h5 id="Tips：列出从1-10的BEll数，为-1-2-5-15-52-203-877-4140-21147-115975"><a href="#Tips：列出从1-10的BEll数，为-1-2-5-15-52-203-877-4140-21147-115975" class="headerlink" title="Tips：列出从1-10的BEll数，为 1 , 2 , 5 , 15 , 52 , 203 , 877 , 4140 , 21147 , 115975"></a>Tips：列出从1-10的BEll数，为 1 , 2 , 5 , 15 , 52 , 203 , 877 , 4140 , 21147 , 115975</h5><h3 id="2-证明两个集合等势"><a href="#2-证明两个集合等势" class="headerlink" title="2.证明两个集合等势"></a>2.证明两个集合等势</h3><p>方法：想办法构造一个双射从而使两个集合之间能够一一对应<br>常用方法：对于证明类似于[1 , 0]等势于 $ \mathbb{R} $ ，可以使用正切函数或余切函数进行构造<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e835997.jpg" alt=""></p>
 <h3 id="3-概念辨析"><a href="#3-概念辨析" class="headerlink" title="3.概念辨析"></a>3.概念辨析</h3><ol>
@@ -291,7 +307,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-11-12T12:44:26.549Z" itemprop="dateModified">最后编辑：2024-11-12</time>
+                    <time datetime="2024-11-12T13:36:14.427Z" itemprop="dateModified">最后编辑：2024-11-12</time>
                 </div>
             </div>
         </footer>
@@ -435,7 +451,7 @@
                     <ul class="kratos-social-icons">
                         
                             <li>
-                                <a href="https://github.com/kratos-rebirth" target="_blank" rel="nofollow">
+                                <a href="https://github.com/Rosist-Sallina" target="_blank" rel="nofollow">
                                     <i class="fa fa-github"></i>
                                 </a>
                             </li>
@@ -574,20 +590,5 @@
 <!-- 额外的追加注入项 -->
 
 
-    <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:false,models:[{"path":"/sagiri/model/sagiri/sagiri.model.json","position":[30,0],"scale":0.15,"stageStyle":{"width":250,"height":250},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"path":"/mashiro/Live2dMashiro/live2d/model/Sakurasou/mashiro/ryoufuku.model.json","position":[30,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.08,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE"},{"path":"/mashiro/Live2dMashiro/live2d/model/Sakurasou/mashiro/shifuku.model.json","position":[30,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.08,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:3600,message:["你好呀，我是Rosist~","欢迎来到我的小站~"]}}});</script><!-- hexo injector body_end end --></body>
+    <!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:false,models:[{"path":"/sagiri/model/sagiri/sagiri.model.json","position":[30,0],"scale":0.15,"stageStyle":{"width":250,"height":250},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"path":"/mashiro/Live2dMashiro/live2d/model/Sakurasou/mashiro/ryoufuku.model.json","position":[30,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.08,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE"},{"path":"/mashiro/Live2dMashiro/live2d/model/Sakurasou/mashiro/shifuku.model.json","position":[30,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.08,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:3600,message:["你好呀，我是Rosist~","欢迎来到我的小站~"]}}});</script><!-- hexo injector body_end end --></body>
 </html>
