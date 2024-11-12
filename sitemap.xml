@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://rosist-sallina.github.io/posts/Discrete_mathematics/</loc>
+    
+    <lastmod>2024-11-12T12:44:26.549Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://rosist-sallina.github.io/posts/Projections_Matrix/</loc>
     
-    <lastmod>2024-11-12T12:08:28.101Z</lastmod>
+    <lastmod>2024-11-12T12:40:24.833Z</lastmod>
     
   </url>
   
@@ -12,13 +19,6 @@
     <loc>https://rosist-sallina.github.io/posts/Matrix/</loc>
     
     <lastmod>2024-11-12T12:08:14.644Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rosist-sallina.github.io/posts/Discrete_mathematics/</loc>
-    
-    <lastmod>2024-11-12T12:08:10.766Z</lastmod>
     
   </url>
   
