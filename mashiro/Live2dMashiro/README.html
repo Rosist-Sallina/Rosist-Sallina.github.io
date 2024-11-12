@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+  <!-- 元数据 -->
+  <meta charset="utf-8">
+  
+    <link rel="icon" href="/assets/favicon.png">
+  
+  
+  <title>Rosist Blog</title>
+  <link rel="canonical" href="https://rosist-sallina.github.io/mashiro/Live2dMashiro/README.html">
+  <meta name="author" content="Sallina" />
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="robots" content="index,follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="format-detection" content="telphone=no, email=no" />
+  
+    <meta name="keywords" content="hexo,theme,kratos-rebirth" />
+  
+  <meta name="description" content="Live2d的看板娘——蕾姆(Rem)伊斯特瓦尔点这里。基于《给博客添加能动的看板娘(Live2D)-将其添加到网页上吧》上的源码进行修改。在原先的基础上加上了如下功能：1.可以基于图灵机器人的聊天功能（需要自己写接口，默认隐藏）。 2.能够随意移动并记录位置（关闭浏览器后失效）。 3.能够随意唤醒或者关闭并记录状态。 4.自动判断浏览器是否为IE或者手机浏览器，如果判断为true则不加载伊斯。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rosist Blog">
+<meta property="og:url" content="https://rosist-sallina.github.io/mashiro/Live2dMashiro/README.html">
+<meta property="og:site_name" content="Rosist Blog">
+<meta property="og:description" content="Live2d的看板娘——蕾姆(Rem)伊斯特瓦尔点这里。基于《给博客添加能动的看板娘(Live2D)-将其添加到网页上吧》上的源码进行修改。在原先的基础上加上了如下功能：1.可以基于图灵机器人的聊天功能（需要自己写接口，默认隐藏）。 2.能够随意移动并记录位置（关闭浏览器后失效）。 3.能够随意唤醒或者关闭并记录状态。 4.自动判断浏览器是否为IE或者手机浏览器，如果判断为true则不加载伊斯。">
+<meta property="og:locale">
+<meta property="og:image" content="http://t1.aixinxi.net/o_1c9b38oqd1ekb12v9pcf1ku81r7a.gif-j.jpg">
+<meta property="article:published_time" content="2024-11-12T13:06:39.756Z">
+<meta property="article:modified_time" content="2018-03-25T10:34:24.000Z">
+<meta property="article:author" content="Sallina">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="theme">
+<meta property="article:tag" content="kratos-rebirth">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://t1.aixinxi.net/o_1c9b38oqd1ekb12v9pcf1ku81r7a.gif-j.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Rosist Blog" type="application/atom+xml">
+  
+  <!-- 样式表文件 -->
+  <link rel="stylesheet" id="kratos-css" href="/css/kr-core.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="highlight-css" href="/css/highlight/highlight.js/night-eighties.min.css" media="all"></link>
+  
+  <link rel="stylesheet" id="theme-light-css" href="/css/kr-theme/light.min.css" media="all"></link>
+  <link rel="stylesheet" id="theme-dark-css" href="/css/kr-theme/dark.min.css" media="(prefers-color-scheme: dark)"></link>
+  <script src="/js/kr-theme.min.js"></script>
+  <link rel="stylesheet" id="fontawe-css" href="/vendors/font-awesome@4.7.0/css/font-awesome.min.css" media="all"></link>
+  
+    <link rel="stylesheet" id="nprogress-css" href="/vendors/nprogress@0.2.0/nprogress.css" media="all"></link>
+  
+  
+    <link rel="stylesheet" href="/vendors/viewerjs@1.11.6/dist/viewer.min.css"></link>
+  
+  <!-- 不得不预先加载的一些JS文件 -->
+  
+    <script src="/vendors/qr-code-styling@1.6.0-rc.1/lib/qr-code-styling.js"></script>
+  
+  <!-- 自定义站点横幅和背景 -->
+  <style>
+    
+      .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner.webp');
+      }
+      html[data-theme="dark"] .kratos-cover.kratos-cover-2 {
+        background-image: url('https://dev.krt.moe/demo-assets/banner_dark.webp');
+      }
+    
+    
+      @media(min-width:768px) {
+        body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+        html[data-theme="dark"] body.custom-background {
+          background-image: url('https://dev.krt.moe/demo-assets/bg.webp');
+        }
+      }
+    
+    
+      .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+      html[data-theme="dark"] .widget-kratos-about .photo-background {
+        background-image: url('/images/default.webp');
+      }
+    
+  </style>
+
+  <!-- 额外的追加注入项 -->
+  
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+    <body class="custom-background">
+        <div id="kratos-wrapper">
+    <div id="kratos-page">
+        <div id="kratos-header">
+            <header id="kratos-desktop-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="nav-header">
+                        <nav id="kratos-menu-wrap">
+                            <ul id="kratos-primary-menu" class="sf-menu">
+                                
+                                    <li>
+                                        
+                                            <a href="/">
+                                        
+                                            
+                                                <i class="fa fa-home"></i>
+                                            
+                                            首页
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/archives/">
+                                        
+                                            
+                                                <i class="fa fa-file"></i>
+                                            
+                                            档案馆
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/wordle/">
+                                        
+                                            
+                                                <i class="fa fa-wordle"></i>
+                                            
+                                            Wordle
+                                        </a>
+                                        
+                                    </li>
+                                
+                                    <li>
+                                        
+                                            <a href="/links/">
+                                        
+                                            
+                                                <i class="fa fa-link"></i>
+                                            
+                                            友链
+                                        </a>
+                                        
+                                    </li>
+                                
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+            <header id="kratos-mobile-topnav" class="kratos-topnav">
+                <div class="container">
+                    <div class="color-logo"><a href="/">Rosist Blog</a></div>
+                    <div id="kratos-nav-toggle-wrapper" class="nav-toggle">
+                        <a id="kratos-nav-toggle" class="kratos-nav-toggle">
+                            <i></i>
+                        </a>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <div class="kratos-start kratos-hero-2">
+            <!-- <div class="kratos-overlay"></div> -->
+            <div class="kratos-cover kratos-cover-2 text-center">
+                <div class="desc desc2 animate-box">
+                    <a href="/">
+                        <h2>Rosist Blog</h2> <br />
+                        <span></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="kratos-blog-post">
+            <div class="container">
+                <div id="main" class="row">
+
+
+        
+
+            
+
+            <section class="kr-main-col col-md-8">
+
+        
+
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://rosist-sallina.github.io/mashiro/Live2dMashiro/README.html">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            
+        </header>
+        <div class="kratos-page-content kr-page">
+            <div itemprop="articleBody"><h1 id="Live2d的看板娘——蕾姆-Rem"><a href="#Live2d的看板娘——蕾姆-Rem" class="headerlink" title="Live2d的看板娘——蕾姆(Rem)"></a>Live2d的看板娘——蕾姆(Rem)</h1><h4 id="伊斯特瓦尔点这里。"><a href="#伊斯特瓦尔点这里。" class="headerlink" title="伊斯特瓦尔点这里。"></a><a target="_blank" rel="noopener" href="https://www.wikimoe.com/?post=76">伊斯特瓦尔点这里</a>。</h4><h4 id="基于《给博客添加能动的看板娘-Live2D-将其添加到网页上吧》上的源码进行修改。"><a href="#基于《给博客添加能动的看板娘-Live2D-将其添加到网页上吧》上的源码进行修改。" class="headerlink" title="基于《给博客添加能动的看板娘(Live2D)-将其添加到网页上吧》上的源码进行修改。"></a>基于<a target="_blank" rel="noopener" href="https://imjad.cn/archives/lab/add-dynamic-poster-girl-with-live2d-to-your-blog-02">《给博客添加能动的看板娘(Live2D)-将其添加到网页上吧》</a>上的源码进行修改。</h4><h4 id="在原先的基础上加上了如下功能："><a href="#在原先的基础上加上了如下功能：" class="headerlink" title="在原先的基础上加上了如下功能："></a>在原先的基础上加上了如下功能：</h4><pre><code>1.可以基于图灵机器人的聊天功能（需要自己写接口，默认隐藏）。
+2.能够随意移动并记录位置（关闭浏览器后失效）。
+3.能够随意唤醒或者关闭并记录状态。
+4.自动判断浏览器是否为IE或者手机浏览器，如果判断为true则不加载伊斯。
+5.给骚扰加了限制频率，不能狂骚扰了。
+</code></pre><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先下载代码。</p>
+<p>然后把解压出来的文件夹改名为：live2d 。</p>
+<h3 id="正式开工，文字部分参考自在-Web-上展示-Live2D-吧！"><a href="#正式开工，文字部分参考自在-Web-上展示-Live2D-吧！" class="headerlink" title="正式开工，文字部分参考自在 Web 上展示 Live2D 吧！"></a>正式开工，文字部分参考自<a target="_blank" rel="noopener" href="https://github.com/galnetwen/Live2D">在 Web 上展示 Live2D 吧！</a></h3><p>在需要页面的头部文件（header）引入界面样式，在 head 标签内插入如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/live2d/css/live2d.css&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>在 需要页面的body 标签内找到合适的位置插入 Live2D 看板娘的元素，按照 Html 书写规范写<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;landlord&quot;</span> <span class="attr">style</span>=<span class="string">&quot;left:5px;bottom:0px;&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;message&quot;</span> <span class="attr">style</span>=<span class="string">&quot;opacity:0&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">&quot;live2d&quot;</span> <span class="attr">width</span>=<span class="string">&quot;500&quot;</span> <span class="attr">height</span>=<span class="string">&quot;560&quot;</span> <span class="attr">class</span>=<span class="string">&quot;live2d&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_talk_input_body&quot;</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_talk_input_name_body&quot;</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;name&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;live_talk_name white_input&quot;</span> <span class="attr">id</span>=<span class="string">&quot;AIuserName&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;你的名字&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_talk_input_text_body&quot;</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;talk&quot;</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">class</span>=<span class="string">&quot;live_talk_talk white_input&quot;</span> <span class="attr">id</span>=<span class="string">&quot;AIuserText&quot;</span> <span class="attr">autocomplete</span>=<span class="string">&quot;off&quot;</span> <span class="attr">placeholder</span>=<span class="string">&quot;要和我聊什么呀？&quot;</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">&quot;button&quot;</span> <span class="attr">class</span>=<span class="string">&quot;live_talk_send_btn&quot;</span> <span class="attr">id</span>=<span class="string">&quot;talk_send&quot;</span>&gt;</span>发送<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;live_talk&quot;</span> <span class="attr">id</span>=<span class="string">&quot;live_talk&quot;</span> <span class="attr">value</span>=<span class="string">&quot;1&quot;</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_ico_box&quot;</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_ico_item type_info&quot;</span> <span class="attr">id</span>=<span class="string">&quot;showInfoBtn&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_ico_item type_talk&quot;</span> <span class="attr">id</span>=<span class="string">&quot;showTalkBtn&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_ico_item type_music&quot;</span> <span class="attr">id</span>=<span class="string">&quot;musicButton&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_ico_item type_youdu&quot;</span> <span class="attr">id</span>=<span class="string">&quot;youduButton&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;live_ico_item type_quit&quot;</span> <span class="attr">id</span>=<span class="string">&quot;hideButton&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;live_statu_val&quot;</span> <span class="attr">id</span>=<span class="string">&quot;live_statu_val&quot;</span> <span class="attr">value</span>=<span class="string">&quot;0&quot;</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span> /&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">&quot;&quot;</span> <span class="attr">style</span>=<span class="string">&quot;display:none;&quot;</span> <span class="attr">id</span>=<span class="string">&quot;live2d_bgm&quot;</span> <span class="attr">data-bgm</span>=<span class="string">&quot;0&quot;</span> <span class="attr">preload</span>=<span class="string">&quot;none&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;live2dBGM&quot;</span> <span class="attr">value</span>=<span class="string">&quot;音乐地址&quot;</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;duType&quot;</span> <span class="attr">value</span>=<span class="string">&quot;douqilai,l2d_caihong&quot;</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;open_live2d&quot;</span>&gt;</span>召唤蕾姆<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure><br>如果需要BGM支持可以按照上面的例子添加：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">name</span>=<span class="string">&quot;live2dBGM&quot;</span> <span class="attr">value</span>=<span class="string">&quot;音乐地址&quot;</span> <span class="attr">type</span>=<span class="string">&quot;hidden&quot;</span>&gt;</span></span><br></pre></td></tr></table></figure><br>在 需要页面的 body 标签结束前插入如下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://apps.bdimg.com/libs/jquery/1.7.1/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">var</span> message_Path = <span class="string">&#x27;/live2d/&#x27;</span>;<span class="comment">//资源目录，如果目录不对请更改</span></span></span><br><span class="line"><span class="language-javascript"><span class="keyword">var</span> talkAPI = <span class="string">&quot;&quot;</span>;<span class="comment">//如果有类似图灵机器人的聊天接口请填写接口路径</span></span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;live2d/js/live2d.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;live2d/js/message.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>鼠标放在页面某个元素上时，需要 Live2D 看板娘提示的请修改 message.json 文件。</p>
+<p><strong>示例：</strong></p>
+<pre><code>&#123;
+    &quot;mouseover&quot;: [
+        &#123;
+            &quot;selector&quot;: &quot;.title a&quot;,  //此处修改为你页面元素的标签名
+            &quot;text&quot;: [&quot;要看看 &#123;text&#125; 么？&quot;]  //此处修改为你需要提示的文字
+        &#125;,
+        &#123;
+            &quot;selector&quot;: &quot;#searchbox&quot;,
+            &quot;text&quot;: [&quot;在找什么东西呢，需要帮忙吗？&quot;]
+        &#125;
+    ],
+    &quot;click&quot;: [  //此处是 Live2D 看板娘的触摸事件提示
+        &#123;
+            &quot;selector&quot;: &quot;#landlord #live2d&quot;,
+            &quot;text&quot;: [&quot;不要动手动脚的！快把手拿开~~&quot;, &quot;真…真的是不知羞耻！&quot;,&quot;Hentai！&quot;, &quot;再摸的话我可要报警了！⌇●﹏●⌇&quot;, &quot;110吗，这里有个变态一直在摸我(ó﹏ò｡)&quot;]
+        &#125;
+    ]
+&#125;
+</code></pre><p>然后，刷新你的页面，看看效果吧！</p>
+<p>注意路径别弄错了噢 ~<br>PHP 程序推荐使用主题函数获取绝对路径。</p>
+<h3 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h3><p><img src="http://t1.aixinxi.net/o_1c9b38oqd1ekb12v9pcf1ku81r7a.gif-j.jpg" alt="">  </p>
+<h3 id="模型说明"><a href="#模型说明" class="headerlink" title="模型说明"></a>模型说明</h3><p>本插件仅供学习和交流使用，禁止用于商业用途。<br>本插件用到的模型为《Re：从零开始的异世界生活》中的蕾姆，故版权归官方所有。<br>原项目使用了 GPL v2 开源协议。</p>
+</div>
+        </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-date">
+                    <time datetime="2018-03-25T10:34:24.000Z" itemprop="dateModified">最后编辑：2018-03-25</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <div class="comment-page">
+            
+        </div>
+    
+</article>
+
+        
+
+            </section>
+
+            
+                
+
+<section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
+    <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
+    
+    
+                <aside id="krw-about" class="widget widget-kratos-about clearfix">
+    <div class="photo-background"></div>
+    <div class="photo-wrapper clearfix">
+        <div class="photo-wrapper-tip text-center">
+            <img class="about-photo" src="/assets/head.jpg" alt="Sallina" loading="lazy" decoding="auto" />
+        </div>
+    </div>
+    <div class="textwidget">
+        <p class="text-center"></p>
+    </div>
+    <div class="site-meta">
+        <a class="meta-item" href="/archives/">
+            <span class="title">
+                文章
+            </span>
+            <span class="count">
+                6
+            </span>
+        </a>
+        <a class="meta-item" href="/categories/">
+            <span class="title">
+                分类
+            </span>
+            <span class="count">
+                0
+            </span>
+        </a>
+        <a class="meta-item" href="/tags/">
+            <span class="title">
+                标签
+            </span>
+            <span class="count">
+                0
+            </span>
+        </a>
+    </div>
+</aside>
+            
+                    <div class="sticky-area">
+                
+                
+
+            
+                
+            
+                
+  <aside id="krw-posts" class="widget widget-kratos-posts">
+  <h4 class="widget-title"><i class="fa fa-file"></i>最新文章</h4>
+  <div class="tab-content">
+      <ul class="list-group">
+        
+        
+          
+          
+            <a class="list-group-item" href="/posts/Projections_Matrix/"><i class="fa fa-book"></i> 矩阵的最小二乘法和投影矩阵</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/Discrete_mathematics/"><i class="fa fa-book"></i> 面向计算机的科学的离散数学 （期中） 对应计算机系离散数学（1）</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/A_simple_self-introduce/"><i class="fa fa-book"></i> 简单的自我介绍</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/A_game_of_program_design/"><i class="fa fa-book"></i> 一个程序基础课程大作业的很酷的搬箱子游戏</a>
+            
+          
+        
+          
+          
+            <a class="list-group-item" href="/posts/Matrix/"><i class="fa fa-book"></i> 线性代数期末预习</a>
+            
+          
+        
+          
+            
+      </ul>
+  </div>
+  </aside>
+
+            
+    </div>
+</section>
+            
+
+        
+
+                </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 footer-list text-center">
+                    <ul class="kratos-social-icons">
+                        
+                            <li>
+                                <a href="https://github.com/kratos-rebirth" target="_blank" rel="nofollow">
+                                    <i class="fa fa-github"></i>
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="/atom.xml" target="_blank" rel="nofollow">
+                                    <i class="fa fa-rss"></i>
+                                </a>
+                            </li>
+                        
+                    </ul>
+                    <ul class="kratos-copyright">
+                        <div>
+                            <li>&copy; 2024 Rosist Blog 版权所有.</li>
+                            <li>本站已在在无监管状态下存活<span id="kr-since">Loading...</span></li>
+                        </div>
+                        <div>
+                            <li>自豪地使用 <a href="https://github.com/Candinya/Kratos-Rebirth" target="_blank">Kratos:Rebirth</a> 主题</li>
+                            <li>站点由 <a href="https://github.com/Candinya/Kratos-Rebirth/graphs/contributors" target="_blank">Sallina</a> 用 <i class="fa fa-heart" style="color:#d43f57"></i> 搭建</li>
+                        </div>
+                        <!-- 额外的追加注入项 -->
+                        
+                            <div>
+                                
+                                    <li>由 <a href="https://hexo.io" target="_blank" rel="nofollow">Hexo</a> 强力驱动</li>
+                                
+                                    <li>在 <a href="https://github.io" target="_blank">Github Pages</a> 暖心托管</li>
+                                
+                            </div>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="kr-tool text-center">
+            <div class="tool">
+                
+                    <div class="box search-box">
+                        <a href="/search">
+                            <span class="fa fa-search"></span>
+                        </a>
+                    </div>
+                
+                <div class="box theme-box" id="theme-toggle">
+                    <span class="fa fa-adjust"></span>
+                </div>
+            </div>
+            <div id="gotop-box" class="box gotop-box">
+                <span class="fa fa-chevron-up"></span>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>
+
+
+    <div id="kr-donate-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseDonateModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-bitcoin"></i>
+            </div>
+            <div class="kr-modal-title">打赏</div>
+            <button class="kr-modal-close" onclick="krCloseDonateModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-donate-message">打赏提示信息</div>
+            <div class="kr-donate-qr" id="kr-donate-qr">
+                
+            </div>
+            <div class="kr-donate-platforms">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/donate.min.js"></script>
+
+
+
+
+    <div id="kr-share-modal" class="kr-modal">
+    <div class="kr-modal-bg" onclick="krCloseShareModal()"></div>
+    <div class="kr-modal-content">
+        <div class="kr-modal-header">
+            <div class="kr-modal-icon">
+                <i class="fa fa-share-alt"></i>
+            </div>
+            <div class="kr-modal-title">分享</div>
+            <button class="kr-modal-close" onclick="krCloseShareModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+        <div class="kr-modal-body">
+            <div class="kr-share-message">分享提示信息</div>
+            <div class="kr-share-qr" id="kr-share-qr"></div>
+            <div class="kr-share-platforms">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script defer src="/js/kr-modal/share.min.js"></script>
+
+
+
+<!-- 额外的追加注入项 -->
+
+
+        <script>
+    if (!window.kr) {
+        window.kr = {};
+    }
+    window.kr.notMobile = (!(navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)));
+    window.kr.siteRoot = "/";
+</script>
+
+
+  <script defer src="/vendors/nprogress@0.2.0/nprogress.js"></script>
+
+
+
+  <script defer src="/vendors/viewerjs@1.11.6/dist/viewer.min.js"></script>
+
+
+<script defer src="/js/kr-core.min.js"></script>
+
+
+  <script defer src="/js/kr-pjax.min.js"></script>
+
+
+<!-- 额外的追加注入项 -->
+
+
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<!-- hexo injector body_end start --><script data-pjax src="https://unpkg.com/oh-my-live2d"></script><script>const oml2d = OML2D.loadOml2d({dockedPosition:"left",mobileDisplay:false,models:[{"path":"/sagiri/model/sagiri/sagiri.model.json","position":[30,0],"scale":0.15,"stageStyle":{"width":250,"height":250},"mobilePosition":[-10,23],"mobileScale":0.1,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"ALL"},{"path":"/mashiro/Live2dMashiro/live2d/model/Sakurasou/mashiro/ryoufuku.model.json","position":[30,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.08,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE"},{"path":"/mashiro/Live2dMashiro/live2d/model/Sakurasou/mashiro/shifuku.model.json","position":[30,20],"scale":0.15,"stageStyle":{"width":350,"height":350},"mobilePosition":[-10,23],"mobileScale":0.08,"mobileStageStyle":{"width":180,"height":166},"motionPreloadStrategy":"IDLE"}],parentElement:document.body,primaryColor:"var(--btn-bg)",sayHello:false,tips:{style: {"width":230,"height":120,"left":"calc(50% - 20px)","top":"-100px"},mobileStyle: {"width":180,"height":80,"left":"calc(50% - 30px)","top":"-100px"},idleTips:{interval:3600,message:["你好呀，我是Rosist~","欢迎来到我的小站~"]}}});</script><!-- hexo injector body_end end --></body>
+</html>
