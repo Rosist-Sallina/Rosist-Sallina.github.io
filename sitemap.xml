@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://rosist-sallina.github.io/posts/A_game_of_program_design/</loc>
+    
+    <lastmod>2024-11-12T11:56:36.029Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://rosist-sallina.github.io/links/index.html</loc>
     
-    <lastmod>2024-11-12T10:52:14.022Z</lastmod>
+    <lastmod>2024-11-12T11:34:39.960Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>https://rosist-sallina.github.io/posts/Intgration/</loc>
     
     <lastmod>2024-04-23T14:51:14.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://rosist-sallina.github.io/posts/A_game_of_program_design/</loc>
-    
-    <lastmod>2024-01-04T13:25:13.615Z</lastmod>
     
   </url>
   

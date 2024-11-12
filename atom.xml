@@ -84,7 +84,7 @@
     <link href="https://rosist-sallina.github.io/posts/A_game_of_program_design/"/>
     <id>https://rosist-sallina.github.io/posts/A_game_of_program_design/</id>
     <published>2024-11-12T09:44:26.094Z</published>
-    <updated>2024-01-04T13:25:13.615Z</updated>
+    <updated>2024-11-12T11:56:36.029Z</updated>
     
     <content type="html"><![CDATA[<p>在上vjf小班辅导的时候抽空发了这个post（x，原谅我不认真听课。</p><h2 id="我要干啥"><a href="#我要干啥" class="headerlink" title="我要干啥"></a>我要干啥</h2><p>这次要发的是在T大xmx老师开设的程序设计基础课上的期末大作业，游戏的本身参考了《人力资源机器》，而我们要做的是用指令行模拟出来一个类似于原游戏的界面。</p><h3 id="这个作业的链接"><a href="#这个作业的链接" class="headerlink" title="这个作业的链接"></a>这个作业的链接</h3><p><a href="https://github.com/Rosist-Sallina/Cpp_Hugehomework">https://github.com/Rosist-Sallina/Cpp_Hugehomework</a></p><h3 id="太懒导致的"><a href="#太懒导致的" class="headerlink" title="太懒导致的"></a>太懒导致的</h3><p>因为时间关系和我实在太懒，把OJ部分交给队友之后，很多错误输入处理部分我就直接不做了，这也就导致游戏存在很多漏洞（坏），虽然在正常游玩上没啥问题，但是一旦游戏遇到一些神奇情况就会歇菜，这也是可能需要完善的地方</p><h3 id="一些感悟"><a href="#一些感悟" class="headerlink" title="一些感悟"></a>一些感悟</h3><p>做程序一定要一次性做到完美，否则后期根据要求再来修改程序真的很痛苦，尤其是在程序写的一团乱麻的时候，在很乱的一堆色块里手动改会耗掉你一下午（坏，泡在图书馆一个下午看写的代码真的痛苦，这还是在有注释的情况下）</p><h3 id="北京马o真不错"><a href="#北京马o真不错" class="headerlink" title="北京马o真不错"></a>北京马o真不错</h3><p>从来没见过这么多爱马仕导致的</p>]]></content>
     
