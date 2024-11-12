@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/favicon.png">
   
   
-  <title>Rosist Blog</title>
-  <link rel="canonical" href="https://rosist-sallina.github.io/index.html">
+  <title>矩阵的最小二乘法和投影矩阵 | Rosist Blog</title>
+  <link rel="canonical" href="https://rosist-sallina.github.io/posts/Projections_Matrix/">
   <meta name="author" content="Sallina" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,18 +17,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="hexo,theme,kratos-rebirth" />
+    <meta name="keywords" content="" />
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Rosist Blog">
-<meta property="og:url" content="https://rosist-sallina.github.io/index.html">
+  <meta name="description" content="投影矩阵对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymbol{A}^{T} &#x3D; 0$和一个上三角矩阵的的乘积，也就是我们所说的QR分解，其中Q为正交矩阵，R为上三角矩阵。由此，我们可以得到投影矩阵$\boldsymbol">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵的最小二乘法和投影矩阵">
+<meta property="og:url" content="https://rosist-sallina.github.io/posts/Projections_Matrix/index.html">
 <meta property="og:site_name" content="Rosist Blog">
+<meta property="og:description" content="投影矩阵对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymbol{A}^{T} &#x3D; 0$和一个上三角矩阵的的乘积，也就是我们所说的QR分解，其中Q为正交矩阵，R为上三角矩阵。由此，我们可以得到投影矩阵$\boldsymbol">
 <meta property="og:locale">
+<meta property="og:image" content="https://rosist-sallina.github.io/%5Cimg%5CWechat_20231226132959.jpg">
+<meta property="article:published_time" content="2024-11-12T09:44:26.109Z">
+<meta property="article:modified_time" content="2024-04-25T06:48:43.048Z">
 <meta property="article:author" content="Sallina">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="theme">
 <meta property="article:tag" content="kratos-rebirth">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://rosist-sallina.github.io/%5Cimg%5CWechat_20231226132959.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Rosist Blog" type="application/atom+xml">
   
@@ -194,305 +200,92 @@
 
         
 
-            <!-- Breadcrumb for tag & category page -->
-
-
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-    <div class="kratos-entry-border clearfix">
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://rosist-sallina.github.io/posts/Projections_Matrix/">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
+            
+                <h1 class="kratos-page-title text-center" itemprop="name headline">矩阵的最小二乘法和投影矩阵</h1>
+            
+            <ul class="kratos-page-meta text-center">
+                <li><time datetime="2024-11-12T09:44:26.109Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-11-12</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Sallina</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            1207
+                        
+                        字
+                    </li>
+                
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-page-content kr-post">
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><p><img src="/%5Cimg%5CWechat_20231226132959.jpg"></p>
+<h2 id="投影矩阵"><a href="#投影矩阵" class="headerlink" title="投影矩阵"></a>投影矩阵</h2><p>对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymbol{A}^{T} &#x3D; 0$和一个上三角矩阵的的乘积，也就是我们所说的QR分解，其中Q为正交矩阵，R为上三角矩阵。由此，我们可以得到投影矩阵$\boldsymbol{A}<em>P$的一种计算方法，即 $\boldsymbol{A</em>{P}} &#x3D; Q\times Q^{T}$ 。</p>
+<p>对于一阶的$R^1$，由于显然其是否经过正交化与得到的结果仅为相差常数倍的关系，得到的结果并没有本质上的不同，因此对于向量$a$来说，其余向量在$a$上的投影矩阵显然是$a\times a^T$。<br>而对于二阶及以上的矩阵平面或者空间来说，显然就没有这么简单了。因此需要经过正交化后再进行处理。</p>
+<h2 id="最小二乘"><a href="#最小二乘" class="headerlink" title="最小二乘"></a>最小二乘</h2><p>在实际条件中，我们往往无法得到一个最完美的解用来满足$\boldsymbol{A}x &#x3D; b$，因此我们需要找到一个x使得得到的解尽可能接近所需的解，即$\hat{x}$满足$\boldsymbol{A}\times \hat{x} &#x3D; b$,<br>此时，可以左右同时乘以$\boldsymbol{A}^T$使得其能够满足投影矩阵条件，此式可以通过偏导数加以证明，但是我不会（。</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>由最小二乘和投影矩阵的结合，我们可以得到一个最小二乘中的$\hat{x}$的解法，即$\boldsymbol{A}^{T} A\hat{x} &#x3D; \boldsymbol{A}^{T}b$，此式也可以写成 $$ \boldsymbol{A}\hat{x} &#x3D; Q^TQb $$ 的形式，这也是我要记录的重点。<br>其中Q是Matrix $\boldsymbol{A}$经过Gram-Schmidt方法正交化得到的产物。</p>
+<p>在经过这样的过程后求得的$\hat{x}$不仅可以是最小二乘法的解，也可以是$\min\lvert\lvert b-\boldsymbol{A}x\rvert\rvert$ 。</p>
+<h2 id="补充，SVD分解和最小二乘的关系"><a href="#补充，SVD分解和最小二乘的关系" class="headerlink" title="补充，SVD分解和最小二乘的关系"></a>补充，SVD分解和最小二乘的关系</h2><p>我们知道，任何矩阵都可以分解成$A&#x3D;U$<br>$\sigma$<br>$V^{T} $<br>的形式，因此，矩阵的广义逆$ A^+ $ 可以表示为$V\sigma^+ U^{T}$的形式，其中V和U前面已经说明，而$\sigma^+$ 是$\sigma$ 的一个广义逆，计算方法是将 $\sigma$上的对角线元素取倒数后进行转置。由此可以算出矩阵的广义逆。</p>
+<p>接着往下讲，$ x&#x3D;A^{+} b+y-A^{+} Ay $ ，这是通过SVD变换和广义逆进行求解的方法。这个方法与上述所讲的$\boldsymbol{QR}$ 分解的本质是一样，但是使用范围更广。</p>
+</div>
+        </div>
         
-        <div class="kratos-entry-post-main">
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</span>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
             
             
-                <div class="kratos-entry-thumb">
-                    <a href="/posts/Projections_Matrix/">
-                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%92%8C%E6%8A%95%E5%BD%B1%E7%9F%A9%E9%98%B5">
-                    </a>
+            
+                <div class="post-actions text-center clearfix" id="post-actions">
+                
+                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> 打赏</a>
+                
+                
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
+                
                 </div>
             
-            <div class="kratos-entry-post-inner">
-                <header class="kratos-entry-header">
-                        
-                    <h2 class="kratos-entry-title"><a href="/posts/Projections_Matrix/" itemprop="mainEntityOfPage"><span itemprop="name headline">矩阵的最小二乘法和投影矩阵</span></a>
-                </header>
-                <div class="kratos-entry-content">
-                    <p itemProp="description">
-                        
-                            
-投影矩阵对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymbol{A...
-                        
-                    </p>
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-04-25T06:48:43.048Z" itemprop="dateModified">最后编辑：2024-04-25</time>
                 </div>
             </div>
-        </div>
-        <footer class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <time datetime="2024-11-12T09:44:26.109Z" itemprop="datePublished">
-                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
-                </time>
-                <a>
-                    
-                </a>
-                
-                
-            </span>
-            <span class="pull-right">
-                <a class="read-more" href="/posts/Projections_Matrix/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-            </span>
         </footer>
     </div>
-</article>
     
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-    <div class="kratos-entry-border clearfix">
-        
-        <div class="kratos-entry-post-main">
+        <nav class="navigation post-navigation clearfix" role="navigation">
             
-            
-                <div class="kratos-entry-thumb">
-                    <a href="/posts/Discrete_mathematics/">
-                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E9%9D%A2%E5%90%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%A7%91%E5%AD%A6%E7%9A%84%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%20%EF%BC%88%E6%9C%9F%E4%B8%AD%EF%BC%89%20%E5%AF%B9%E5%BA%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%EF%BC%881%EF%BC%89">
-                    </a>
-                </div>
-            
-            <div class="kratos-entry-post-inner">
-                <header class="kratos-entry-header">
-                        
-                    <h2 class="kratos-entry-title"><a href="/posts/Discrete_mathematics/" itemprop="mainEntityOfPage"><span itemprop="name headline">面向计算机的科学的离散数学 （期中） 对应计算机系离散数学（1）</span></a>
-                </header>
-                <div class="kratos-entry-content">
-                    <p itemProp="description">
-                        
-                            
-tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习1.在集合A上等价关系个数的计算等价关系与划分一一对应，非空集合A上的等价关系个数等于A的划分个数，即等价关系个数等于划分个数。转换为数学模型：即将n个小球放入m个...
-                        
-                    </p>
-                </div>
+            <div class="nav-previous clearfix">
+                <a title=" 面向计算机的科学的离散数学 （期中） 对应计算机系离散数学（1）" href="/posts/Discrete_mathematics/"><i class="fa fa-angle-left"></i> 上一篇</a>
             </div>
+            
+            
+        </nav>
+    
+    
+        <div class="comment-post">
+            
         </div>
-        <footer class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <time datetime="2024-11-12T09:44:26.099Z" itemprop="datePublished">
-                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
-                </time>
-                <a>
-                    
-                </a>
-                
-                
-            </span>
-            <span class="pull-right">
-                <a class="read-more" href="/posts/Discrete_mathematics/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-            </span>
-        </footer>
-    </div>
+    
 </article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-    <div class="kratos-entry-border clearfix">
-        
-        <div class="kratos-entry-post-main">
-            
-            
-                <div class="kratos-entry-thumb">
-                    <a href="/posts/A_simple_self-introduce/">
-                        <img class="kratos-entry-thumb-img" src="https://i0.imgs.ovh/2023/11/09/ltLuX.png" alt="/%E7%AE%80%E5%8D%95%E7%9A%84%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D">
-                    </a>
-                </div>
-            
-            <div class="kratos-entry-post-inner">
-                <header class="kratos-entry-header">
-                        
-                    <h2 class="kratos-entry-title"><a href="/posts/A_simple_self-introduce/" itemprop="mainEntityOfPage"><span itemprop="name headline">简单的自我介绍</span></a>
-                </header>
-                <div class="kratos-entry-content">
-                    <p itemProp="description">
-                        
-                            Hello你好啊，我是Rosist ，现就读于华清大学计金班，编程很菜但是正在努力学习（X。希望能多多交流喵谢谢喵。
-开始摆烂喵的怎么写啊有没有一种可能你来到这个网站出自偶然，但是来了就别想跑了喵，我会把你抓进手掌心的喵。
-关注周放p...
-                        
-                    </p>
-                </div>
-            </div>
-        </div>
-        <footer class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <time datetime="2024-11-12T09:44:26.096Z" itemprop="datePublished">
-                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
-                </time>
-                <a>
-                    
-                </a>
-                
-                
-            </span>
-            <span class="pull-right">
-                <a class="read-more" href="/posts/A_simple_self-introduce/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-            </span>
-        </footer>
-    </div>
-</article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-    <div class="kratos-entry-border clearfix">
-        
-        <div class="kratos-entry-post-main">
-            
-            
-                <div class="kratos-entry-thumb">
-                    <a href="/posts/A_game_of_program_design/">
-                        <img class="kratos-entry-thumb-img" src="https://i0.imgs.ovh/2023/12/31/0g5kV.jpeg" alt="/%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%BE%88%E9%85%B7%E7%9A%84%E6%90%AC%E7%AE%B1%E5%AD%90%E6%B8%B8%E6%88%8F">
-                    </a>
-                </div>
-            
-            <div class="kratos-entry-post-inner">
-                <header class="kratos-entry-header">
-                        
-                    <h2 class="kratos-entry-title"><a href="/posts/A_game_of_program_design/" itemprop="mainEntityOfPage"><span itemprop="name headline">一个程序基础课程大作业的很酷的搬箱子游戏</span></a>
-                </header>
-                <div class="kratos-entry-content">
-                    <p itemProp="description">
-                        
-                            在上vjf小班辅导的时候抽空发了这个post（x，原谅我不认真听课。
-我要干啥这次要发的是在T大xmx老师开设的程序设计基础课上的期末大作业，游戏的本身参考了《人力资源机器》，而我们要做的是用指令行模拟出来一个类似于原游戏的界面。
-这...
-                        
-                    </p>
-                </div>
-            </div>
-        </div>
-        <footer class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <time datetime="2024-11-12T09:44:26.094Z" itemprop="datePublished">
-                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
-                </time>
-                <a>
-                    
-                </a>
-                
-                
-            </span>
-            <span class="pull-right">
-                <a class="read-more" href="/posts/A_game_of_program_design/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-            </span>
-        </footer>
-    </div>
-</article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-    <div class="kratos-entry-border clearfix">
-        
-        <div class="kratos-entry-post-main">
-            
-            
-                <div class="kratos-entry-thumb">
-                    <a href="/posts/Matrix/">
-                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%A2%84%E4%B9%A0">
-                    </a>
-                </div>
-            
-            <div class="kratos-entry-post-inner">
-                <header class="kratos-entry-header">
-                        
-                    <h2 class="kratos-entry-title"><a href="/posts/Matrix/" itemprop="mainEntityOfPage"><span itemprop="name headline">线性代数期末预习</span></a>
-                </header>
-                <div class="kratos-entry-content">
-                    <p itemProp="description">
-                        
-                            
-线性变换的定义如果我们将线性变换看作是一种对于向量的线性变换关系，这种关系是广义的，可以涉及很多方面。但是，在线性代数层面而不是抽象代数层面，我们当然希望这种变换是符合线性的，也就是说，我们希望一种变换$\boldsymbol{L}...
-                        
-                    </p>
-                </div>
-            </div>
-        </div>
-        <footer class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <time datetime="2024-11-12T09:26:36.509Z" itemprop="datePublished">
-                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
-                </time>
-                <a>
-                    
-                </a>
-                
-                
-            </span>
-            <span class="pull-right">
-                <a class="read-more" href="/posts/Matrix/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-            </span>
-        </footer>
-    </div>
-</article>
-    
-
-    
-    
-        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
-    <div class="kratos-entry-border clearfix">
-        
-        <div class="kratos-entry-post-main">
-            
-            
-                <div class="kratos-entry-thumb">
-                    <a href="/posts/Intgration/">
-                        <img class="kratos-entry-thumb-img" src="/images/default.webp" alt="/%E5%85%B3%E4%BA%8E%E5%BE%AE%E7%A7%AF%E5%88%86A2%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%AC%E5%BC%8F%E5%8F%8A%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86">
-                    </a>
-                </div>
-            
-            <div class="kratos-entry-post-inner">
-                <header class="kratos-entry-header">
-                        
-                    <h2 class="kratos-entry-title"><a href="/posts/Intgration/" itemprop="mainEntityOfPage"><span itemprop="name headline">关于微积分A2的一些公式及条件整理</span></a>
-                </header>
-                <div class="kratos-entry-content">
-                    <p itemProp="description">
-                        
-                            1.关于积分的可交换性：$ 当f(x,y)在[a,b]\times[c,d]上连续时，\int_{a}^{b} dx\int_{c}^{d} f(x, y) dy &#x3D;  \int_{a}^{b} dy\int_{c}^{d}...
-                        
-                    </p>
-                </div>
-            </div>
-        </div>
-        <footer class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <time datetime="2024-11-12T09:26:36.507Z" itemprop="datePublished">
-                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
-                </time>
-                <a>
-                    
-                </a>
-                
-                
-            </span>
-            <span class="pull-right">
-                <a class="read-more" href="/posts/Intgration/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
-            </span>
-        </footer>
-    </div>
-</article>
-    
-
-
-
-
-
-
-
 
         
 
@@ -503,8 +296,6 @@ tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -545,6 +336,8 @@ tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识
     </div>
 </aside>
             
+                    <div class="sticky-area">
+                
                 
 
             

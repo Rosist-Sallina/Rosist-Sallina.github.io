@@ -2,9 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://rosist-sallina.github.io/posts/hello-world/</loc>
+    <loc>https://rosist-sallina.github.io/posts/Discrete_mathematics/</loc>
     
-    <lastmod>2024-11-12T07:34:22.000Z</lastmod>
+    <lastmod>2024-04-25T08:20:51.983Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rosist-sallina.github.io/posts/Projections_Matrix/</loc>
+    
+    <lastmod>2024-04-25T06:48:43.048Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rosist-sallina.github.io/posts/Matrix/</loc>
+    
+    <lastmod>2024-04-24T09:29:18.932Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rosist-sallina.github.io/posts/Intgration/</loc>
+    
+    <lastmod>2024-04-23T14:51:14.810Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rosist-sallina.github.io/posts/A_game_of_program_design/</loc>
+    
+    <lastmod>2024-01-04T13:25:13.615Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://rosist-sallina.github.io/posts/A_simple_self-introduce/</loc>
+    
+    <lastmod>2024-01-04T13:25:05.913Z</lastmod>
     
   </url>
   
