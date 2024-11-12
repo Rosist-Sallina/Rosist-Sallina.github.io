@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/favicon.png">
   
   
-  <title>Rosist 的朋友们 | Rosist Blog</title>
-  <link rel="canonical" href="https://rosist-sallina.github.io/links/index.html">
+  <title>Rosist Blog</title>
+  <link rel="canonical" href="https://rosist-sallina.github.io/wordle/README.html">
   <meta name="author" content="Sallina" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -19,22 +19,20 @@
   
     <meta name="keywords" content="hexo,theme,kratos-rebirth" />
   
-  <meta name="description" content=".links-page {     max-width: 800px;     margin: 0 auto;     text-align: center;     font-family: Arial, sans-serif;   }    .links-page h1 {     font-size: 2em;     margin-bottom: 20px;   }    .link">
+  <meta name="description" content="大作业：Wordle2024 年夏季学期《程序设计训练》 Rust 课堂大作业（一）。 项目说明程序结构123456789101112src|-- app                                &#x2F;&#x2F;仅包含app调用的函数|    |-- judge_yew.rs                  &#x2F;&#x2F;判断函数|    |-- resources.rs       |-- d">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rosist 的朋友们">
-<meta property="og:url" content="https://rosist-sallina.github.io/links/index.html">
+<meta property="og:title" content="Rosist Blog">
+<meta property="og:url" content="https://rosist-sallina.github.io/wordle/README.html">
 <meta property="og:site_name" content="Rosist Blog">
-<meta property="og:description" content=".links-page {     max-width: 800px;     margin: 0 auto;     text-align: center;     font-family: Arial, sans-serif;   }    .links-page h1 {     font-size: 2em;     margin-bottom: 20px;   }    .link">
+<meta property="og:description" content="大作业：Wordle2024 年夏季学期《程序设计训练》 Rust 课堂大作业（一）。 项目说明程序结构123456789101112src|-- app                                &#x2F;&#x2F;仅包含app调用的函数|    |-- judge_yew.rs                  &#x2F;&#x2F;判断函数|    |-- resources.rs       |-- d">
 <meta property="og:locale">
-<meta property="og:image" content="https://www.helloimg.com/i/2024/11/12/6733683ce456f.jpg">
-<meta property="article:published_time" content="2024-11-12T10:33:54.000Z">
-<meta property="article:modified_time" content="2024-11-12T14:42:00.845Z">
+<meta property="article:published_time" content="2024-11-12T12:12:50.703Z">
+<meta property="article:modified_time" content="2024-07-12T02:51:42.000Z">
 <meta property="article:author" content="Sallina">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="theme">
 <meta property="article:tag" content="kratos-rebirth">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://www.helloimg.com/i/2024/11/12/6733683ce456f.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Rosist Blog" type="application/atom+xml">
   
@@ -213,126 +211,89 @@
         
 
             <article itemscope itemtype="https://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://rosist-sallina.github.io/links/index.html">
+    <link itemprop="mainEntityOfPage" href="https://rosist-sallina.github.io/wordle/README.html">
     <div class="kratos-hentry kratos-page-inner clearfix">
         <header class="kratos-page-header">
             
-                <h1 class="kratos-page-title text-center" itemprop="name headline">Rosist 的朋友们</h1>
-            
         </header>
         <div class="kratos-page-content kr-page">
-            <div itemprop="articleBody"><style>
-  .links-page {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: Arial, sans-serif;
-  }
-
-  .links-page h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-  }
-
-  .links-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
-  }
-
-  .link-item {
-    width: 40%;
-    max-width: 300px;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, background-color 0.3s, color 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .link-item:hover {
-    transform: scale(1.05);
-    background-color: #333;
-    color: #fff;
-  }
-
-  .link-content {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .link-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-    transition: filter 0.3s;
-  }
-
-  .link-item:hover .link-image {
-    filter: brightness(0.8);
-  }
-
-  .divider {
-    width: 1px; /* 竖直分割线 */
-    height: 40px; /* 与图片和标题的高度一致 */
-    background-color: #ccc;
-    margin: 0 10px;
-  }
-
-  .link-title {
-    font-size: 1em;
-    font-weight: bold;
-    color: #333;
-    transition: color 0.3s;
-    text-decoration: none !important; /* 去除下划线 */
-    border-bottom: none !important; /* 强制去除底部边框 */
-    outline: none !important; /* 去除任何轮廓 */
-    display: inline; /* 设置为 inline 确保标题不继承块级样式 */
-  }
-
-  .link-item a {
-    text-decoration: none !important; /* 去除链接的下划线 */
-    color: inherit; /* 保持链接颜色与父级一致 */
-  }
-
-  .link-item:hover .link-title {
-    color: #fff;
-  }
-
-  .link-description {
-    font-size: 0.8em;
-    color: #666;
-    transition: color 0.3s;
-    margin-top: 8px;
-  }
-
-  .link-item:hover .link-description {
-    color: #fff;
-  }
-</style>
-
-<div class="links-page">
-  <div class="links-container">
-    <div class="link-item">
-      <a href="https://murasaki010.github.io" target="blank">
-        <div class="link-content">
-          <img src="https://www.helloimg.com/i/2024/11/12/6733683ce456f.jpg" alt="murasaki" class="link-image">
-          <div class="divider"></div>
-          <span class="link-title">murasaki</span>
-        </div>
-        <p class="link-description">无聊的人</p>
-      </a>
-    </div>
-  </div>
-</div></div>
+            <div itemprop="articleBody"><h1 id="大作业：Wordle"><a href="#大作业：Wordle" class="headerlink" title="大作业：Wordle"></a>大作业：Wordle</h1><p>2024 年夏季学期《程序设计训练》 Rust 课堂大作业（一）。</p>
+<h2 id="项目说明"><a href="#项目说明" class="headerlink" title="项目说明"></a>项目说明</h2><h3 id="程序结构"><a href="#程序结构" class="headerlink" title="程序结构"></a>程序结构</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">|-- app                                <span class="comment">//仅包含app调用的函数</span></span><br><span class="line">|    |-- judge_yew.rs                  <span class="comment">//判断函数</span></span><br><span class="line">|    |-- resources.rs       </span><br><span class="line">|-- data</span><br><span class="line">|   |-- config.json                      <span class="comment">//配置文件</span></span><br><span class="line">|-- app.rs                               <span class="comment">//Web GUI</span></span><br><span class="line">|-- builtin_words.rs                     <span class="comment">//内置词库</span></span><br><span class="line">|-- lib.rs                               <span class="comment">//GUI入口</span></span><br><span class="line">|-- judge.rs                             <span class="comment">//判断函数</span></span><br><span class="line">|-- main.rs                              <span class="comment">//normal入口</span></span><br><span class="line">|-- tty_mode.rs                          <span class="comment">//终端输入模式</span></span><br></pre></td></tr></table></figure>
+<p>Crate下的各种模块（除builtin_words）为CLI独有，app下的模块为GUI独有.</p>
+<h3 id="用法说明"><a href="#用法说明" class="headerlink" title="用法说明"></a>用法说明</h3><h4 id="CLI"><a href="#CLI" class="headerlink" title="CLI"></a>CLI</h4><p>直接进行cargo run将会进入CLI交互模式。在此模式中，可以通过制定一些参数自定义游戏体验。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>子参数</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>‘—random’ /‘-r’</td>
+<td></td>
+<td>开启随机模式，会根据day和seed作为伪参数决定答案</td>
+<td>依赖于’—random’</td>
+</tr>
+<tr>
+<td>‘—difficult’ /‘-D’</td>
+<td></td>
+<td>开启困难模式</td>
+<td></td>
+</tr>
+<tr>
+<td>‘—day’ /‘-d’</td>
+<td>day<int></td>
+<td>指定日期</td>
+<td>day的范围不能太大，否则会超出预选库大小</td>
+</tr>
+<tr>
+<td>‘—seed’ /‘-s’</td>
+<td>seed<int></td>
+<td>指定种子</td>
+<td>依赖于’—random’</td>
+</tr>
+<tr>
+<td>‘—word’ /‘-w’</td>
+<td>word<String></td>
+<td>指定答案</td>
+<td>与’—random’冲突</td>
+</tr>
+<tr>
+<td>‘—acceptable-set’ / ‘-a’</td>
+<td>path <String></td>
+<td>指定可接受的单词集</td>
+<td></td>
+</tr>
+<tr>
+<td>‘—final-set’ / ‘-f’</td>
+<td>path <String></td>
+<td>指定随机单词选取的的单词集</td>
+<td></td>
+</tr>
+<tr>
+<td>‘—state’ / ‘-S’</td>
+<td>path <String></td>
+<td>指定状态存储路径</td>
+<td></td>
+</tr>
+<tr>
+<td>‘—stats’ / ‘-t’</td>
+<td></td>
+<td>每一局结束后展示统计信息</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h4><p>本项目的GUI部分是基于Yew框架的Web应用，通过编译到WebAssembly的方式应用。目前本项目被部署在<a href="https://rosist-sallina.github.io/wordle/">这里</a>。<br>通过键盘输入，一行输入完成后点击屏幕上的Enter键即可提交答案。对于无法提交的情况，请检查单词的合法性。</p>
+<p>左上角的设置面板提供了困难模式的切换设置和种子的参数设置。</p>
+<p>左边的统计面板会输出当前胜利局数和总局数，以及使用频率最高的5个单词。</p>
+<p>值得注意的是，本项目实现了原Wordle游戏中单词翻转的动画，使变化效果更加美观圆滑。</p>
+<h4 id="提高要求实现"><a href="#提高要求实现" class="headerlink" title="提高要求实现"></a>提高要求实现</h4><p>采用<a target="_blank" rel="noopener" href="https://yew.rs/">Yew</a>框架以及极少量JavaScript（主要是为了实现界面的监听效果）实现。<br>并使用<a target="_blank" rel="noopener" href="https://trunkrs.dev/">Trunk</a>将编译完成的WebAssembly打包后，部署到Github Pages上。</p>
+</div>
         </div>
         
         <footer class="kratos-entry-footer clearfix">
@@ -341,11 +302,15 @@
             
             <div class="footer-tag clearfix">
                 <div class="pull-date">
-                    <time datetime="2024-11-12T14:42:00.845Z" itemprop="dateModified">最后编辑：2024-11-12</time>
+                    <time datetime="2024-07-12T02:51:42.000Z" itemprop="dateModified">最后编辑：2024-07-12</time>
                 </div>
             </div>
         </footer>
     </div>
+    
+        <div class="comment-page">
+            
+        </div>
     
 </article>
 
