@@ -19,16 +19,16 @@
   
     <meta name="keywords" content="" />
   
-  <meta name="description" content="S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。  实现逻辑1.密钥生成 首先生成一个10位初始秘钥，分为左右两部分，各5位 将左右两部分分别左移1位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥 通过置换表得到( K_1 ) 将左右两部分分别左移2位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10">
+  <meta name="description" content="S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。  实现逻辑1.密钥生成 首先生成一个10位初始秘钥，分为左右两部分，各5位 将左右两部分分别左移1位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥 通过置换表得到$ K_1 $ 将左右两部分分别左移2位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10">
 <meta property="og:type" content="article">
 <meta property="og:title" content="S-DES">
 <meta property="og:url" content="https://rosist-sallina.github.io/posts/S-DES/index.html">
 <meta property="og:site_name" content="Rosist Blog">
-<meta property="og:description" content="S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。  实现逻辑1.密钥生成 首先生成一个10位初始秘钥，分为左右两部分，各5位 将左右两部分分别左移1位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥 通过置换表得到( K_1 ) 将左右两部分分别左移2位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10">
+<meta property="og:description" content="S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。  实现逻辑1.密钥生成 首先生成一个10位初始秘钥，分为左右两部分，各5位 将左右两部分分别左移1位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥 通过置换表得到$ K_1 $ 将左右两部分分别左移2位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10">
 <meta property="og:locale">
 <meta property="og:image" content="https://www.helloimg.com/i/2024/12/23/6769282e68478.jpg">
 <meta property="article:published_time" content="2024-12-23T08:41:40.582Z">
-<meta property="article:modified_time" content="2024-12-23T11:16:10.447Z">
+<meta property="article:modified_time" content="2024-12-23T11:39:33.427Z">
 <meta property="article:author" content="Sallina">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="theme">
@@ -258,15 +258,15 @@
 <li>首先生成一个10位初始秘钥，分为左右两部分，各5位</li>
 <li>将左右两部分分别左移1位，得到两个新的5位秘钥</li>
 <li>将左右两个新的秘钥和为一个10位秘钥</li>
-<li>通过置换表得到( K_1 )</li>
+<li>通过置换表得到$ K_1 $</li>
 <li>将左右两部分分别左移2位，得到两个新的5位秘钥</li>
-<li>将左右两个新的秘钥和为一个10位秘钥,并通过置换表生成( K_2 )<h3 id="2-加密过程"><a href="#2-加密过程" class="headerlink" title="2.加密过程"></a>2.加密过程</h3></li>
+<li>将左右两个新的秘钥和为一个10位秘钥,并通过置换表生成$ K_2 $<h3 id="2-加密过程"><a href="#2-加密过程" class="headerlink" title="2.加密过程"></a>2.加密过程</h3></li>
 <li>第一步<ul>
 <li>将明文分块得到多个8位明文块，不足的部分用0补齐</li>
-<li>将明文块通过初始置换表得到( IP )</li>
-<li>将( IP )分为左右两部分，各4位</li>
+<li>将明文块通过初始置换表得到$ IP $</li>
+<li>将$ IP $分为左右两部分，各4位</li>
 <li>将右部分通过扩展置换表得到8位</li>
-<li>将( E(R) )和( K_1 )异或得到8位</li>
+<li>将$ E(R) $和$ K_1 $异或得到8位</li>
 <li>将异或结果分为两部分，各4位</li>
 <li>将两部分分别通过S盒组合得到4位</li>
 <li>将S盒置换结果和左部分异或得到新的右部分</li>
@@ -279,7 +279,7 @@
 </ul>
 </li>
 <li>第三步<ul>
-<li>通过( IP^{-1} )得到密文</li>
+<li>通过$ IP^{-1} $得到密文</li>
 </ul>
 </li>
 </ul>
@@ -313,7 +313,7 @@
 <li>结果<br>S盒代换的最终输出为 0101。</li>
 </ul>
 <h2 id="解密过程"><a href="#解密过程" class="headerlink" title="解密过程"></a>解密过程</h2><ul>
-<li>与加密过程相同，只是密钥的使用顺序相反，即先使用( K_2 )再使用( K_1 )</li>
+<li>与加密过程相同，只是密钥的使用顺序相反，即先使用$ K_2 $再使用$ K_1 $</li>
 </ul>
 <h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>DES和S-DES中的 <code>交换</code> 过程即 Feistel 结构，保证了每一轮都可以影响最终加密的结果</p>
 </div>
@@ -342,7 +342,7 @@
                     
                 </div>
                 <div class="pull-date">
-                    <time datetime="2024-12-23T11:16:10.447Z" itemprop="dateModified">最后编辑：2024-12-23</time>
+                    <time datetime="2024-12-23T11:39:33.427Z" itemprop="dateModified">最后编辑：2024-12-23</time>
                 </div>
             </div>
         </footer>
