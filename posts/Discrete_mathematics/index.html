@@ -102,23 +102,35 @@
   function renderMathJax() {
     if (typeof MathJax !== "undefined") {
       if (MathJax.typeset) {
-        // MathJax 3.x
+        // MathJax 3.x 渲染
         MathJax.typeset();
       } else if (MathJax.Hub && MathJax.Hub.Queue) {
-        // MathJax 2.x
+        // MathJax 2.x 渲染
         MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
       }
+    } else {
+      console.warn("MathJax is not defined");
     }
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  // 页面首次加载触发 MathJax 渲染
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("Rendering MathJax on DOMContentLoaded");
+      renderMathJax();
+    });
+  } else {
+    console.log("Rendering MathJax immediately");
     renderMathJax();
-  });
+  }
 
-  document.addEventListener("pjax:complete", function () {
+  // 动态加载（例如 PJAX）触发 MathJax 渲染
+  window.addEventListener("pjax:complete", function () {
+    console.log("Rendering MathJax on PJAX complete");
     renderMathJax();
   });
 </script>
+
 
     <body class="custom-background">
         <div id="kratos-wrapper">
@@ -598,25 +610,34 @@ f(x) = g(x), \quad x \in (\mathbb{Q} \cup \mathbb{Q}) + \sqrt{2}</script><p>其�
     function renderMathJax() {
       if (typeof MathJax !== "undefined") {
         if (MathJax.typeset) {
-          // MathJax 3.x
+          // MathJax 3.x 渲染
           MathJax.typeset();
         } else if (MathJax.Hub && MathJax.Hub.Queue) {
-          // MathJax 2.x
+          // MathJax 2.x 渲染
           MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
         }
+      } else {
+        console.warn("MathJax is not defined");
       }
     }
   
-    document.addEventListener("DOMContentLoaded", function () {
-      console.log("MathJax loaded000");
+    // 页面首次加载触发 MathJax 渲染
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Rendering MathJax on DOMContentLoaded");
+        renderMathJax();
+      });
+    } else {
+      console.log("Rendering MathJax immediately");
       renderMathJax();
-    });
+    }
   
-    document.addEventListener("pjax:complete", function () {
-      console.log("MathJax reloaded111");
+    // 动态加载（例如 PJAX）触发 MathJax 渲染
+    winsow.addEventListener("pjax:complete", function () {
+      console.log("Rendering MathJax on PJAX complete");
       renderMathJax();
     });
-</script>
+  </script>
   
         <script>
     if (!window.kr) {
