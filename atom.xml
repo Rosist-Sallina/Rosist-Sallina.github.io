@@ -45,15 +45,18 @@
     <link href="https://rosist-sallina.github.io/posts/Projections_Matrix/"/>
     <id>https://rosist-sallina.github.io/posts/Projections_Matrix/</id>
     <published>2024-11-12T09:44:26.109Z</published>
-    <updated>2024-12-23T09:07:40.973Z</updated>
+    <updated>2024-12-23T10:49:20.246Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://www.helloimg.com/i/2024/11/12/673343d45928a.jpg" alt="thumbnail_IMG_9456.jpg"></p><h2 id="投影矩阵"><a href="#投影矩阵" class="headerlink" title="投影矩阵"></a>投影矩阵</h2><p>对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymbol{A}^{T} = 0$和一个上三角矩阵的的乘积，也就是我们所说的QR分解，其中Q为正交矩阵，R为上三角矩阵。由此，我们可以得到投影矩阵$\boldsymbol{A}_P$的一种计算方法，即 $\boldsymbol{A_{P}} = Q\times Q^{T}$ 。</p><p>对于一阶的$R^1$，由于显然其是否经过正交化与得到的结果仅为相差常数倍的关系，得到的结果并没有本质上的不同，因此对于向量$a$来说，其余向量在$a$上的投影矩阵显然是$a\times a^T$。<br>而对于二阶及以上的矩阵平面或者空间来说，显然就没有这么简单了。因此需要经过正交化后再进行处理。</p><h2 id="最小二乘"><a href="#最小二乘" class="headerlink" title="最小二乘"></a>最小二乘</h2><p>在实际条件中，我们往往无法得到一个最完美的解用来满足$\boldsymbol{A}x = b$，因此我们需要找到一个x使得得到的解尽可能接近所需的解，即$\hat{x}$满足$\boldsymbol{A}\times \hat{x} = b$,<br>此时，可以左右同时乘以$\boldsymbol{A}^T$使得其能够满足投影矩阵条件，此式可以通过偏导数加以证明，但是我不会（。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>由最小二乘和投影矩阵的结合，我们可以得到一个最小二乘中的$\hat{x}$的解法，即$\boldsymbol{A}^{T} A\hat{x} = \boldsymbol{A}^{T}b$，此式也可以写成 <script type="math/tex">\boldsymbol{A}\hat{x} = Q^TQb</script> 的形式，这也是我要记录的重点。<br>其中Q是Matrix $\boldsymbol{A}$经过Gram-Schmidt方法正交化得到的产物。</p><p>在经过这样的过程后求得的$\hat{x}$不仅可以是最小二乘法的解，也可以是$\min\lvert\lvert b-\boldsymbol{A}x\rvert\rvert$ 。</p><h2 id="补充，SVD分解和最小二乘的关系"><a href="#补充，SVD分解和最小二乘的关系" class="headerlink" title="补充，SVD分解和最小二乘的关系"></a>补充，SVD分解和最小二乘的关系</h2><p>我们知道，任何矩阵都可以分解成$A=U\sigmaV^{T} $<br>的形式，因此，矩阵的广义逆$ A^+ $ 可以表示为$V \sigma^{+} U^{T}$的形式，其中V和U前面已经说明，而$\sigma^+$ 是$\sigma$ 的一个广义逆，计算方法是将 $\sigma$上的对角线元素取倒数后进行转置。由此可以算出矩阵的广义逆。</p><p>接着往下讲，$ x=A^{+} b+y-A^{+} Ay $ ，这是通过SVD变换和广义逆进行求解的方法。这个方法与上述所讲的$\boldsymbol{QR}$ 分解的本质是一样，但是使用范围更广。</p>]]></content>
+    <content type="html"><![CDATA[<script type="text/javascript" async  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><p><img src="https://www.helloimg.com/i/2024/11/12/673343d45928a.jpg" alt="thumbnail_IMG_9456.jpg"></p><h2 id="投影矩阵"><a href="#投影矩阵" class="headerlink" title="投影矩阵"></a>投影矩阵</h2><p>对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymbol{A}^{T} = 0$和一个上三角矩阵的的乘积，也就是我们所说的QR分解，其中Q为正交矩阵，R为上三角矩阵。由此，我们可以得到投影矩阵$\boldsymbol{A}_P$的一种计算方法，即 $\boldsymbol{A_{P}} = Q\times Q^{T}$ 。</p><p>对于一阶的$R^1$，由于显然其是否经过正交化与得到的结果仅为相差常数倍的关系，得到的结果并没有本质上的不同，因此对于向量$a$来说，其余向量在$a$上的投影矩阵显然是$a\times a^T$。<br>而对于二阶及以上的矩阵平面或者空间来说，显然就没有这么简单了。因此需要经过正交化后再进行处理。</p><h2 id="最小二乘"><a href="#最小二乘" class="headerlink" title="最小二乘"></a>最小二乘</h2><p>在实际条件中，我们往往无法得到一个最完美的解用来满足$\boldsymbol{A}x = b$，因此我们需要找到一个x使得得到的解尽可能接近所需的解，即$\hat{x}$满足$\boldsymbol{A}\times \hat{x} = b$,<br>此时，可以左右同时乘以$\boldsymbol{A}^T$使得其能够满足投影矩阵条件，此式可以通过偏导数加以证明，但是我不会（。</p><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>由最小二乘和投影矩阵的结合，我们可以得到一个最小二乘中的$\hat{x}$的解法，即$\boldsymbol{A}^{T} A\hat{x} = \boldsymbol{A}^{T}b$，此式也可以写成 <script type="math/tex">\boldsymbol{A}\hat{x} = Q^TQb</script> 的形式，这也是我要记录的重点。<br>其中Q是Matrix $\boldsymbol{A}$经过Gram-Schmidt方法正交化得到的产物。</p><p>在经过这样的过程后求得的$\hat{x}$不仅可以是最小二乘法的解，也可以是$\min\lvert\lvert b-\boldsymbol{A}x\rvert\rvert$ 。</p><h2 id="补充，SVD分解和最小二乘的关系"><a href="#补充，SVD分解和最小二乘的关系" class="headerlink" title="补充，SVD分解和最小二乘的关系"></a>补充，SVD分解和最小二乘的关系</h2><p>我们知道，任何矩阵都可以分解成$A=U\sigmaV^{T} $<br>的形式，因此，矩阵的广义逆$ A^+ $ 可以表示为$V \sigma^{+} U^{T}$的形式，其中V和U前面已经说明，而$\sigma^+$ 是$\sigma$ 的一个广义逆，计算方法是将 $\sigma$上的对角线元素取倒数后进行转置。由此可以算出矩阵的广义逆。</p><p>接着往下讲，$ x=A^{+} b+y-A^{+} Ay $ ，这是通过SVD变换和广义逆进行求解的方法。这个方法与上述所讲的$\boldsymbol{QR}$ 分解的本质是一样，但是使用范围更广。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://www.helloimg.com/i/2024/11/12/673343d45928a.jpg&quot; alt=&quot;thumbnail_IMG_9456.jpg&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;投影矩阵&quot;&gt;&lt;a href=&quot;#投影矩阵&quot; class=</summary>
+    <summary type="html">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;</summary>
       
     
     
@@ -66,15 +69,18 @@
     <link href="https://rosist-sallina.github.io/posts/Discrete_mathematics/"/>
     <id>https://rosist-sallina.github.io/posts/Discrete_mathematics/</id>
     <published>2024-11-12T09:44:26.099Z</published>
-    <updated>2024-12-23T09:08:08.707Z</updated>
+    <updated>2024-12-23T10:48:58.574Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e7ef60d.jpg" alt=""></p><h5 id="tips-本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习"><a href="#tips-本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习" class="headerlink" title="tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习"></a>tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习</h5><h3 id="1-在集合A上等价关系个数的计算"><a href="#1-在集合A上等价关系个数的计算" class="headerlink" title="1.在集合A上等价关系个数的计算"></a>1.在集合A上等价关系个数的计算</h3><p>等价关系与划分一一对应，非空集合A上的等价关系个数等于A的划分个数，即等价关系个数等于划分个数。<br>转换为数学模型：即将n个小球放入m个相同的盒子中，并且不能出现空盒，不同的放球方式代表着不同的划分方式<br>再转换为第二类斯特林数：$S(n,m)$，代表以上方法</p><h4 id="第二类斯特林数计算方法"><a href="#第二类斯特林数计算方法" class="headerlink" title="第二类斯特林数计算方法"></a>第二类斯特林数计算方法</h4><ol><li><p>递推公式：$S(n,m) = S(n-1,m-1) + mS(n-1,m)  \rightarrow $ 注意到等价于背包问题 </p></li><li><p>$ S(n , 0) = 0 , S(n , 1) = 1 , S(n , 2) = 2^{n-1}-1 , S(n , n-1) = C(n , 2) , S(n , n ) = 1$</p></li></ol><h4 id="4元集等价关系计算"><a href="#4元集等价关系计算" class="headerlink" title="4元集等价关系计算"></a>4元集等价关系计算</h4><ol><li>方法：利用第二类斯特林数计算</li><li>过程：N = S(4,1) + S(4,2) + S(4,3) + S(4,4) = 1=7+6+1 = 15<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e813295.jpg" alt=""><h4 id="6元集等价关系计算"><a href="#6元集等价关系计算" class="headerlink" title="6元集等价关系计算"></a>6元集等价关系计算</h4></li><li>方法：利用第二类斯特林数计算</li></ol><h5 id="Tips：列出从1-10的BEll数，为-1-2-5-15-52-203-877-4140-21147-115975"><a href="#Tips：列出从1-10的BEll数，为-1-2-5-15-52-203-877-4140-21147-115975" class="headerlink" title="Tips：列出从1-10的BEll数，为 1 , 2 , 5 , 15 , 52 , 203 , 877 , 4140 , 21147 , 115975"></a>Tips：列出从1-10的BEll数，为 1 , 2 , 5 , 15 , 52 , 203 , 877 , 4140 , 21147 , 115975</h5><h3 id="2-证明两个集合等势"><a href="#2-证明两个集合等势" class="headerlink" title="2.证明两个集合等势"></a>2.证明两个集合等势</h3><p>方法：想办法构造一个双射从而使两个集合之间能够一一对应<br>常用方法：对于证明类似于[1 , 0]等势于 $ \mathbb{R} $ ，可以使用正切函数或余切函数进行构造<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e835997.jpg" alt=""></p><h3 id="3-概念辨析"><a href="#3-概念辨析" class="headerlink" title="3.概念辨析"></a>3.概念辨析</h3><ol><li>A不相容：对于任一解释，A中至少有一子句为假（或者称之为永假或不可满足或矛盾）</li><li>A相容：存在一种解释，使得A中所有子句为真（或称之为可满足）</li><li>Skolem范式：与A在不相容意义下保持等价</li><li>良序集的条件：1.必须为全续集 2.任何非空子集必须有最小元素</li></ol><h3 id="4-证明无限集和实数集等势"><a href="#4-证明无限集和实数集等势" class="headerlink" title="4.证明无限集和实数集等势"></a>4.证明无限集和实数集等势</h3><p>方法：构造函数形如</p><script type="math/tex; mode=display">f(x) = x , x \in R/(Q \cup Q) + \sqrt{2}</script><script type="math/tex; mode=display">f(x)  = g(x)  , x \in (Q\cup Q) + \sqrt{2}</script><p>其中g(x)为 <script type="math/tex">Q \cup Q + \sqrt{2} \Rightarrow Q + \sqrt{2}</script> 的映射。由于前者为可数集并可数集等于可数集，可数集与可数集之间一定存在一一映射，g(x)存在。<br>定义域为R，值域为<script type="math/tex">R/(Q + Q) + Q + Q + \sqrt{2} = R / Q</script><br>证明了该函数为从$ R $到$ R / Q $的一一映射，即等势得证</p><p>转自知乎：<a href="https://zhuanlan.zhihu.com/p/385762588">https://zhuanlan.zhihu.com/p/385762588</a></p><h3 id="5-一些基础（虽然可能不值得写）"><a href="#5-一些基础（虽然可能不值得写）" class="headerlink" title="5.一些基础（虽然可能不值得写）"></a>5.一些基础（虽然可能不值得写）</h3><p>1.<script type="math/tex">P\rightarrow Q = \neg P \vee Q</script><br>2.<script type="math/tex">P \leftrightarrow Q = (\neg P \vee Q) \wedge (\neg Q \vee P)</script><br>3.<script type="math/tex">证明A \rightarrow B 为真 \Leftrightarrow 证明 A \wedge \neg B 为矛盾式</script><br>4.空关系是一种等价关系，具有传递性，自反性，对称性<br>5.<script type="math/tex">P \rightarrow (Q \rightarrow R ) \neq ( P \rightarrow Q) \rightarrow R  易证</script><br>6.一个偏序关系的极大元需要属于这个集合，且极大元的定义是没有比它更大的元素<br>7.上确界的定义是每个元素都小于等于上确界，且不存在小于上确界的元素成为关系的上界<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e8e8ca5.png" alt=""></p><h3 id="6-根据无穷公理构造的自然数"><a href="#6-根据无穷公理构造的自然数" class="headerlink" title="6.根据无穷公理构造的自然数"></a>6.根据无穷公理构造的自然数</h3><script type="math/tex; mode=display">1 = \{0\}</script><script type="math/tex; mode=display">2 = \{0, 1\}</script><p>以此类推<br>我们可以得到</p><script type="math/tex; mode=display">\cap 1(2, 3 , 4...) = 0</script><script type="math/tex; mode=display">\cup n = n - 1</script><h3 id="8-考虑各种闭包对于关系的破坏"><a href="#8-考虑各种闭包对于关系的破坏" class="headerlink" title="8.考虑各种闭包对于关系的破坏"></a>8.考虑各种闭包对于关系的破坏</h3><p>显然自反性(r)，对称性(s)不会因为关系的扩张而受到影响，而对称性不一定，因此，我们需要考虑对这种情况谨慎处理</p><p><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e88e5bf.jpg" alt=""></p><h3 id="9-求取主析取范式和主合取范式的一些方法"><a href="#9-求取主析取范式和主合取范式的一些方法" class="headerlink" title="9.求取主析取范式和主合取范式的一些方法"></a>9.求取主析取范式和主合取范式的一些方法</h3><p>求取主析取范式基本策略：向式子后面补充$ \vee (p \wedge \neg p)$ ,变成一个一坨巨大的东西之后慢慢利用分配率等方式进行化简<br>求取主合取范式：利用主析取范式和主合取范式之间的关系可以很快求解，大概为找到剩余的项，然后分别用$ 2^n -1 $ 减掉即可</p>]]></content>
+    <content type="html"><![CDATA[<script type="text/javascript" async  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><p><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e7ef60d.jpg" alt=""></p><h5 id="tips-本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习"><a href="#tips-本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习" class="headerlink" title="tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习"></a>tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习</h5><h3 id="1-在集合A上等价关系个数的计算"><a href="#1-在集合A上等价关系个数的计算" class="headerlink" title="1.在集合A上等价关系个数的计算"></a>1.在集合A上等价关系个数的计算</h3><p>等价关系与划分一一对应，非空集合A上的等价关系个数等于A的划分个数，即等价关系个数等于划分个数。<br>转换为数学模型：即将n个小球放入m个相同的盒子中，并且不能出现空盒，不同的放球方式代表着不同的划分方式<br>再转换为第二类斯特林数：$S(n,m)$，代表以上方法</p><h4 id="第二类斯特林数计算方法"><a href="#第二类斯特林数计算方法" class="headerlink" title="第二类斯特林数计算方法"></a>第二类斯特林数计算方法</h4><ol><li><p>递推公式：$S(n,m) = S(n-1,m-1) + mS(n-1,m)  \rightarrow $ 注意到等价于背包问题 </p></li><li><p>$ S(n , 0) = 0 , S(n , 1) = 1 , S(n , 2) = 2^{n-1}-1 , S(n , n-1) = C(n , 2) , S(n , n ) = 1$</p></li></ol><h4 id="4元集等价关系计算"><a href="#4元集等价关系计算" class="headerlink" title="4元集等价关系计算"></a>4元集等价关系计算</h4><ol><li>方法：利用第二类斯特林数计算</li><li>过程：N = S(4,1) + S(4,2) + S(4,3) + S(4,4) = 1=7+6+1 = 15<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e813295.jpg" alt=""><h4 id="6元集等价关系计算"><a href="#6元集等价关系计算" class="headerlink" title="6元集等价关系计算"></a>6元集等价关系计算</h4></li><li>方法：利用第二类斯特林数计算</li></ol><h5 id="Tips：列出从1-10的BEll数，为-1-2-5-15-52-203-877-4140-21147-115975"><a href="#Tips：列出从1-10的BEll数，为-1-2-5-15-52-203-877-4140-21147-115975" class="headerlink" title="Tips：列出从1-10的BEll数，为 1 , 2 , 5 , 15 , 52 , 203 , 877 , 4140 , 21147 , 115975"></a>Tips：列出从1-10的BEll数，为 1 , 2 , 5 , 15 , 52 , 203 , 877 , 4140 , 21147 , 115975</h5><h3 id="2-证明两个集合等势"><a href="#2-证明两个集合等势" class="headerlink" title="2.证明两个集合等势"></a>2.证明两个集合等势</h3><p>方法：想办法构造一个双射从而使两个集合之间能够一一对应<br>常用方法：对于证明类似于[1 , 0]等势于 $ \mathbb{R} $ ，可以使用正切函数或余切函数进行构造<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e835997.jpg" alt=""></p><h3 id="3-概念辨析"><a href="#3-概念辨析" class="headerlink" title="3.概念辨析"></a>3.概念辨析</h3><ol><li>A不相容：对于任一解释，A中至少有一子句为假（或者称之为永假或不可满足或矛盾）</li><li>A相容：存在一种解释，使得A中所有子句为真（或称之为可满足）</li><li>Skolem范式：与A在不相容意义下保持等价</li><li>良序集的条件：1.必须为全续集 2.任何非空子集必须有最小元素</li></ol><h3 id="4-证明无限集和实数集等势"><a href="#4-证明无限集和实数集等势" class="headerlink" title="4.证明无限集和实数集等势"></a>4.证明无限集和实数集等势</h3><p>方法：构造函数形如</p><script type="math/tex; mode=display">f(x) = x , x \in R/(Q \cup Q) + \sqrt{2}</script><script type="math/tex; mode=display">f(x)  = g(x)  , x \in (Q\cup Q) + \sqrt{2}</script><p>其中g(x)为 <script type="math/tex">Q \cup Q + \sqrt{2} \Rightarrow Q + \sqrt{2}</script> 的映射。由于前者为可数集并可数集等于可数集，可数集与可数集之间一定存在一一映射，g(x)存在。<br>定义域为R，值域为<script type="math/tex">R/(Q + Q) + Q + Q + \sqrt{2} = R / Q</script><br>证明了该函数为从$ R $到$ R / Q $的一一映射，即等势得证</p><p>转自知乎：<a href="https://zhuanlan.zhihu.com/p/385762588">https://zhuanlan.zhihu.com/p/385762588</a></p><h3 id="5-一些基础（虽然可能不值得写）"><a href="#5-一些基础（虽然可能不值得写）" class="headerlink" title="5.一些基础（虽然可能不值得写）"></a>5.一些基础（虽然可能不值得写）</h3><p>1.<script type="math/tex">P\rightarrow Q = \neg P \vee Q</script><br>2.<script type="math/tex">P \leftrightarrow Q = (\neg P \vee Q) \wedge (\neg Q \vee P)</script><br>3.<script type="math/tex">证明A \rightarrow B 为真 \Leftrightarrow 证明 A \wedge \neg B 为矛盾式</script><br>4.空关系是一种等价关系，具有传递性，自反性，对称性<br>5.<script type="math/tex">P \rightarrow (Q \rightarrow R ) \neq ( P \rightarrow Q) \rightarrow R  易证</script><br>6.一个偏序关系的极大元需要属于这个集合，且极大元的定义是没有比它更大的元素<br>7.上确界的定义是每个元素都小于等于上确界，且不存在小于上确界的元素成为关系的上界<br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e8e8ca5.png" alt=""></p><h3 id="6-根据无穷公理构造的自然数"><a href="#6-根据无穷公理构造的自然数" class="headerlink" title="6.根据无穷公理构造的自然数"></a>6.根据无穷公理构造的自然数</h3><script type="math/tex; mode=display">1 = \{0\}</script><script type="math/tex; mode=display">2 = \{0, 1\}</script><p>以此类推<br>我们可以得到</p><script type="math/tex; mode=display">\cap 1(2, 3 , 4...) = 0</script><script type="math/tex; mode=display">\cup n = n - 1</script><h3 id="8-考虑各种闭包对于关系的破坏"><a href="#8-考虑各种闭包对于关系的破坏" class="headerlink" title="8.考虑各种闭包对于关系的破坏"></a>8.考虑各种闭包对于关系的破坏</h3><p>显然自反性(r)，对称性(s)不会因为关系的扩张而受到影响，而对称性不一定，因此，我们需要考虑对这种情况谨慎处理</p><p><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e88e5bf.jpg" alt=""></p><h3 id="9-求取主析取范式和主合取范式的一些方法"><a href="#9-求取主析取范式和主合取范式的一些方法" class="headerlink" title="9.求取主析取范式和主合取范式的一些方法"></a>9.求取主析取范式和主合取范式的一些方法</h3><p>求取主析取范式基本策略：向式子后面补充$ \vee (p \wedge \neg p)$ ,变成一个一坨巨大的东西之后慢慢利用分配率等方式进行化简<br>求取主合取范式：利用主析取范式和主合取范式之间的关系可以很快求解，大概为找到剩余的项，然后分别用$ 2^n -1 $ 减掉即可</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://vip.helloimg.com/i/2024/04/23/6627c8e7ef60d.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h5 id=&quot;tips-本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习&quot;&gt;&lt;a href=&quot;#tips</summary>
+    <summary type="html">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;</summary>
       
     
     
@@ -87,15 +93,18 @@
     <link href="https://rosist-sallina.github.io/posts/A_simple_self-introduce/"/>
     <id>https://rosist-sallina.github.io/posts/A_simple_self-introduce/</id>
     <published>2024-11-12T09:44:26.096Z</published>
-    <updated>2024-12-23T09:08:08.707Z</updated>
+    <updated>2024-12-23T10:49:18.050Z</updated>
     
-    <content type="html"><![CDATA[<p>Hello你好啊，我是Rosist ，现就读于华清大学计金班，编程很菜但是正在努力学习（X。希望能多多交流喵谢谢喵。</p><h2 id="开始摆烂"><a href="#开始摆烂" class="headerlink" title="开始摆烂"></a>开始摆烂</h2><h3 id="喵的怎么写啊"><a href="#喵的怎么写啊" class="headerlink" title="喵的怎么写啊"></a>喵的怎么写啊</h3><p>有没有一种可能你来到这个网站出自偶然，但是来了就别想跑了喵，我会把你抓进手掌心的喵。</p><h3 id="关注周放patra谢谢喵"><a href="#关注周放patra谢谢喵" class="headerlink" title="关注周放patra谢谢喵"></a>关注周放patra谢谢喵</h3><p>谢谢喵，关注rosist谢谢喵。</p>]]></content>
+    <content type="html"><![CDATA[<script type="text/javascript" async  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><p>Hello你好啊，我是Rosist ，现就读于华清大学计金班，编程很菜但是正在努力学习（X。希望能多多交流喵谢谢喵。</p><h2 id="开始摆烂"><a href="#开始摆烂" class="headerlink" title="开始摆烂"></a>开始摆烂</h2><h3 id="喵的怎么写啊"><a href="#喵的怎么写啊" class="headerlink" title="喵的怎么写啊"></a>喵的怎么写啊</h3><p>有没有一种可能你来到这个网站出自偶然，但是来了就别想跑了喵，我会把你抓进手掌心的喵。</p><h3 id="关注周放patra谢谢喵"><a href="#关注周放patra谢谢喵" class="headerlink" title="关注周放patra谢谢喵"></a>关注周放patra谢谢喵</h3><p>谢谢喵，关注rosist谢谢喵。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Hello你好啊，我是Rosist ，现就读于华清大学计金班，编程很菜但是正在努力学习（X。希望能多多交流喵谢谢喵。&lt;/p&gt;
-&lt;h2 id=&quot;开始摆烂&quot;&gt;&lt;a href=&quot;#开始摆烂&quot; class=&quot;headerlink&quot; title=&quot;开始摆烂&quot;&gt;&lt;/a&gt;开始摆烂&lt;/h2</summary>
+    <summary type="html">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;H</summary>
       
     
     
@@ -108,15 +117,18 @@
     <link href="https://rosist-sallina.github.io/posts/A_game_of_program_design/"/>
     <id>https://rosist-sallina.github.io/posts/A_game_of_program_design/</id>
     <published>2024-11-12T09:44:26.094Z</published>
-    <updated>2024-12-23T09:08:09.631Z</updated>
+    <updated>2024-12-23T10:49:18.050Z</updated>
     
-    <content type="html"><![CDATA[<p>在上vjf小班辅导的时候抽空发了这个post（x，原谅我不认真听课。</p><h2 id="我要干啥"><a href="#我要干啥" class="headerlink" title="我要干啥"></a>我要干啥</h2><p>这次要发的是在T大xmx老师开设的程序设计基础课上的期末大作业，游戏的本身参考了《人力资源机器》，而我们要做的是用指令行模拟出来一个类似于原游戏的界面。</p><h3 id="这个作业的链接"><a href="#这个作业的链接" class="headerlink" title="这个作业的链接"></a>这个作业的链接</h3><p><a href="https://github.com/Rosist-Sallina/Cpp_Hugehomework">https://github.com/Rosist-Sallina/Cpp_Hugehomework</a></p><h3 id="太懒导致的"><a href="#太懒导致的" class="headerlink" title="太懒导致的"></a>太懒导致的</h3><p>因为时间关系和我实在太懒，把OJ部分交给队友之后，很多错误输入处理部分我就直接不做了，这也就导致游戏存在很多漏洞（坏），虽然在正常游玩上没啥问题，但是一旦游戏遇到一些神奇情况就会歇菜，这也是可能需要完善的地方</p><h3 id="一些感悟"><a href="#一些感悟" class="headerlink" title="一些感悟"></a>一些感悟</h3><p>做程序一定要一次性做到完美，否则后期根据要求再来修改程序真的很痛苦，尤其是在程序写的一团乱麻的时候，在很乱的一堆色块里手动改会耗掉你一下午（坏，泡在图书馆一个下午看写的代码真的痛苦，这还是在有注释的情况下）</p><h3 id="北京马o真不错"><a href="#北京马o真不错" class="headerlink" title="北京马o真不错"></a>北京马o真不错</h3><p>从来没见过这么多爱马仕导致的</p>]]></content>
+    <content type="html"><![CDATA[<script type="text/javascript" async  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><p>在上vjf小班辅导的时候抽空发了这个post（x，原谅我不认真听课。</p><h2 id="我要干啥"><a href="#我要干啥" class="headerlink" title="我要干啥"></a>我要干啥</h2><p>这次要发的是在T大xmx老师开设的程序设计基础课上的期末大作业，游戏的本身参考了《人力资源机器》，而我们要做的是用指令行模拟出来一个类似于原游戏的界面。</p><h3 id="这个作业的链接"><a href="#这个作业的链接" class="headerlink" title="这个作业的链接"></a>这个作业的链接</h3><p><a href="https://github.com/Rosist-Sallina/Cpp_Hugehomework">https://github.com/Rosist-Sallina/Cpp_Hugehomework</a></p><h3 id="太懒导致的"><a href="#太懒导致的" class="headerlink" title="太懒导致的"></a>太懒导致的</h3><p>因为时间关系和我实在太懒，把OJ部分交给队友之后，很多错误输入处理部分我就直接不做了，这也就导致游戏存在很多漏洞（坏），虽然在正常游玩上没啥问题，但是一旦游戏遇到一些神奇情况就会歇菜，这也是可能需要完善的地方</p><h3 id="一些感悟"><a href="#一些感悟" class="headerlink" title="一些感悟"></a>一些感悟</h3><p>做程序一定要一次性做到完美，否则后期根据要求再来修改程序真的很痛苦，尤其是在程序写的一团乱麻的时候，在很乱的一堆色块里手动改会耗掉你一下午（坏，泡在图书馆一个下午看写的代码真的痛苦，这还是在有注释的情况下）</p><h3 id="北京马o真不错"><a href="#北京马o真不错" class="headerlink" title="北京马o真不错"></a>北京马o真不错</h3><p>从来没见过这么多爱马仕导致的</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;在上vjf小班辅导的时候抽空发了这个post（x，原谅我不认真听课。&lt;/p&gt;
-&lt;h2 id=&quot;我要干啥&quot;&gt;&lt;a href=&quot;#我要干啥&quot; class=&quot;headerlink&quot; title=&quot;我要干啥&quot;&gt;&lt;/a&gt;我要干啥&lt;/h2&gt;&lt;p&gt;这次要发的是在T大xmx老师开设的程序设</summary>
+    <summary type="html">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;在</summary>
       
     
     
@@ -129,15 +141,18 @@
     <link href="https://rosist-sallina.github.io/posts/Matrix/"/>
     <id>https://rosist-sallina.github.io/posts/Matrix/</id>
     <published>2024-11-12T09:26:36.509Z</published>
-    <updated>2024-12-23T09:47:58.511Z</updated>
+    <updated>2024-12-23T10:49:10.570Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://vip.helloimg.com/i/2024/04/24/6628cf348b9a0.jpg" alt=""></p><h2 id="线性变换的定义"><a href="#线性变换的定义" class="headerlink" title="线性变换的定义"></a>线性变换的定义</h2><p>如果我们将线性变换看作是一种对于向量的线性变换关系，这种关系是广义的，可以涉及很多方面。但是，在线性代数层面而不是抽象代数层面，我们当然希望这种变换<br>是符合线性的，也就是说，我们希望一种变换$\boldsymbol{L}$对于向量$ \vec v_1 \vec v_2 $满足以下关系：</p><script type="math/tex; mode=display">c \boldsymbol{L}\left(\boldsymbol{v}_1\right) = \boldsymbol{L}\left(\boldsymbol{v}_1\right)</script><script type="math/tex; mode=display">\boldsymbol{L}\left(\boldsymbol{v}_1\right) + \boldsymbol{L}\left(\boldsymbol{v}_2\right) = \boldsymbol{L}\left(\boldsymbol{v}_1 + \boldsymbol{v}_2\right) + \boldsymbol{L}\left(\boldsymbol{v}_2\right)</script><p>这样，我们就说这种变化是一种线性变换。</p><p>简化一下: </p><script type="math/tex; mode=display">\\L(\alpha\boldsymbol{v}_1+\beta\boldsymbol{v}_2)=\alpha L(\boldsymbol{v}_1)+\beta L(\boldsymbol{v}_2)</script><p>在数学上可以证明，对于一个n维向量$a$ 和m维向量 $b$来说，存在一个矩阵 $\boldsymbol{A}$使得$\boldsymbol{A}a= b$成立，这也被称为线性变化的矩阵化表述。</p><p>现在拓展到向量之外，如果一种函数或者任何抽象的代数形式，对于$f\left(x_1\right)\rightarrow f\left(x_2\right) $ 也满足上述<br>条件，那么，我们也说它是一种线性变换。</p><h2 id="特征值（听说还叫本征值）的相关知识"><a href="#特征值（听说还叫本征值）的相关知识" class="headerlink" title="特征值（听说还叫本征值）的相关知识"></a>特征值（听说还叫本征值）的相关知识</h2><p>特征值作为矩阵很重要的一个特征量，在整个矩阵学习过程中占据着很重要的位置。首先，在做题过程中，特征值的定义应该首先被考虑$ Ax = \lambda x $ ,$\lambda $ 是矩阵的特征值，$ x $是矩阵的每个特征向量。然后我们需要对于这个式子做恰当变形，如果涉及 $ A^T $ , $ A^{-1} $ 等情况 ，应该优先考虑在等式两端左乘或者右乘来达到变量代换。上述等式应当作为证明题和计算题的核心。</p><p>与此同时，特征值也存在着一些二级公式，如 $ P\left(\lambda\right) $ 应当对应于 $ P\left(A\right) $ 的特征值。这在某些题目中可能存在一些应用。<br>其次，特征值是否是半单的也决定着矩阵是否可对角化，矩阵对角化即为将矩阵通过适当的分解使得矩阵能够实现$ \boldsymbol{A} = SVS^{-1} $，其中V是 </p><p>$$ \begin{equation}<br>    \begin{bmatrix}<br>     a_{11} &amp;   &amp; &amp;  \\<br>      &amp; a_{22} &amp;  &amp; \\<br>      &amp;   &amp; a_{33}&amp;\\<br>      &amp;   &amp;  &amp;a_{44}<br>     \end{bmatrix}<br>\end{equation}</p><p>$$ , $S$是经过 Gran-Summit 正交化的由各个特征向量组成的矩阵。</p>]]></content>
+    <content type="html"><![CDATA[<script type="text/javascript" async  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><p><img src="https://vip.helloimg.com/i/2024/04/24/6628cf348b9a0.jpg" alt=""></p><h2 id="线性变换的定义"><a href="#线性变换的定义" class="headerlink" title="线性变换的定义"></a>线性变换的定义</h2><p>如果我们将线性变换看作是一种对于向量的线性变换关系，这种关系是广义的，可以涉及很多方面。但是，在线性代数层面而不是抽象代数层面，我们当然希望这种变换<br>是符合线性的，也就是说，我们希望一种变换$\boldsymbol{L}$对于向量$ \vec v_1 \vec v_2 $满足以下关系：</p><script type="math/tex; mode=display">c \boldsymbol{L}\left(\boldsymbol{v}_1\right) = \boldsymbol{L}\left(\boldsymbol{v}_1\right)</script><script type="math/tex; mode=display">\boldsymbol{L}\left(\boldsymbol{v}_1\right) + \boldsymbol{L}\left(\boldsymbol{v}_2\right) = \boldsymbol{L}\left(\boldsymbol{v}_1 + \boldsymbol{v}_2\right) + \boldsymbol{L}\left(\boldsymbol{v}_2\right)</script><p>这样，我们就说这种变化是一种线性变换。</p><p>简化一下: </p><script type="math/tex; mode=display">\\L(\alpha\boldsymbol{v}_1+\beta\boldsymbol{v}_2)=\alpha L(\boldsymbol{v}_1)+\beta L(\boldsymbol{v}_2)</script><p>在数学上可以证明，对于一个n维向量$a$ 和m维向量 $b$来说，存在一个矩阵 $\boldsymbol{A}$使得$\boldsymbol{A}a= b$成立，这也被称为线性变化的矩阵化表述。</p><p>现在拓展到向量之外，如果一种函数或者任何抽象的代数形式，对于$f\left(x_1\right)\rightarrow f\left(x_2\right) $ 也满足上述<br>条件，那么，我们也说它是一种线性变换。</p><h2 id="特征值（听说还叫本征值）的相关知识"><a href="#特征值（听说还叫本征值）的相关知识" class="headerlink" title="特征值（听说还叫本征值）的相关知识"></a>特征值（听说还叫本征值）的相关知识</h2><p>特征值作为矩阵很重要的一个特征量，在整个矩阵学习过程中占据着很重要的位置。首先，在做题过程中，特征值的定义应该首先被考虑$ Ax = \lambda x $ ,$\lambda $ 是矩阵的特征值，$ x $是矩阵的每个特征向量。然后我们需要对于这个式子做恰当变形，如果涉及 $ A^T $ , $ A^{-1} $ 等情况 ，应该优先考虑在等式两端左乘或者右乘来达到变量代换。上述等式应当作为证明题和计算题的核心。</p><p>与此同时，特征值也存在着一些二级公式，如 $ P\left(\lambda\right) $ 应当对应于 $ P\left(A\right) $ 的特征值。这在某些题目中可能存在一些应用。<br>其次，特征值是否是半单的也决定着矩阵是否可对角化，矩阵对角化即为将矩阵通过适当的分解使得矩阵能够实现$ \boldsymbol{A} = SVS^{-1} $，其中V是 </p><p>$$ \begin{equation}<br>    \begin{bmatrix}<br>     a_{11} &amp;   &amp; &amp;  \\<br>      &amp; a_{22} &amp;  &amp; \\<br>      &amp;   &amp; a_{33}&amp;\\<br>      &amp;   &amp;  &amp;a_{44}<br>     \end{bmatrix}<br>\end{equation}</p><p>$$ , $S$是经过 Gran-Summit 正交化的由各个特征向量组成的矩阵。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://vip.helloimg.com/i/2024/04/24/6628cf348b9a0.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;线性变换的定义&quot;&gt;&lt;a href=&quot;#线性变换的定义&quot; class=&quot;headerlink&quot; tit</summary>
+    <summary type="html">&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;</summary>
       
     
     
@@ -150,14 +165,16 @@
     <link href="https://rosist-sallina.github.io/posts/Intgration/"/>
     <id>https://rosist-sallina.github.io/posts/Intgration/</id>
     <published>2024-11-12T09:26:36.507Z</published>
-    <updated>2024-12-23T09:07:49.212Z</updated>
+    <updated>2024-12-23T10:49:06.508Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e7bc594.jpg" alt="微信图片_202404232244581.jpg"><br>1.关于积分的可交换性：$ 当f(x,y)在[a,b]\times[c,d]上连续时，\int_{a}^{b} dx\int_{c}^{d} f(x, y) dy =  \int_{a}^{b} dy\int_{c}^{d} f(x, y) dx$</p><p>2.关于积分与导数的交换：$ 当f(x,y) 在[a,b]\times[c,d]上连续且\frac{\partial f(x, y)}{\partial x}也在其上连续时， \int\frac{d}{dx}\int_{a}^{b} f(x, y) dy = \int_{a}^{b} \frac{\partial f(x, y)}{\partial x} dy$</p>]]></content>
+    <content type="html"><![CDATA[<p><script type="text/javascript" async  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><br><img src="https://vip.helloimg.com/i/2024/04/23/6627c8e7bc594.jpg" alt="微信图片_202404232244581.jpg"><br>1.关于积分的可交换性：$ 当f(x,y)在[a,b]\times[c,d]上连续时，\int_{a}^{b} dx\int_{c}^{d} f(x, y) dy =  \int_{a}^{b} dy\int_{c}^{d} f(x, y) dx$</p><p>2.关于积分与导数的交换：$ 当f(x,y) 在[a,b]\times[c,d]上连续且\frac{\partial f(x, y)}{\partial x}也在其上连续时， \int\frac{d}{dx}\int_{a}^{b} f(x, y) dy = \int_{a}^{b} \frac{\partial f(x, y)}{\partial x} dy$</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://vip.helloimg.com/i/2024/04/23/6627c8e7bc594.jpg&quot; alt=&quot;微信图片_202404232244581.jpg&quot;&gt;&lt;br&gt;1.关于积分的可交换性：$ 当f(x,y)在[a,b]&#92;times[c</summary>
+    <summary type="html">&lt;p&gt;&lt;script type=&quot;text/javascript&quot; async
+  src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;&lt;br</summary>
       
     
     
