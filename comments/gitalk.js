@@ -15,9 +15,9 @@
         }, {
           clientID: 'Ov23liOK4eLKQcAHcv04',
           clientSecret: '63193fd9eba6db7b44513576e57fea65c02811f5',
-          repo: "Rosist-Sallina.github.io",
+          repo: "Comments",
           owner: "Rosist-Sallina",
-          admin: ["<管理员账户的 GitHub 用户名>"],
+          admin: ["Rosist-Sallina"],
           distractionFreeMode: false,
         }));
   
