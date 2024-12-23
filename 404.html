@@ -87,6 +87,28 @@
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+<script type="text/javascript">
+  function renderMathJax() {
+    if (typeof MathJax !== "undefined") {
+      if (MathJax.typeset) {
+        // MathJax 3.x
+        MathJax.typeset();
+      } else if (MathJax.Hub && MathJax.Hub.Queue) {
+        // MathJax 2.x
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathJax();
+  });
+
+  document.addEventListener("pjax:complete", function () {
+    renderMathJax();
+  });
+</script>
+
     <body class="custom-background">
         <div id="kratos-wrapper">
     <div id="kratos-page">

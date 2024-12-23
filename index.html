@@ -89,6 +89,28 @@
   
 <meta name="generator" content="Hexo 7.3.0"></head>
 
+<script type="text/javascript">
+  function renderMathJax() {
+    if (typeof MathJax !== "undefined") {
+      if (MathJax.typeset) {
+        // MathJax 3.x
+        MathJax.typeset();
+      } else if (MathJax.Hub && MathJax.Hub.Queue) {
+        // MathJax 2.x
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+      }
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathJax();
+  });
+
+  document.addEventListener("pjax:complete", function () {
+    renderMathJax();
+  });
+</script>
+
     <body class="custom-background">
         <div id="kratos-wrapper">
     <div id="kratos-page">
@@ -236,15 +258,11 @@
                 <div class="kratos-entry-content">
                     <p itemProp="description">
                         
-                            
-
-
-
-S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。
+                            S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。
 
 实现逻辑1.密钥生成
 首先生成一个10位初始秘钥，分为左右两部分，各5位
-将左右两部分分别左移1位，得...
+将左右两部分分别左移1位，得到两个新...
                         
                     </p>
                 </div>
@@ -548,10 +566,7 @@ Hello你好啊，我是Rosist ，现就读于华清大学计金班，编程很�
                 <div class="kratos-entry-content">
                     <p itemProp="description">
                         
-                            
-
-
-1.关于积分的可交换性：$ 当f(x,y)在[a,b]\times[c,d]上连续时，\int_{a}^{b} dx\int_{c}^{d} f(x, y) dy &#x3D;  \int_{a}^{b} dy\int_{c}^{d} f...
+                            1.关于积分的可交换性：$ 当f(x,y)在[a,b]\times[c,d]上连续时，\int_{a}^{b} dx\int_{c}^{d} f(x, y) dy &#x3D;  \int_{a}^{b} dy\int_{c}^{d} f(x,...
                         
                     </p>
                 </div>
