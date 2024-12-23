@@ -543,6 +543,28 @@ var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口�
 <!-- 额外的追加注入项 -->
 
 
+<script type="text/javascript">
+    function renderMathJax() {
+      if (typeof MathJax !== "undefined") {
+        if (MathJax.typeset) {
+          // MathJax 3.x
+          MathJax.typeset();
+        } else if (MathJax.Hub && MathJax.Hub.Queue) {
+          // MathJax 2.x
+          MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+        }
+      }
+    }
+  
+    document.addEventListener("DOMContentLoaded", function () {
+      renderMathJax();
+    });
+  
+    document.addEventListener("pjax:complete", function () {
+      renderMathJax();
+    });
+</script>
+  
         <script>
     if (!window.kr) {
         window.kr = {};
