@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/favicon.png">
   
   
-  <title>文章归档 | Rosist Blog</title>
-  <link rel="canonical" href="https://rosist-sallina.github.io/archives/index.html">
+  <title>S-DES | Rosist Blog</title>
+  <link rel="canonical" href="https://rosist-sallina.github.io/posts/S-DES/">
   <meta name="author" content="Sallina" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -17,18 +17,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <meta name="format-detection" content="telphone=no, email=no" />
   
-    <meta name="keywords" content="hexo,theme,kratos-rebirth" />
+    <meta name="keywords" content="" />
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="文章归档">
-<meta property="og:url" content="https://rosist-sallina.github.io/archives/index.html">
+  <meta name="description" content="S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。  实现逻辑1.密钥生成 首先生成一个10位初始秘钥，分为左右两部分，各5位 将左右两部分分别左移1位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥 通过置换表得到$ K_1$ 将左右两部分分别左移2位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥,并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="S-DES">
+<meta property="og:url" content="https://rosist-sallina.github.io/posts/S-DES/index.html">
 <meta property="og:site_name" content="Rosist Blog">
+<meta property="og:description" content="S-DES简介S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。  实现逻辑1.密钥生成 首先生成一个10位初始秘钥，分为左右两部分，各5位 将左右两部分分别左移1位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥 通过置换表得到$ K_1$ 将左右两部分分别左移2位，得到两个新的5位秘钥 将左右两个新的秘钥和为一个10位秘钥,并">
 <meta property="og:locale">
+<meta property="og:image" content="https://www.helloimg.com/i/2024/12/23/6769282e68478.jpg">
+<meta property="article:published_time" content="2024-12-23T08:41:40.582Z">
+<meta property="article:modified_time" content="2024-12-23T09:12:44.083Z">
 <meta property="article:author" content="Sallina">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="theme">
 <meta property="article:tag" content="kratos-rebirth">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.helloimg.com/i/2024/12/23/6769282e68478.jpg">
   
     <link rel="alternate" href="/atom.xml" title="Rosist Blog" type="application/atom+xml">
   
@@ -206,211 +212,148 @@
 
         
 
+            <article itemscope itemtype="https://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://rosist-sallina.github.io/posts/S-DES/">
+    <div class="kratos-hentry kratos-page-inner clearfix">
+        <header class="kratos-page-header">
             
-<style>
-  .post-meta time{color:#00a7e0}
-  @media (max-width:767px){.posts-collapse{margin:0 20px}
-  .posts-collapse .post-meta,
-  .posts-collapse .post-title{display:block;width:auto;text-align:left}}
-  .posts-collapse{position:relative}
-  .posts-collapse::after{content:" ";position:absolute;top:20px;left:0;margin-left:-2px;width:4px;height:calc(100% - 35px);background:#f5f5f5;z-index:-1}
-  @media (max-width:991px){.posts-collapse{margin:0 20px}}
-  .posts-collapse .collection-title{position:relative}
-  .posts-collapse .collection-title h1,
-  .posts-collapse .collection-title h2{margin-left:20px}
-  .posts-collapse .collection-title small{color:#bbb;margin-left:5px}
-  .posts-collapse .collection-title::before{content:" ";position:absolute;left:0;top:50%;margin-left:-4px;margin-top:-4px;width:8px;height:8px;background:#bbb;border-radius:50%}
-  .posts-collapse .post-header{position:relative;transition-duration:.2s;transition-timing-function:ease-in-out;transition-delay:0s;transition-property:border}
-  .posts-collapse .post-header::before{content:" ";position:absolute;left:0;top:12px;width:6px;height:6px;margin-left:-4px;background:#bbb;border-radius:50%;border:1px solid #fff;transition: all .3s ease-in-out}
-  .posts-collapse .post-header:hover{border-bottom-color:#666}
-  .posts-collapse .post-header:hover::before{background:#222}
-  .posts-collapse .post-meta{position:absolute;font-size:12px;left:20px;top:5px}
-  .posts-collapse .kr-comments-count{display:none}
-  .posts-collapse .post-title{margin-left:70px;font-size:16px;font-weight:400;line-height:inherit}
-  .posts-collapse .post-title::after{margin-left:3px;opacity:.6}
-  .posts-collapse .post-title a{color:#666;border-bottom:none}
-</style>
-
-  <article>
-      <div class="kratos-hentry kratos-page-inner clearfix">
-          <header class="kratos-page-header">
-            <h1 class="kratos-page-title text-center" itemprop="name headline">文章归档</h1>
-          </header>
-          <div class="kratos-page-content kr-archive">
-            <div id="archives">
-              <div class="post-block archive post" style="margin-left: 2em;">
-                <h3 class="archive-page-counter">当前共有 7 篇文章 (゜-゜)つロ 干杯~</h3>
-                <div class="posts-collapse">
-                  
-                  
-                    
-                    
-                      <!-- 没遇到Title的会被自动忽略年份，即使并不一致 -->
-                      
-                      <div class="collection-title">
-                        <a href="/archives/2024/"><h2 class="archive-year">2024</h2></a>
-                      </div>
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/S-DES/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">S-DES</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-12-23T08:41:40.582Z">
-                              12-23
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/Projections_Matrix/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">矩阵的最小二乘法和投影矩阵</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-11-12T09:44:26.109Z">
-                              11-12
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/Discrete_mathematics/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">面向计算机的科学的离散数学 （期中） 对应计算机系离散数学（1）</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-11-12T09:44:26.099Z">
-                              11-12
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/A_simple_self-introduce/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">简单的自我介绍</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-11-12T09:44:26.096Z">
-                              11-12
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/A_game_of_program_design/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">一个程序基础课程大作业的很酷的搬箱子游戏</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-11-12T09:44:26.094Z">
-                              11-12
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/Matrix/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">线性代数期末预习</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-11-12T09:26:36.509Z">
-                              11-12
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                    
-                    
-                    
-                      <article class="post" itemscope itemtype="https://schema.org/Article">
-                        <header class="post-header">
-                          <h3 class="post-title">
-                            
-                                <a class="post-title-link" href="/posts/Intgration/" itemprop="mainEntityOfPage">
-                                  <span itemprop="name headline">关于微积分A2的一些公式及条件整理</span>
-                                </a>
-                            
-                          </h3>
-                          <div class="post-meta">
-                            <time class="post-time" itemprop="datePublished"
-                                  datetime="2024-11-12T09:26:36.507Z">
-                              11-12
-                            </time>
-                          </div>
-                        </header>
-                      </article>
-                    
-                  
-                </div>
-              </div>
-            </div>
+                <h1 class="kratos-page-title text-center" itemprop="name headline">S-DES</h1>
+            
+            <ul class="kratos-page-meta text-center">
+                <li><time datetime="2024-12-23T08:41:40.582Z" itemprop="datePublished"><i class="fa fa-calendar"></i> 2024-12-23</time></li>
+                <li itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <i class="fa fa-user"></i> 作者 <span itemprop="name">Sallina</span>
+                </li>
+                
+                    <li>
+                        <i class="fa fa-edit"></i> 
+                        
+                        
+                            861
+                        
+                        字
+                    </li>
+                
+                
+                
+            </ul>
+        </header>
+        <div class="kratos-page-content kr-post">
+            
+            
+            
+            <hr />
+            <div itemprop="articleBody"><h1 id="S-DES"><a href="#S-DES" class="headerlink" title="S-DES"></a>S-DES</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。</p>
+<p><img src="https://www.helloimg.com/i/2024/12/23/6769282e68478.jpg" alt="1734944786856.jpg"></p>
+<h2 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h2><h3 id="1-密钥生成"><a href="#1-密钥生成" class="headerlink" title="1.密钥生成"></a>1.密钥生成</h3><ul>
+<li>首先生成一个10位初始秘钥，分为左右两部分，各5位</li>
+<li>将左右两部分分别左移1位，得到两个新的5位秘钥</li>
+<li>将左右两个新的秘钥和为一个10位秘钥</li>
+<li>通过置换表得到$ K_1$</li>
+<li>将左右两部分分别左移2位，得到两个新的5位秘钥</li>
+<li>将左右两个新的秘钥和为一个10位秘钥,并通过置换表生成$ K_2$<h3 id="2-加密过程"><a href="#2-加密过程" class="headerlink" title="2.加密过程"></a>2.加密过程</h3></li>
+<li>第一步<ul>
+<li>将明文分块得到多个8位明文块，不足的部分用0补齐</li>
+<li>将明文块通过初始置换表得到$ IP$</li>
+<li>将$ IP$分为左右两部分，各4位</li>
+<li>将右部分通过扩展置换表得到8位</li>
+<li>将$ E(R)$和$ K_1$异或得到8位</li>
+<li>将异或结果分为两部分，各4位</li>
+<li>将两部分分别通过$ S$盒组合得到4位</li>
+<li>将$S$盒置换结果和左部分异或得到新的右部分</li>
+<li>将新的右部分作为左部分，与原来的右部分组合得到新的$ IP$</li>
+</ul>
+</li>
+<li>第二步<ul>
+<li>交换左右两部分</li>
+<li>重复第一步</li>
+</ul>
+</li>
+<li>第三步<ul>
+<li>通过$ IP^{-1}$得到密文</li>
+</ul>
+</li>
+</ul>
+<h2 id="解释一下S盒代换"><a href="#解释一下S盒代换" class="headerlink" title="解释一下S盒代换"></a>解释一下S盒代换</h2><p>假设：扩展异或后的输入为 10101100。<br>子密钥 𝐾1=10100100</p>
+<ul>
+<li>步骤 1：分组<ul>
+<li>前4位：1010 -&gt; 输入 S0。</li>
+<li>后4位：1100 -&gt; 输入 S1。</li>
+</ul>
+</li>
+<li>步骤 2：查表<ul>
+<li>S0 查表：<ul>
+<li>行号：10（十进制 2），列号：01（十进制 1）。</li>
+<li>S0 输出：10。</li>
+</ul>
+</li>
+<li>S1 查表：<ul>
+<li>行号：11（十进制 3），列号：00（十进制 0）。</li>
+<li>S1 输出：10。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>步骤 3：合并与置换<ul>
+<li>合并 S0 和 S1 输出：1010。</li>
+<li>对 1010 应用 P4 置换（[2, 4, 3, 1]）：</li>
+<li>输入：1010。</li>
+<li>输出：0101。</li>
+</ul>
+</li>
+<li>结果<br>S盒代换的最终输出为 0101。</li>
+</ul>
+<h2 id="解密过程"><a href="#解密过程" class="headerlink" title="解密过程"></a>解密过程</h2><ul>
+<li>与加密过程相同，只是密钥的使用顺序相反，即先使用$ K_2$再使用$ K_1$</li>
+</ul>
+<h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>DES和S-DES中的 <code>交换</code> 过程即 Feistel 结构，保证了每一轮都可以影响最终加密的结果</p>
+</div>
         </div>
-      </div>
-      
-  </article>
-
+        
+            <div class="kratos-copyright text-center clearfix">
+                <span itemprop="copyrightNotice">本作品采用 <a rel="license nofollow" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</span>
+            </div>
+        
+        <footer class="kratos-entry-footer clearfix">
+            
+            
+            
+                <div class="post-actions text-center clearfix" id="post-actions">
+                
+                    <a class="donate" href="javascript:;" onclick="krOpenDonateModal()"><i class="fa fa-bitcoin"></i> 打赏</a>
+                
+                
+                    <a class="share" href="javascript:;" onclick="krOpenShareModal()"><i class="fa fa-share-alt"></i> 分享</a>
+                
+                </div>
+            
+            <div class="footer-tag clearfix">
+                <div class="pull-left">
+                <i class="fa fa-tags"></i>
+                    
+                </div>
+                <div class="pull-date">
+                    <time datetime="2024-12-23T09:12:44.083Z" itemprop="dateModified">最后编辑：2024-12-23</time>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+        <nav class="navigation post-navigation clearfix" role="navigation">
+            
+            <div class="nav-previous clearfix">
+                <a title=" 矩阵的最小二乘法和投影矩阵" href="/posts/Projections_Matrix/"><i class="fa fa-angle-left"></i> 上一篇</a>
+            </div>
+            
+            
+        </nav>
+    
+    
+        <div class="comment-post">
+            
+        </div>
+    
+</article>
 
         
 
@@ -421,8 +364,6 @@
 
 <section id="kratos-widget-area" class="col-md-4 hidden-xs hidden-sm">
     <!-- 文章和页面根据splitter来分割，没有的话就从头开始设置为sticky -->
-    
-        <div class="sticky-area">
     
     
                 <aside id="krw-about" class="widget widget-kratos-about clearfix">
@@ -463,6 +404,8 @@
     </div>
 </aside>
             
+                    <div class="sticky-area">
+                
                 
 
             
