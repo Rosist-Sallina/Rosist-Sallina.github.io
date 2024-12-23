@@ -6,7 +6,7 @@
   <link href="https://rosist-sallina.github.io/atom.xml" rel="self"/>
   
   <link href="https://rosist-sallina.github.io/"/>
-  <updated>2024-12-23T10:41:43.766Z</updated>
+  <updated>2024-12-23T10:42:59.461Z</updated>
   <id>https://rosist-sallina.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://rosist-sallina.github.io/posts/S-DES/"/>
     <id>https://rosist-sallina.github.io/posts/S-DES/</id>
     <published>2024-12-23T08:41:40.582Z</published>
-    <updated>2024-12-23T10:41:43.766Z</updated>
+    <updated>2024-12-23T10:42:59.461Z</updated>
     
     <content type="html"><![CDATA[<script type="text/javascript" async  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><h1 id="S-DES"><a href="#S-DES" class="headerlink" title="S-DES"></a>S-DES</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>S-DES是一种简化版本的DES，用于教学目的。其通过置换、代换、密钥生成和简单的加密轮实现基本加密逻辑。</p><p><img src="https://www.helloimg.com/i/2024/12/23/6769282e68478.jpg" alt="1734944786856.jpg"></p><h2 id="实现逻辑"><a href="#实现逻辑" class="headerlink" title="实现逻辑"></a>实现逻辑</h2><h3 id="1-密钥生成"><a href="#1-密钥生成" class="headerlink" title="1.密钥生成"></a>1.密钥生成</h3><ul><li>首先生成一个10位初始秘钥，分为左右两部分，各5位</li><li>将左右两部分分别左移1位，得到两个新的5位秘钥</li><li>将左右两个新的秘钥和为一个10位秘钥</li><li>通过置换表得到$ K_1$</li><li>将左右两部分分别左移2位，得到两个新的5位秘钥</li><li>将左右两个新的秘钥和为一个10位秘钥,并通过置换表生成$ K_2$<h3 id="2-加密过程"><a href="#2-加密过程" class="headerlink" title="2.加密过程"></a>2.加密过程</h3></li><li>第一步<ul><li>将明文分块得到多个8位明文块，不足的部分用0补齐</li><li>将明文块通过初始置换表得到$ IP$</li><li>将$ IP$分为左右两部分，各4位</li><li>将右部分通过扩展置换表得到8位</li><li>将$ E(R)$和$ K_1$异或得到8位</li><li>将异或结果分为两部分，各4位</li><li>将两部分分别通过$ S$盒组合得到4位</li><li>将$S$盒置换结果和左部分异或得到新的右部分</li><li>将新的右部分作为左部分，与原来的右部分组合得到新的$ IP$</li></ul></li><li>第二步<ul><li>交换左右两部分</li><li>重复第一步</li></ul></li><li>第三步<ul><li>通过$ IP^{-1}$得到密文</li></ul></li></ul><h2 id="解释一下S盒代换"><a href="#解释一下S盒代换" class="headerlink" title="解释一下S盒代换"></a>解释一下S盒代换</h2><p>假设：扩展异或后的输入为 10101100。<br>子密钥 𝐾1=10100100</p><ul><li>步骤 1：分组<ul><li>前4位：1010 -&gt; 输入 S0。</li><li>后4位：1100 -&gt; 输入 S1。</li></ul></li><li>步骤 2：查表<ul><li>S0 查表：<ul><li>行号：10（十进制 2），列号：01（十进制 1）。</li><li>S0 输出：10。</li></ul></li><li>S1 查表：<ul><li>行号：11（十进制 3），列号：00（十进制 0）。</li><li>S1 输出：10。</li></ul></li></ul></li><li>步骤 3：合并与置换<ul><li>合并 S0 和 S1 输出：1010。</li><li>对 1010 应用 P4 置换（[2, 4, 3, 1]）：</li><li>输入：1010。</li><li>输出：0101。</li></ul></li><li>结果<br>S盒代换的最终输出为 0101。</li></ul><h2 id="解密过程"><a href="#解密过程" class="headerlink" title="解密过程"></a>解密过程</h2><ul><li>与加密过程相同，只是密钥的使用顺序相反，即先使用$ K_2$再使用$ K_1$</li></ul><h2 id="注"><a href="#注" class="headerlink" title="注"></a>注</h2><p>DES和S-DES中的 <code>交换</code> 过程即 Feistel 结构，保证了每一轮都可以影响最终加密的结果</p>]]></content>
     
