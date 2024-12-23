@@ -588,10 +588,12 @@
     }
   
     document.addEventListener("DOMContentLoaded", function () {
+      console.log("MathJax loaded000");
       renderMathJax();
     });
   
     document.addEventListener("pjax:complete", function () {
+      console.log("MathJax reloaded111");
       renderMathJax();
     });
 </script>

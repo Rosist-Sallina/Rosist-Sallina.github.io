@@ -557,10 +557,12 @@ var talkAPI = "";//如果有类似图灵机器人的聊天接口请填写接口�
     }
   
     document.addEventListener("DOMContentLoaded", function () {
+      console.log("MathJax loaded000");
       renderMathJax();
     });
   
     document.addEventListener("pjax:complete", function () {
+      console.log("MathJax reloaded111");
       renderMathJax();
     });
 </script>

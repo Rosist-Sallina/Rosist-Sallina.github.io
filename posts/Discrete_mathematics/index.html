@@ -608,10 +608,12 @@ f(x) = g(x), \quad x \in (\mathbb{Q} \cup \mathbb{Q}) + \sqrt{2}</script><p>å…¶ä
     }
   
     document.addEventListener("DOMContentLoaded", function () {
+      console.log("MathJax loaded000");
       renderMathJax();
     });
   
     document.addEventListener("pjax:complete", function () {
+      console.log("MathJax reloaded111");
       renderMathJax();
     });
 </script>

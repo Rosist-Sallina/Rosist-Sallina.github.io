@@ -846,10 +846,12 @@ Hello你好啊，我是Rosist ，现就读于华清大学计金班，编程很�
     }
   
     document.addEventListener("DOMContentLoaded", function () {
+      console.log("MathJax loaded000");
       renderMathJax();
     });
   
     document.addEventListener("pjax:complete", function () {
+      console.log("MathJax reloaded111");
       renderMathJax();
     });
 </script>
