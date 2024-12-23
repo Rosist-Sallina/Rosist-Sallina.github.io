@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/favicon.png">
   
   
-  <title>搜索 | Rosist Blog</title>
-  <link rel="canonical" href="https://rosist-sallina.github.io/search/index.html">
+  <title>标签: math | Rosist Blog</title>
+  <link rel="canonical" href="https://rosist-sallina.github.io/tags/math/index.html">
   <meta name="author" content="Sallina" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -20,8 +20,8 @@
     <meta name="keywords" content="hexo,theme,kratos-rebirth" />
   
   <meta property="og:type" content="website">
-<meta property="og:title" content="搜索">
-<meta property="og:url" content="https://rosist-sallina.github.io/search/index.html">
+<meta property="og:title" content="标签: math">
+<meta property="og:url" content="https://rosist-sallina.github.io/tags/math/index.html">
 <meta property="og:site_name" content="Rosist Blog">
 <meta property="og:locale">
 <meta property="article:author" content="Sallina">
@@ -244,136 +244,245 @@
 
         
 
-            <style>
-  #kr-search-notice.alert {
-    transition: 0.3s;
-  }
+            <!-- Breadcrumb for tag & category page -->
 
-  #kr-search-results {
-    margin-top: 20px;
-  }
-
-  .kr-search-result {
-    margin: 20px;
-  }
-
-  .kratos-entry-content m {
-    color: #333;
-    background-color: yellow;
-  }
-
-  #search-input {
-    appearance: none;
-    -webkit-appearance: none;
-    border-color: #dbdbdb;
-    border-radius: 4px 0 0 4px;
-
-    &:hover {
-      border-color: #b5b5b5;
-    }
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  .input-group .form-input.input-lg {
-    display: inline-flex;
-    box-shadow: none;
-    flex: auto;
-    justify-content: flex-start;
-    padding: 0 8px;
-    font-size: 15px;
-    max-width: 100%;
-    border: 1px solid transparent;
-  }
-
-  .btn.btn-primary {
-    border: transparent;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .search-demo-tags a {
-    margin: 5px 10px;
-  }
-
-  #search-input {
-    color: var(--kr-theme-text);
-    background-color: var(--kr-theme-card-bg);
-
-    &:active,
-    &:focus {
-      border-color: var(--kr-theme-link-hover);
-      box-shadow: 0 0 0 0.125em rga(var(--kr-theme-link-hover), 0.25);
-    }
-  }
-</style>
-
-<div class="kratos-hentry kratos-page-inner clearfix">
-    <header class="kratos-page-header">
-        <h1 class="kratos-page-title text-center" itemprop="name headline">搜索</h1>
-    </header>
-    <div class="kratos-page-content kr-search-input">
-        <form class="input-group" onsubmit="return inpSearch();">
-            <input class="form-input input-lg" id="search-input" maxlength="80" name="s" placeholder="有什么想找找看的呢o(*￣▽￣*)ブ" required type="search">
-            <button class="btn btn-primary" type="submit">找一找~</button>
-        </form>
-    </div>
-</div>
-
-<div class="alert alert-info" id="kr-search-notice">
-    这里是 Rosist Blog 的搜索引擎~
-</div>
-
-<div id="kr-search-results">
-    <div class="kratos-hentry kratos-page-inner clearfix">
-        <div class="kratos-page-content kr-search-result">
-            <p>搜索多个关键词时请用空格分割，例如「网络安全 认证 math」这样；</p>
-            <p>您也可以使用这些标签碰碰运气哦~</p>
-            <p class="search-demo-tags">
-                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 21px; color: #8f96a3">网络安全</a> <a href="/tags/%E8%AE%A4%E8%AF%81/" style="font-size: 18px; color: #b2b7be">认证</a> <a href="/tags/math/" style="font-size: 24px; color: #6c7588">math</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 18px; color: #b2b7be">程序设计</a> <a href="/tags/%E5%AF%86%E7%A0%81%E7%A0%81%E4%BC%BC%E4%BA%86/" style="font-size: 18px; color: #b2b7be">密码码似了</a> <a href="/tags/S-DES/" style="font-size: 18px; color: #b2b7be">S-DES</a> <a href="/tags/%E4%BA%A4%E6%98%93/" style="font-size: 18px; color: #b2b7be">交易</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-<template id="kr-search-result-template">
-  <article class="kratos-hentry clearfix">
-    <div class="kratos-entry-border clearfix">
-        <div class="kratos-entry-post-inner kr-search-result">
-            <header class="kratos-entry-header">
-                $CATEGORY
-                <h2 class="kratos-entry-title"><a href="$LINK">$TITLE</a></h2>
-            </header>
-            <div class="kratos-entry-content">
-                <p>...$CONTENT...</p>
-            </div>
-        </div>
-        <div class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <a><i class="fa fa-calendar"></i></a><a>$DATE</a>
-                $TAGS
-            </span>
-        </div>
+    <article class="kratos-hentry kratos-entry-border clearfix">
+    <div class="kratos-breadcrumb">
+        <a href="/">
+            <i class="fa fa-home"></i>
+        </a>
+        <i class="fa fa-angle-right"></i>
+        
+            <a href="/tags/">
+                标签
+            </a>
+            <i class="fa fa-angle-right"></i>
+            <a href="/tags/math">
+                math
+            </a>
+        
+        
     </div>
 </article>
-</template>
-
-<template id="kr-search-tag-begin-template">
-  <a><i class="fa fa-tags"></i></a>
-</template>
-
-<template id="kr-search-tag-template">
-  <a class="tag-link" href="$LINK" rel="tag">$TAG</a>
-</template>
-
-<template id="kr-search-category-template">
-  <a class="label-link" href="$LINK">$CATEGORY</a>
-</template>
 
 
-  <script>window.searchDataFile = "/search-index.json";</script>
-  <script defer src="/js/kr-search.min.js"></script>
+
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/posts/Projections_Matrix/">
+                        <img class="kratos-entry-thumb-img" src="https://www.helloimg.com/i/2024/12/23/676928673db02.jpg" alt="/%E7%9F%A9%E9%98%B5%E7%9A%84%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95%E5%92%8C%E6%8A%95%E5%BD%B1%E7%9F%A9%E9%98%B5">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/math/">math</a>
+                    <h2 class="kratos-entry-title"><a href="/posts/Projections_Matrix/" itemprop="mainEntityOfPage"><span itemprop="name headline">矩阵的最小二乘法和投影矩阵</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            
+
+
+
+
+投影矩阵对于任何矩阵$\left( 即任意的 \boldsymbol{M}\times N 矩阵\right)$，都可以通过Gram－Schmidt方法进行正交化，从而分解成一个正交矩阵 $A\times \boldsymb...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-12T09:44:26.109Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
+                </time>
+                <a>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/math/" rel="tag">math</a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/posts/Projections_Matrix/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/posts/Discrete_mathematics/">
+                        <img class="kratos-entry-thumb-img" src="https://www.helloimg.com/i/2024/12/23/676928673db02.jpg" alt="/%E9%9D%A2%E5%90%91%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E7%A7%91%E5%AD%A6%E7%9A%84%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%20%EF%BC%88%E6%9C%9F%E4%B8%AD%EF%BC%89%20%E5%AF%B9%E5%BA%94%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%EF%BC%881%EF%BC%89">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/math/">math</a>
+                    <h2 class="kratos-entry-title"><a href="/posts/Discrete_mathematics/" itemprop="mainEntityOfPage"><span itemprop="name headline">面向计算机的科学的离散数学 （期中） 对应计算机系离散数学（1）</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            test_1
+tips:本文逻辑和顺序可能混乱，因为作者是根据题目进行知识点的复习1.在集合A上等价关系个数的计算等价关系与划分一一对应，非空集合A上的等价关系个数等于A的划分个数，即等价关系个数等于划分个数。转换为数学模型：即将n个...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-12T09:44:26.099Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
+                </time>
+                <a>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/math/" rel="tag">math</a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/posts/Discrete_mathematics/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/posts/Matrix/">
+                        <img class="kratos-entry-thumb-img" src="https://www.helloimg.com/i/2024/12/23/676928673db02.jpg" alt="/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E6%9C%9F%E6%9C%AB%E9%A2%84%E4%B9%A0">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/math/">math</a>
+                    <h2 class="kratos-entry-title"><a href="/posts/Matrix/" itemprop="mainEntityOfPage"><span itemprop="name headline">线性代数期末预习</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            
+
+
+
+
+线性变换的定义如果我们将线性变换看作是一种对于向量的线性变换关系，这种关系是广义的，可以涉及很多方面。但是，在线性代数层面而不是抽象代数层面，我们当然希望这种变换是符合线性的，也就是说，我们希望一种变换$\boldsymbo...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-12T09:26:36.509Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
+                </time>
+                <a>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/math/" rel="tag">math</a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/posts/Matrix/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/posts/Intgration/">
+                        <img class="kratos-entry-thumb-img" src="https://www.helloimg.com/i/2024/12/23/676928673db02.jpg" alt="/%E5%85%B3%E4%BA%8E%E5%BE%AE%E7%A7%AF%E5%88%86A2%E7%9A%84%E4%B8%80%E4%BA%9B%E5%85%AC%E5%BC%8F%E5%8F%8A%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/math/">math</a>
+                    <h2 class="kratos-entry-title"><a href="/posts/Intgration/" itemprop="mainEntityOfPage"><span itemprop="name headline">关于微积分A2的一些公式及条件整理</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            1.关于积分的可交换性：$ 当f(x,y)在[a,b]\times[c,d]上连续时，\int_{a}^{b} dx\int_{c}^{d} f(x, y) dy &#x3D;  \int_{a}^{b} dy\int_{c}^{d} f(x,...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2024-11-12T09:26:36.507Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2024-11-12</a>
+                </time>
+                <a>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/math/" rel="tag">math</a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/posts/Intgration/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+
+
+
+
 
 
 

@@ -7,8 +7,8 @@
     <link rel="icon" href="/assets/favicon.png">
   
   
-  <title>搜索 | Rosist Blog</title>
-  <link rel="canonical" href="https://rosist-sallina.github.io/search/index.html">
+  <title>分类: 程序设计 | Rosist Blog</title>
+  <link rel="canonical" href="https://rosist-sallina.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
   <meta name="author" content="Sallina" />
   <meta http-equiv="Cache-Control" content="no-transform" />
   <meta http-equiv="Cache-Control" content="no-siteapp" />
@@ -20,8 +20,8 @@
     <meta name="keywords" content="hexo,theme,kratos-rebirth" />
   
   <meta property="og:type" content="website">
-<meta property="og:title" content="搜索">
-<meta property="og:url" content="https://rosist-sallina.github.io/search/index.html">
+<meta property="og:title" content="分类: 程序设计">
+<meta property="og:url" content="https://rosist-sallina.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Rosist Blog">
 <meta property="og:locale">
 <meta property="article:author" content="Sallina">
@@ -244,136 +244,94 @@
 
         
 
-            <style>
-  #kr-search-notice.alert {
-    transition: 0.3s;
-  }
+            <!-- Breadcrumb for tag & category page -->
 
-  #kr-search-results {
-    margin-top: 20px;
-  }
+    <article class="kratos-hentry kratos-entry-border clearfix">
+    <div class="kratos-breadcrumb">
+        <a href="/">
+            <i class="fa fa-home"></i>
+        </a>
+        <i class="fa fa-angle-right"></i>
+        
 
-  .kr-search-result {
-    margin: 20px;
-  }
+            <a href="/categories/">
+                分类
+            </a>
 
-  .kratos-entry-content m {
-    color: #333;
-    background-color: yellow;
-  }
-
-  #search-input {
-    appearance: none;
-    -webkit-appearance: none;
-    border-color: #dbdbdb;
-    border-radius: 4px 0 0 4px;
-
-    &:hover {
-      border-color: #b5b5b5;
-    }
-
-    &:focus {
-      outline: 0;
-    }
-  }
-
-  .input-group .form-input.input-lg {
-    display: inline-flex;
-    box-shadow: none;
-    flex: auto;
-    justify-content: flex-start;
-    padding: 0 8px;
-    font-size: 15px;
-    max-width: 100%;
-    border: 1px solid transparent;
-  }
-
-  .btn.btn-primary {
-    border: transparent;
-    border-radius: 0 4px 4px 0;
-  }
-
-  .search-demo-tags a {
-    margin: 5px 10px;
-  }
-
-  #search-input {
-    color: var(--kr-theme-text);
-    background-color: var(--kr-theme-card-bg);
-
-    &:active,
-    &:focus {
-      border-color: var(--kr-theme-link-hover);
-      box-shadow: 0 0 0 0.125em rga(var(--kr-theme-link-hover), 0.25);
-    }
-  }
-</style>
-
-<div class="kratos-hentry kratos-page-inner clearfix">
-    <header class="kratos-page-header">
-        <h1 class="kratos-page-title text-center" itemprop="name headline">搜索</h1>
-    </header>
-    <div class="kratos-page-content kr-search-input">
-        <form class="input-group" onsubmit="return inpSearch();">
-            <input class="form-input input-lg" id="search-input" maxlength="80" name="s" placeholder="有什么想找找看的呢o(*￣▽￣*)ブ" required type="search">
-            <button class="btn btn-primary" type="submit">找一找~</button>
-        </form>
-    </div>
-</div>
-
-<div class="alert alert-info" id="kr-search-notice">
-    这里是 Rosist Blog 的搜索引擎~
-</div>
-
-<div id="kr-search-results">
-    <div class="kratos-hentry kratos-page-inner clearfix">
-        <div class="kratos-page-content kr-search-result">
-            <p>搜索多个关键词时请用空格分割，例如「网络安全 认证 math」这样；</p>
-            <p>您也可以使用这些标签碰碰运气哦~</p>
-            <p class="search-demo-tags">
-                <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 21px; color: #8f96a3">网络安全</a> <a href="/tags/%E8%AE%A4%E8%AF%81/" style="font-size: 18px; color: #b2b7be">认证</a> <a href="/tags/math/" style="font-size: 24px; color: #6c7588">math</a> <a href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" style="font-size: 18px; color: #b2b7be">程序设计</a> <a href="/tags/%E5%AF%86%E7%A0%81%E7%A0%81%E4%BC%BC%E4%BA%86/" style="font-size: 18px; color: #b2b7be">密码码似了</a> <a href="/tags/S-DES/" style="font-size: 18px; color: #b2b7be">S-DES</a> <a href="/tags/%E4%BA%A4%E6%98%93/" style="font-size: 18px; color: #b2b7be">交易</a>
-            </p>
-        </div>
-    </div>
-</div>
-
-<template id="kr-search-result-template">
-  <article class="kratos-hentry clearfix">
-    <div class="kratos-entry-border clearfix">
-        <div class="kratos-entry-post-inner kr-search-result">
-            <header class="kratos-entry-header">
-                $CATEGORY
-                <h2 class="kratos-entry-title"><a href="$LINK">$TITLE</a></h2>
-            </header>
-            <div class="kratos-entry-content">
-                <p>...$CONTENT...</p>
-            </div>
-        </div>
-        <div class="kratos-entry-post-meta">
-            <span class="pull-left">
-                <a><i class="fa fa-calendar"></i></a><a>$DATE</a>
-                $TAGS
-            </span>
-        </div>
+            
+            
+                <i class="fa fa-angle-right"></i>
+                <a href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">
+                    程序设计
+                </a>
+            
+        
+        
     </div>
 </article>
-</template>
-
-<template id="kr-search-tag-begin-template">
-  <a><i class="fa fa-tags"></i></a>
-</template>
-
-<template id="kr-search-tag-template">
-  <a class="tag-link" href="$LINK" rel="tag">$TAG</a>
-</template>
-
-<template id="kr-search-category-template">
-  <a class="label-link" href="$LINK">$CATEGORY</a>
-</template>
 
 
-  <script>window.searchDataFile = "/search-index.json";</script>
-  <script defer src="/js/kr-search.min.js"></script>
+
+
+    
+    
+        <article class="kratos-hentry clearfix" itemscope itemtype="https://schema.org/Article">
+    <div class="kratos-entry-border clearfix">
+        
+        <div class="kratos-entry-post-main">
+            
+            
+                <div class="kratos-entry-thumb">
+                    <a href="/posts/A_game_of_program_design/">
+                        <img class="kratos-entry-thumb-img" src="https://www.helloimg.com/i/2024/12/23/676928673db02.jpg" alt="/%E4%B8%80%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%9F%BA%E7%A1%80%E8%AF%BE%E7%A8%8B%E5%A4%A7%E4%BD%9C%E4%B8%9A%E7%9A%84%E5%BE%88%E9%85%B7%E7%9A%84%E6%90%AC%E7%AE%B1%E5%AD%90%E6%B8%B8%E6%88%8F">
+                    </a>
+                </div>
+            
+            <div class="kratos-entry-post-inner">
+                <header class="kratos-entry-header">
+                        <a class="label-link" href="/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/">程序设计</a>
+                    <h2 class="kratos-entry-title"><a href="/posts/A_game_of_program_design/" itemprop="mainEntityOfPage"><span itemprop="name headline">一个程序基础课程大作业的很酷的搬箱子游戏</span></a>
+                </header>
+                <div class="kratos-entry-content">
+                    <p itemProp="description">
+                        
+                            
+
+
+
+在上vjf小班辅导的时候抽空发了这个post（x，原谅我不认真听课。
+我要干啥这次要发的是在T大xmx老师开设的程序设计基础课上的期末大作业，游戏的本身参考了《人力资源机器》，而我们要做的是用指令行模拟出来一个类似于原游戏的界...
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+        <footer class="kratos-entry-post-meta">
+            <span class="pull-left">
+                <time datetime="2023-11-30T16:00:00.000Z" itemprop="datePublished">
+                    <a><i class="fa fa-calendar"></i> 2023-12-01</a>
+                </time>
+                <a>
+                    
+                        <i class="fa fa-tags"></i>
+                        <a class="tag-none-link" href="/tags/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/" rel="tag">程序设计</a>
+                    
+                </a>
+                
+                
+            </span>
+            <span class="pull-right">
+                <a class="read-more" href="/posts/A_game_of_program_design/" title="阅读全文">阅读全文<i class="fa fa-chevron-circle-right"></i></a>
+            </span>
+        </footer>
+    </div>
+</article>
+    
+
+
+
+
+
 
 
 
