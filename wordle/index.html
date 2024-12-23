@@ -87,7 +87,7 @@
 
   <!-- 额外的追加注入项 -->
   
-    <link rel="stylesheet" href="https://jjeejj.github.io/css/gitment.css">
+    <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
 
   
 <meta name="generator" content="Hexo 7.3.0"></head>
@@ -515,10 +515,25 @@
 
 <!-- 额外的追加注入项 -->
 
-  <script src="https://www.wenjunjiang.win/js/gitment.js"></script>
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script src="/comments/gitment.js"></script>
 
 
 
-    </body>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
 </html>
