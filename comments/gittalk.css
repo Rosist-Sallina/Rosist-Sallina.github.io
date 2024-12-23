@@ -1,0 +1,17 @@
+.gt-counts,
+.gt-header-textarea,
+.gt-user-name {
+  color: var(--kr-theme-text) !important;
+}
+
+.gt-header-textarea,
+.gt-header-preview,
+.gt-btn-preview,
+.gt-comment-content,
+.gt-popup {
+  background-color: var(--kr-theme-page-bg) !important;
+}
+
+.gt-popup {
+  border-color: #6190e8 !important;
+}
