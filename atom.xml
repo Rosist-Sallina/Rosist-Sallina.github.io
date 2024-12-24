@@ -6,7 +6,7 @@
   <link href="https://rosist-sallina.github.io/atom.xml" rel="self"/>
   
   <link href="https://rosist-sallina.github.io/"/>
-  <updated>2024-12-24T15:18:38.482Z</updated>
+  <updated>2024-12-24T15:27:10.384Z</updated>
   <id>https://rosist-sallina.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>SSl和HTTPS</title>
+    <title>SSL和HTTPS</title>
     <link href="https://rosist-sallina.github.io/posts/SSL/"/>
     <id>https://rosist-sallina.github.io/posts/SSL/</id>
     <published>2024-12-24T14:32:22.665Z</published>
-    <updated>2024-12-24T15:18:38.482Z</updated>
+    <updated>2024-12-24T15:27:10.384Z</updated>
     
     <content type="html"><![CDATA[<h1 id="SSL和HTTPS"><a href="#SSL和HTTPS" class="headerlink" title="SSL和HTTPS"></a>SSL和HTTPS</h1><h2 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h2><p>SSL主要分为两层协议，，分别是SSL记录协议和SSL握手协议。</p><h3 id="SSL记录协议"><a href="#SSL记录协议" class="headerlink" title="SSL记录协议"></a>SSL记录协议</h3><ul><li>分块 将数据分为大小合适的块，大小不超过2^14字节</li><li>消息认证 使用HMAC生成消息摘要</li><li>加密 使用对称算法如AES加密数据和MAC</li><li>附加头部并发送<h3 id="SSL握手协议"><a href="#SSL握手协议" class="headerlink" title="SSL握手协议"></a>SSL握手协议</h3></li><li>客户端发送ClientHello，包含SSL版本、加密算法、压缩算法等</li><li>服务器发送ServerHello，从客户端提供的信息中选择加密算法、压缩算法等，并发送自己的证书，可能要求客户端提供证书</li><li>通过如D-H算法生成共享密钥</li><li>身份验证</li><li>通知切换到加密通信，握手完成</li></ul><p>SSL对应用层透明，可以在应用层之下使用</p><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>全部由明文传输，很容易被截取并使用ARP攻击</p><h3 id="HTTPS-1"><a href="#HTTPS-1" class="headerlink" title="HTTPS"></a>HTTPS</h3><p>流程</p><ul><li>客户端发送一个请求</li><li>服务器返回数字证书以验证自己的身份</li><li>客户端验证证书。证书中包含了公钥，CA签发的签名，有效期等信息</li><li>客户端和服务器约定加密算法与对称密钥</li><li>双方使用对称密钥进行加密通信</li></ul><p>HTTPS使用了SSL技术，CA技术，对称加密/非对称加密技术，散列函数等技术</p><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>HTTPS并不能阻挡中间人获取信息，但是由于信息是加密的，即使获取了，中间人也不能读取内部信息。同时，由于证书由可靠的CA签发，ARP也不能伪造。</p>]]></content>
     
