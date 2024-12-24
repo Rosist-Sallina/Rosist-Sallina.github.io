@@ -6,7 +6,7 @@
   <link href="https://rosist-sallina.github.io/atom.xml" rel="self"/>
   
   <link href="https://rosist-sallina.github.io/"/>
-  <updated>2024-12-24T13:19:18.589Z</updated>
+  <updated>2024-12-24T15:13:26.550Z</updated>
   <id>https://rosist-sallina.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSl和Https</title>
+    <link href="https://rosist-sallina.github.io/posts/SSL/"/>
+    <id>https://rosist-sallina.github.io/posts/SSL/</id>
+    <published>2024-12-24T14:32:22.665Z</published>
+    <updated>2024-12-24T15:13:26.550Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="SSL和HTTPS"><a href="#SSL和HTTPS" class="headerlink" title="SSL和HTTPS"></a>SSL和HTTPS</h1><h2 id="SSL"><a href="#SSL" class="headerlink" title="SSL"></a>SSL</h2><p>SSL主要分为两层协议，，分别是SSL记录协议和SSL握手协议。</p><h3 id="SSL记录协议"><a href="#SSL记录协议" class="headerlink" title="SSL记录协议"></a>SSL记录协议</h3><ul><li>分块 将数据分为大小合适的块，大小不超过2^14字节</li><li>消息认证 使用HMAC生成消息摘要</li><li>加密 使用对称算法如AES加密数据和MAC</li><li>附加头部并发送<h3 id="SSL握手协议"><a href="#SSL握手协议" class="headerlink" title="SSL握手协议"></a>SSL握手协议</h3></li><li>客户端发送ClientHello，包含SSL版本、加密算法、压缩算法等</li><li>服务器发送ServerHello，从客户端提供的信息中选择加密算法、压缩算法等，并发送自己的证书，可能要求客户端提供证书</li><li>通过如D-H算法生成共享密钥</li><li>身份验证</li><li>通知切换到加密通信，握手完成</li></ul><p>SSL对应用层透明，可以在应用层之下使用</p><h2 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h2><h3 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h3><p>全部由明文传输，很容易被截取并使用ARP攻击</p><h3 id="HTTPS-1"><a href="#HTTPS-1" class="headerlink" title="HTTPS"></a>HTTPS</h3><p>流程</p><ul><li>客户端发送一个请求</li><li>服务器返回数字证书以验证自己的身份</li><li>客户端验证证书。证书中包含了公钥，CA签发的签名，有效期等信息</li><li>客户端和服务器约定加密算法与对称密钥</li><li>双方使用对称密钥进行加密通信</li></ul><p>HTTPS使用了SSL技术，CA技术，对称加密/非对称加密技术，散列函数等技术</p><h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2><p>HTTPS并不能阻挡中间人获取信息，但是由于信息是加密的，即使获取了，中间人也不能读取内部信息。同时，由于证书由可靠的CA签发，ARP也不能伪造。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;SSL和HTTPS&quot;&gt;&lt;a href=&quot;#SSL和HTTPS&quot; class=&quot;headerlink&quot; title=&quot;SSL和HTTPS&quot;&gt;&lt;/a&gt;SSL和HTTPS&lt;/h1&gt;&lt;h2 id=&quot;SSL&quot;&gt;&lt;a href=&quot;#SSL&quot; class=&quot;headerlink</summary>
+      
+    
+    
+    
+    <category term="计算机网络安全技术" scheme="https://rosist-sallina.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="网络安全" scheme="https://rosist-sallina.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IPsec</title>
+    <link href="https://rosist-sallina.github.io/posts/IPsec/"/>
+    <id>https://rosist-sallina.github.io/posts/IPsec/</id>
+    <published>2024-12-24T13:29:41.642Z</published>
+    <updated>2024-12-24T13:54:16.528Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="IPsec"><a href="#IPsec" class="headerlink" title="IPsec"></a>IPsec</h1><h2 id="AH和ESP"><a href="#AH和ESP" class="headerlink" title="AH和ESP"></a>AH和ESP</h2><h3 id="AH"><a href="#AH" class="headerlink" title="AH"></a>AH</h3><p>AH能够提供数据完整性保护，能够保证数据在传输过程中没有被篡改。<br>AH不涉及加密。<br>AH位于IP头部之后，TCP/UDP头部（传输层）之前。<br>AH保护载荷和部分IP头部内容（可选）。<br>在隧道模式下，整个IP数据包被视为一个整体被AH所保护</p><h3 id="ESP"><a href="#ESP" class="headerlink" title="ESP"></a>ESP</h3><p>ESP在提供数据完整性保护的基础上，提供了对称加密。<br>ESP仅保护载荷，不保护IP头部。<br>在隧道模式下，整个IP数据包被视为一个整体被ESP所保护</p><ul><li>AH和ESP可以同时使用，也可以单独使用</li></ul><h2 id="SA"><a href="#SA" class="headerlink" title="SA"></a>SA</h2><p>SA是一组安全关联，包括加密算法、密钥、协议、模式等。<br>SA包含</p><ul><li>SPI 唯一一个标识SA的标识符</li><li>协议 AH/ESP</li><li>加密算法 DES/AES</li><li>密钥信息 </li><li>生命周期<br>SA通常通过IKE协商等方式自动建立</li></ul><h2 id="IKE"><a href="#IKE" class="headerlink" title="IKE"></a>IKE</h2><p>IKE用于建立SA，协商密钥等。<br>IKE分为两个阶段</p><ul><li>第一阶段，建立IKE SA<ul><li>双方协商加密算法、HASH算法、Diffie-Hellman组、认证方法等</li><li>通过Diffie-Hellman算法协商出一个共享密钥</li><li>通过密钥或者证书等方式完成身份认证</li><li>通过共享密钥对IKE SA进行保护</li><li>模式分为主模式和快速模式</li></ul></li><li>第二阶段，建立Ipsec SA<ul><li>双方协商IPsec参数，包括SPI、加密算法、HASH算法等</li><li>通过第一阶段生成的IKE SA通道生成共享密钥</li><li>双方验证并使用共享密钥对IPsec SA进行保护</li><li>模式同样有主模式和快速模式<br>主模式需要通信6次，快速模式需要通信3次<br>建立的IPsec SA通常是单向的，需要建立两次才能实现双向通信<br>Ipsec SA中包含SP即序列号，用来保护数据包的顺序性，并且结合窗口机制来防止重放攻击</li></ul></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;IPsec&quot;&gt;&lt;a href=&quot;#IPsec&quot; class=&quot;headerlink&quot; title=&quot;IPsec&quot;&gt;&lt;/a&gt;IPsec&lt;/h1&gt;&lt;h2 id=&quot;AH和ESP&quot;&gt;&lt;a href=&quot;#AH和ESP&quot; class=&quot;headerlink&quot; title=&quot;A</summary>
+      
+    
+    
+    
+    <category term="计算机网络安全技术" scheme="https://rosist-sallina.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="网络安全" scheme="https://rosist-sallina.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>关于计算机网络安全技术的一些要点</title>
@@ -45,7 +93,7 @@
     <link href="https://rosist-sallina.github.io/posts/SET/"/>
     <id>https://rosist-sallina.github.io/posts/SET/</id>
     <published>2024-12-23T13:37:03.052Z</published>
-    <updated>2024-12-24T11:54:23.799Z</updated>
+    <updated>2024-12-24T13:23:13.242Z</updated>
     
     <content type="html"><![CDATA[<h1 id="SET-电子安全交易协议"><a href="#SET-电子安全交易协议" class="headerlink" title="SET 电子安全交易协议"></a>SET 电子安全交易协议</h1><h2 id="几个要点"><a href="#几个要点" class="headerlink" title="几个要点"></a>几个要点</h2><ul><li>SET协议起到的作用是保护消费者的隐私，将支付信息与商品信息分开传输，使商家或者银行均无法获得完整的购买信息，</li><li>SET的核心是电子证书技术（CA），即一个可信的第三方机构（如国家银行）为交易参与者颁发证书（持卡人证书/网上商家证书/支付网关证书/收款行证书/发卡行证书）</li></ul><h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><h3 id="持卡人证书"><a href="#持卡人证书" class="headerlink" title="持卡人证书"></a>持卡人证书</h3><ul><li>持卡人的发卡机构对用户验证并同意后，向持卡人发放证书。</li><li>在SET协议中，持卡人向支付网关提供帐号信息和秘密值用于验证，持卡人证书连同购买请求和加密后的支付指令一同传送给网上商家</li><li>网上商家接收到持卡人证书后，能够在最低程度上验证该帐号<h3 id="商家证书"><a href="#商家证书" class="headerlink" title="商家证书"></a>商家证书</h3></li><li>商家证书中记录了该商家支持的银行卡种类，每个商家对每个它接受的支付卡品牌拥有一对证书</li><li>商家证书只能由值得信任的CA机构颁发，并进行了数字签名，以确保证书的真实性<h3 id="支付网关证书"><a href="#支付网关证书" class="headerlink" title="支付网关证书"></a>支付网关证书</h3></li><li>由收款银行或处理授权和请款消息的受理系统拥有</li><li>持卡人从支付网关证书中获取其加密公钥，用于加密持卡人账号信息；这样，只有持有密钥的支付网关才能看到持卡人的账号信息<h3 id="收款行证书-发卡行证书"><a href="#收款行证书-发卡行证书" class="headerlink" title="收款行证书/发卡行证书"></a>收款行证书/发卡行证书</h3></li><li>收款行/发卡行证书必须有证书才能接收并处理商家的证书请求</li><li>收款行/发卡行从支付卡品牌接收证书<h2 id="双签名生成"><a href="#双签名生成" class="headerlink" title="双签名生成"></a>双签名生成</h2><script type="math/tex; mode=display">DS = E_{KRc}(H(H(PI) || H(OI)))</script>其中$ E_{KRc}为用户的私钥，用以实现签名 $<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2>商家使用用户在证书中提供的公钥对双签名解密，得到$ OIMD $ ，随后与加密的$ OI$进行比对，以验证$ OI $信息真实有效。发卡行与之类似。<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2>SET实现了交易信息和支付信息相互分离。商家无法获得持卡人的支付信息，持卡人也无法获得商家的银行信息。这样，即使商家的数据库被黑客入侵，也不会泄露持卡人的支付信息。同时，SET协议还能够防止商家和持卡人之间的欺诈行为，保护持卡人的利益，防止纠纷。</li></ul><hr><h2 id="更新于-2024-12-24"><a href="#更新于-2024-12-24" class="headerlink" title="更新于 2024-12-24"></a>更新于 2024-12-24</h2><p>SET协议中既使用了对称加密也使用了非对称加密。在信息发送过程中，给与数字网关的相关支付信息，事实上是使用了DES等方式进行对称加密的，而解密的秘钥是通过网关提供的公钥进行加密的（也就是数字信封），这也就保证了支付信息无法被商家读取，但是可以验证确实由持卡人发出。<br><img src="https://cdn-fusion.imgcdn.store/i/2024/93f0df5b362d2117.png" alt=""></p><ul><li>图片来源 yx ppt</li></ul>]]></content>
     
@@ -71,7 +119,7 @@
     <link href="https://rosist-sallina.github.io/posts/Hash/"/>
     <id>https://rosist-sallina.github.io/posts/Hash/</id>
     <published>2024-12-23T12:51:45.400Z</published>
-    <updated>2024-12-23T18:24:39.945Z</updated>
+    <updated>2024-12-24T13:29:35.608Z</updated>
     
     <content type="html"><![CDATA[<h1 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h1><h2 id="Hash与MAC"><a href="#Hash与MAC" class="headerlink" title="Hash与MAC"></a>Hash与MAC</h2><h3 id="Hash"><a href="#Hash" class="headerlink" title="Hash"></a>Hash</h3><ul><li>Hash函数是一种单向函数，在可承受时间内无法逆向破解。</li><li>Hash函数只用来做摘要，来验证数据的完整性。<h3 id="MAC"><a href="#MAC" class="headerlink" title="MAC"></a>MAC</h3>MAC主要分为两种，CMAC(基于块密码)和HMAC(基于Hash函数)。<h4 id="CMAC"><a href="#CMAC" class="headerlink" title="CMAC"></a>CMAC</h4>CMAC往往使用AES作为对称密码，在这个过程中，往往将原数据分为若干个大小相同的块（通常为128位），然后对每个块进行加密。在一种算法下，我们可能会通过对所有的块进行异或操作得到最终的MAC，而在其他的情况下我们可能通过其他方式来获取MAC值。<h4 id="HMAC"><a href="#HMAC" class="headerlink" title="HMAC"></a>HMAC</h4>HMAC是一种基于Hash函数的MAC.在一些算法下，我们会使用一个双方共享的秘钥K分别与内外两层填充值进行异或操作，将内层填充值接在元数据之后，然后对其进行HASH运算，得到内部哈希值。随后，将外层填充值接在内部哈希值之后，再次进行HASH运算，得到最终的MAC值。即：<script type="math/tex; mode=display">HMAC(K,m) = H((K \oplus opad) || H((K \oplus ipad) || m))</script></li></ul><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>MAC是用来做消息认证的，即验证数据的完整性和真实性，即接收方可以确认消息是由真正的发送方所发出。而Hash函数只用来做摘要，来验证数据的完整性。但是这依然无法避免接收方伪造消息，并声称这是由发送方发出的，以及发送方声称消息不是由自己发出的情况，因此，我们就引出了签名的概念。</p><h2 id="数字签名"><a href="#数字签名" class="headerlink" title="数字签名"></a>数字签名</h2><p>发送方使用自己的私钥来对消息进行签名，接收方使用发送方的公钥来验证签名。<br>由于私钥只由发送方持有，而任何人都可以用公钥来验证签名，因此发送方无法抵赖，相似的，接收方也无法伪造签名。<br>在保密程度最高的情况下，我们采取: 认证 + 签名 + 保密的方式来维护数据的私有性:<br>即先计算摘要，随后对摘要进行签名，附在元数据之后，最后再对整个数据进行对称或者非对称的加密。</p><script type="math/tex; mode=display">E_k(M || E_{KRa}(H(M)))</script>]]></content>
     
