@@ -6,7 +6,7 @@
   <link href="https://rosist-sallina.github.io/atom.xml" rel="self"/>
   
   <link href="https://rosist-sallina.github.io/"/>
-  <updated>2024-12-23T18:25:54.459Z</updated>
+  <updated>2024-12-24T11:45:49.625Z</updated>
   <id>https://rosist-sallina.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://rosist-sallina.github.io/posts/SET/"/>
     <id>https://rosist-sallina.github.io/posts/SET/</id>
     <published>2024-12-23T13:37:03.052Z</published>
-    <updated>2024-12-23T18:25:54.459Z</updated>
+    <updated>2024-12-24T11:45:49.625Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="SET-电子安全交易协议"><a href="#SET-电子安全交易协议" class="headerlink" title="SET 电子安全交易协议"></a>SET 电子安全交易协议</h1><h2 id="几个要点"><a href="#几个要点" class="headerlink" title="几个要点"></a>几个要点</h2><ul><li>SET协议起到的作用是保护消费者的隐私，将支付信息与商品信息分开传输，使商家或者银行均无法获得完整的购买信息，</li><li>SET的核心是电子证书技术（CA），即一个可信的第三方机构（如国家银行）为交易参与者颁发证书（持卡人证书/网上商家证书/支付网关证书/收款行证书/发卡行证书），</li></ul><h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><h3 id="持卡人证书"><a href="#持卡人证书" class="headerlink" title="持卡人证书"></a>持卡人证书</h3><ul><li>持卡人的发卡机构对用户验证并同意后，向持卡人发放证书。</li><li>在SET协议中，持卡人向支付网关提供帐号信息和秘密值用于验证，持卡人证书连同购买请求和加密后的支付指令一同传送给网上商家</li><li>网上商家接收到持卡人证书后，能够在最低程度上验证该帐号<h3 id="商家证书"><a href="#商家证书" class="headerlink" title="商家证书"></a>商家证书</h3></li><li>商家证书中记录了该商家支持的银行卡种类，每个商家对每个它接受的支付卡品牌拥有一对证书</li><li>商家证书只能由值得信任的CA机构颁发，并进行了数字签名，以确保证书的真实性<h3 id="支付网关证书"><a href="#支付网关证书" class="headerlink" title="支付网关证书"></a>支付网关证书</h3></li><li>由收款银行或处理授权和请款消息的受理系统拥有</li><li>持卡人从支付网关证书中获取其加密公钥，用于加密持卡人账号信息；这样，只有持有密钥的支付网关才能看到持卡人的账号信息<h3 id="收款行证书-发卡行证书"><a href="#收款行证书-发卡行证书" class="headerlink" title="收款行证书/发卡行证书"></a>收款行证书/发卡行证书</h3></li><li>收款行/发卡行证书必须有证书才能接收并处理商家的证书请求</li><li>收款行/发卡行从支付卡品牌接收证书<h2 id="双签名生成"><a href="#双签名生成" class="headerlink" title="双签名生成"></a>双签名生成</h2><script type="math/tex; mode=display">DS = E_{KRc}(H(H(PI) || H(OI)))</script>其中$ E_{KRc}为用户的私钥，用以实现签名 $<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2>商家使用用户在证书中提供的公钥对双签名解密，得到$ OIMD $ ，随后与加密的$ OI$进行比对，以验证$ OI $信息真实有效。发卡行与之类似。<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2>SET实现了交易信息和支付信息相互分离。商家无法获得持卡人的支付信息，持卡人也无法获得商家的银行信息。这样，即使商家的数据库被黑客入侵，也不会泄露持卡人的支付信息。同时，SET协议还能够防止商家和持卡人之间的欺诈行为，保护持卡人的利益，防止纠纷。</li></ul>]]></content>
+    <content type="html"><![CDATA[<h1 id="SET-电子安全交易协议"><a href="#SET-电子安全交易协议" class="headerlink" title="SET 电子安全交易协议"></a>SET 电子安全交易协议</h1><h2 id="几个要点"><a href="#几个要点" class="headerlink" title="几个要点"></a>几个要点</h2><ul><li>SET协议起到的作用是保护消费者的隐私，将支付信息与商品信息分开传输，使商家或者银行均无法获得完整的购买信息，</li><li>SET的核心是电子证书技术（CA），即一个可信的第三方机构（如国家银行）为交易参与者颁发证书（持卡人证书/网上商家证书/支付网关证书/收款行证书/发卡行证书）</li></ul><h2 id="证书"><a href="#证书" class="headerlink" title="证书"></a>证书</h2><h3 id="持卡人证书"><a href="#持卡人证书" class="headerlink" title="持卡人证书"></a>持卡人证书</h3><ul><li>持卡人的发卡机构对用户验证并同意后，向持卡人发放证书。</li><li>在SET协议中，持卡人向支付网关提供帐号信息和秘密值用于验证，持卡人证书连同购买请求和加密后的支付指令一同传送给网上商家</li><li>网上商家接收到持卡人证书后，能够在最低程度上验证该帐号<h3 id="商家证书"><a href="#商家证书" class="headerlink" title="商家证书"></a>商家证书</h3></li><li>商家证书中记录了该商家支持的银行卡种类，每个商家对每个它接受的支付卡品牌拥有一对证书</li><li>商家证书只能由值得信任的CA机构颁发，并进行了数字签名，以确保证书的真实性<h3 id="支付网关证书"><a href="#支付网关证书" class="headerlink" title="支付网关证书"></a>支付网关证书</h3></li><li>由收款银行或处理授权和请款消息的受理系统拥有</li><li>持卡人从支付网关证书中获取其加密公钥，用于加密持卡人账号信息；这样，只有持有密钥的支付网关才能看到持卡人的账号信息<h3 id="收款行证书-发卡行证书"><a href="#收款行证书-发卡行证书" class="headerlink" title="收款行证书/发卡行证书"></a>收款行证书/发卡行证书</h3></li><li>收款行/发卡行证书必须有证书才能接收并处理商家的证书请求</li><li>收款行/发卡行从支付卡品牌接收证书<h2 id="双签名生成"><a href="#双签名生成" class="headerlink" title="双签名生成"></a>双签名生成</h2><script type="math/tex; mode=display">DS = E_{KRc}(H(H(PI) || H(OI)))</script>其中$ E_{KRc}为用户的私钥，用以实现签名 $<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2>商家使用用户在证书中提供的公钥对双签名解密，得到$ OIMD $ ，随后与加密的$ OI$进行比对，以验证$ OI $信息真实有效。发卡行与之类似。<h2 id="优势"><a href="#优势" class="headerlink" title="优势"></a>优势</h2>SET实现了交易信息和支付信息相互分离。商家无法获得持卡人的支付信息，持卡人也无法获得商家的银行信息。这样，即使商家的数据库被黑客入侵，也不会泄露持卡人的支付信息。同时，SET协议还能够防止商家和持卡人之间的欺诈行为，保护持卡人的利益，防止纠纷。</li></ul><hr><h2 id="更新于-2024-12-24"><a href="#更新于-2024-12-24" class="headerlink" title="更新于 2024-12-24"></a>更新于 2024-12-24</h2><p>SET协议中既使用了对称加密也使用了非对称加密。在信息发送过程中，给与数字网关的相关支付信息，事实上是使用了DES等方式进行对称加密的，而解密的秘钥是通过网关提供的公钥进行加密的（也就是数字信封），这也就保证了支付信息无法被商家读取，但是可以验证确实由持卡人发出。<br><img src="https://cdn-fusion.imgcdn.store/i/2024/93f0df5b362d2117.png" alt=""></p>]]></content>
     
     
       
@@ -88,11 +88,11 @@
     <category term="计算机网络安全技术" scheme="https://rosist-sallina.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="网络安全" scheme="https://rosist-sallina.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
-    
     <category term="密码码似了" scheme="https://rosist-sallina.github.io/tags/%E5%AF%86%E7%A0%81%E7%A0%81%E4%BC%BC%E4%BA%86/"/>
     
     <category term="S-DES" scheme="https://rosist-sallina.github.io/tags/S-DES/"/>
+    
+    <category term="网络安全" scheme="https://rosist-sallina.github.io/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
     
   </entry>
   
