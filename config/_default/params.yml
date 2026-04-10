@@ -17,6 +17,9 @@ menu:
   - name: friend
     url: "friend"
     icon:
+  - name: wordle
+    url: "wordle/"
+    icon:
 
 mainSections: ["post"]
 # 年，月，日及时间的格式化样式
@@ -28,7 +31,7 @@ timeFormat: "2006-01-02 15:04:05"
 
 author: Rosist Sallina
 email: sallinarosist@gmail.com
-description: "代码、笔记与胡思乱想"
+description: "这家伙在想什么乱七八糟的东西呢"
 # subtitle: "少女祈祷中..."
 subtitle:
   typing:
@@ -47,7 +50,7 @@ subtitle:
     showCursor: true            # 是否显示闪烁的字符
     cursorChar: "|"             # 字符
     smartBackspace: false       # 智能退格，只删除不同的部分
-  text: "代码、笔记与胡思乱想"        # 当 typing.enable = false 时使用
+  text: "这家伙在想什么乱七八糟的东西呢"        # 当 typing.enable = false 时使用
 
 banner: "images/banner.png"
 # You can also write it in the form of the following url
