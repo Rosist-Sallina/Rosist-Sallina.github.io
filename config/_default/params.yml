@@ -611,7 +611,7 @@ home_categories:
 # Make sure your code snippet is safeHTML
 injector:
   head_begin: # Inject code snippet right after <head>
-  head_end: # Inject code snippet right before </head>
+  head_end: '<link rel="stylesheet" href="/css/comment-custom.css">'
   body_begin: # Inject code snippet right after <body>
   body_end: # Inject code snippet right before </body>
   sidebar_begin: # Inject code snippet right after <aside>
