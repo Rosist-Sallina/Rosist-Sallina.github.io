@@ -664,7 +664,7 @@ player:
     options:
       audio: []
       fixed: true
-      autoplay: false
+      autoplay:
       loop: all
       order: random
       preload: auto
