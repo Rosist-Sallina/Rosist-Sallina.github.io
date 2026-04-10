@@ -11,7 +11,7 @@
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* 评论区顶部装饰线 */
+/* 顶部装饰线 */
 #comments::before {
   content: '';
   position: absolute;
@@ -23,9 +23,28 @@
   border-radius: 16px 16px 0 0;
 }
 
-/* 评论内容区 */
-#comments .comment-content {
-  min-height: 60px;
+/* 标题行 */
+#comments .comment-header {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+#comments .comment-title {
+  margin: 0 !important;
+  width: auto !important;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  text-align: left !important;
+}
+
+/* 隐藏 selector（只有一个评论系统时不需要） */
+#comments .comment-selector {
+  display: none !important;
 }
 
 /* giscus iframe 撑满 */
@@ -34,7 +53,6 @@
   width: 100%;
 }
 
-/* 响应式 */
 @media (max-width: 600px) {
   #comments {
     padding: 16px !important;

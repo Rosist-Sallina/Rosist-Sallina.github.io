@@ -419,7 +419,7 @@ giscus:
   categoryId: "DIC_kwDOKq9Pus4C6h_G"
   mapping: pathname
   strict: 0
-  reactionsEnabled: 0
+  reactionsEnabled: 1
   emitMetadata: 0
   inputPosition: bottom
   theme:
