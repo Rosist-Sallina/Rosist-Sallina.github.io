@@ -109,7 +109,7 @@ footer:
   icon:
     url: "../images/teitetsu.svg"
     rotate: true
-    mask: false # whether to use the images as a mask
+    mask: true # whether to use the images as a mask
 
 # Sidebar
 # sidebar: right # deprecated, use sidebar.position instead
@@ -542,7 +542,7 @@ top:
   icon:
     url: "../images/teitetsu.svg"
     rotate: true
-    mask: false
+    mask: true
 
 # whether to display the notification when the article is outdated
 outdate:
@@ -577,7 +577,7 @@ sponsor:
   icon:
     url: "../images/teitetsu.svg"
     rotate: true
-    mask: false
+    mask: true
   qr:
     # - name: 支付宝
     #   src: "sponsor/alipay.jpg"
