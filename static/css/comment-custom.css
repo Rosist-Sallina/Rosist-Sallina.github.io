@@ -6,7 +6,7 @@
 #comments {
   position: relative;
   margin: 20px 0;
-  padding: 28px 32px !important;
+  padding: 24px 32px !important;
   border-radius: 16px !important;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
@@ -23,99 +23,6 @@
   border-radius: 16px 16px 0 0;
 }
 
-/* 评论头部区域 — 保持纵向，改善内部元素 */
-#comments .comment-header {
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--color-border, rgba(128,128,128,0.2));
-  position: relative;
-  gap: 12px;
-}
-
-/* 标题行：图标 + 文字横排 */
-#comments .comment-title {
-  margin: 0 !important;
-  width: auto !important;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--color-default);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  white-space: nowrap;
-}
-
-#comments .comment-title::before {
-  content: '󰆉';  /* fallback: 纯色块 */
-  content: '💬';
-  font-style: normal;
-  font-size: 0.95rem;
-  line-height: 1;
-}
-
-/* selector 居中展示 */
-#comments .comment-selector {
-  width: 100%;
-  display: flex;
-  justify-content: center !important;
-  margin-bottom: 0 !important;
-}
-
-/* 选择器包装 — 胶囊组 */
-#comments .comment-selector-wrap {
-  display: inline-flex;
-  gap: 0;
-  overflow: hidden !important;
-  border-radius: 999px !important;
-  border: 1.5px solid rgba(128, 128, 128, 0.2);
-  padding: 3px;
-  background: rgba(128, 128, 128, 0.05);
-}
-
-[data-theme="dark"] #comments .comment-selector-wrap {
-  border-color: rgba(255, 255, 255, 0.1);
-  background: rgba(255, 255, 255, 0.04);
-}
-
-/* 选择器按钮 */
-#comments .selector-item {
-  padding: 5px 18px !important;
-  border-radius: 999px !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.06em;
-  background-color: transparent !important;
-  color: var(--color-default) !important;
-  border: none !important;
-  transition: background 0.2s ease, color 0.2s ease !important;
-  cursor: pointer !important;
-  white-space: nowrap;
-}
-
-[data-theme="dark"] #comments .selector-item {
-  color: #ccc !important;
-}
-
-#comments .selector-item:hover {
-  background-color: rgba(128, 128, 128, 0.12) !important;
-  transform: none !important;
-  box-shadow: none !important;
-}
-
-[data-theme="dark"] #comments .selector-item:hover {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-#comments .selector-item.active {
-  color: white !important;
-  background-color: var(--red-1) !important;
-  border: none !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-}
-
 /* 评论内容区 */
 #comments .comment-content {
   min-height: 60px;
@@ -130,6 +37,6 @@
 /* 响应式 */
 @media (max-width: 600px) {
   #comments {
-    padding: 20px 16px !important;
+    padding: 16px !important;
   }
 }
