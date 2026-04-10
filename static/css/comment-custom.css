@@ -1,8 +1,30 @@
 /* ========================================
+   蹄铁图标 —— 替换导航菜单旋转图标
+   ======================================== */
+
+/* 隐藏原 iconfont 字符，改用蹄铁 SVG mask */
+.main-nav-icon.rotate {
+  color: transparent !important;
+  font-size: 0 !important;
+  width: 1.2em;
+  height: 1.2em;
+  background-color: var(--color-nav-icon, currentColor);
+  -webkit-mask: url(/images/teitetsu.svg) no-repeat center / contain;
+  mask: url(/images/teitetsu.svg) no-repeat center / contain;
+  /* 默认 -45deg，让蹄铁开口朝上 */
+  transform: rotate(-45deg) !important;
+  transition: transform 0.3s !important;
+}
+
+/* hover 时在 -45 基础上再转 90deg = 45deg */
+.main-nav-link-wrap:hover .main-nav-icon.rotate {
+  transform: rotate(45deg) !important;
+}
+
+/* ========================================
    评论区自定义美化样式
    ======================================== */
 
-/* 评论区整体容器 */
 #comments {
   position: relative;
   margin: 20px 0;
@@ -11,7 +33,6 @@
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* 顶部装饰线 */
 #comments::before {
   content: '';
   position: absolute;
@@ -23,7 +44,6 @@
   border-radius: 16px 16px 0 0;
 }
 
-/* 标题行 */
 #comments .comment-header {
   flex-direction: row;
   align-items: center;
@@ -42,12 +62,10 @@
   text-align: left !important;
 }
 
-/* 隐藏 selector（只有一个评论系统时不需要） */
 #comments .comment-selector {
   display: none !important;
 }
 
-/* giscus iframe 撑满 */
 .giscus-comment .giscus,
 .giscus-comment iframe.giscus-frame {
   width: 100%;
