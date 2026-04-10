@@ -1,9 +1,10 @@
 /* ========================================
-   蹄铁图标 —— 替换导航菜单旋转图标
+   蹄铁图标 —— 全站替换太极旋转图标
    ======================================== */
 
-/* 隐藏原 iconfont 字符，改用蹄铁 SVG mask */
-.main-nav-icon.rotate {
+/* 公共 mixin：蹄铁 mask + 135deg */
+.main-nav-icon.rotate,
+.sidebar-menu-icon.rotate {
   color: transparent !important;
   font-size: 0 !important;
   width: 18px;
@@ -13,14 +14,59 @@
   background-color: var(--red-1) !important;
   -webkit-mask: url(/images/teitetsu.svg) no-repeat center / contain;
   mask: url(/images/teitetsu.svg) no-repeat center / contain;
-  /* 默认 -45deg，让蹄铁开口朝上 */
   transform: rotate(135deg) !important;
   transition: transform 0.3s !important;
 }
 
-/* hover 时在 -45 基础上再转 90deg */
+/* 桌面导航 hover */
 .main-nav-link-wrap:hover .main-nav-icon.rotate {
   transform: rotate(225deg) !important;
+}
+
+/* 侧边栏菜单 hover */
+.sidebar-menu-link-wrap:hover .sidebar-menu-icon.rotate {
+  transform: rotate(225deg) !important;
+}
+
+/* 页脚分隔蹄铁 */
+.footer-info-sep.rotate {
+  display: inline-block;
+  color: transparent !important;
+  font-size: 0 !important;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  background-color: var(--red-1);
+  -webkit-mask: url(/images/teitetsu.svg) no-repeat center / contain;
+  mask: url(/images/teitetsu.svg) no-repeat center / contain;
+  transform: rotate(135deg);
+  transition: transform 0.3s;
+}
+
+/* 回到顶部蹄铁 */
+.sidebar-top-taichi.rotate {
+  -webkit-mask-image: url(/images/teitetsu.svg) !important;
+  mask-image: url(/images/teitetsu.svg) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  transform: rotate(135deg);
+}
+
+/* 打赏图标蹄铁 */
+.sponsor-icon.rotate {
+  -webkit-mask-image: url(/images/teitetsu.svg) !important;
+  mask-image: url(/images/teitetsu.svg) !important;
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  mask-size: contain !important;
+  transform: rotate(135deg);
 }
 
 /* ========================================
