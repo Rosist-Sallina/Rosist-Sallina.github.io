@@ -8,6 +8,7 @@ tags:
   - hugo
 categories:
   - site
+cover: "images/hello-reimu-cover.png"
 ---
 
 旧站先下线了，现在这一版是新的 Hugo 站点骨架。

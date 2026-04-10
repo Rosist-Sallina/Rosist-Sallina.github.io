@@ -49,7 +49,7 @@ subtitle:
     smartBackspace: false       # 智能退格，只删除不同的部分
   text: "代码、笔记与胡思乱想"        # 当 typing.enable = false 时使用
 
-banner: "images/banner.jpg"
+banner: "images/banner.png"
 # You can also write it in the form of the following url
 # banner: "https://example.com"
 
