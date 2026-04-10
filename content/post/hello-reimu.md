@@ -1,8 +1,8 @@
 ---
 title: 站点重建中
 description: Hugo + Reimu 初始版本已上线
-date: 2026-04-10T20:30:00+08:00
-lastmod: 2026-04-10T20:30:00+08:00
+date: 2026-04-10T20:00:00+08:00
+lastmod: 2026-04-10T20:00:00+08:00
 tags:
   - blog
   - hugo

@@ -24,6 +24,11 @@
 
 ## 当前待办
 
-- 确认 GitHub Pages 的发布方式切到 `GitHub Actions`
-- 等首次 Actions 构建完成
 - 开始做页面魔改和旧文章迁移
+
+## 最终状态
+
+- 代码已推送到 `Rosist-Sallina/Rosist-Sallina.github.io`
+- GitHub Pages 已切换到 `workflow` 发布模式
+- `Deploy Hugo Site` 首次构建已成功
+- 线上地址：`https://rosist-sallina.github.io/`
