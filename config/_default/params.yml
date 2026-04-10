@@ -676,7 +676,7 @@ player:
     # https://github.com/metowolf/MetingJS
     # if you want to use meting, please enable aplayer first
     enable: true
-    meting_api: https://api.injahow.cn/meting/
+    meting_api: https://meting-h5yz9krh0-rosist-sallinas-projects.vercel.app/
     options:
       id: 8624041584
       server: tencent
