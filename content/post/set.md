@@ -7,6 +7,7 @@ tags:
   - 网络安全
   - SET
   - 电子商务
+math: true
 ---
 
 # SET 电子安全交易协议

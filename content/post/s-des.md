@@ -7,6 +7,7 @@ tags:
   - 密码学
   - S-DES
   - 安全
+math: true
 ---
 
 # S-DES

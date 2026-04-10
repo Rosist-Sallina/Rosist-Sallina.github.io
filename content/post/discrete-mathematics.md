@@ -1,4 +1,5 @@
 ---
+math: true
 title: "面向计算机的科学的离散数学（期中）"
 date: 2024-11-12T00:00:00+08:00
 categories:
@@ -7,6 +8,7 @@ tags:
   - 离散数学
   - 数学
 ---
+math: true
 
 test_1
 ![](https://vip.helloimg.com/i/2024/04/23/6627c8e7ef60d.jpg)

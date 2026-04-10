@@ -1,4 +1,5 @@
 ---
+math: true
 title: "线性代数期末预习"
 date: 2024-11-12T00:00:00+08:00
 categories:
@@ -7,6 +8,7 @@ tags:
   - 线性代数
   - 数学
 ---
+math: true
 
 ![](https://vip.helloimg.com/i/2024/04/24/6628cf348b9a0.jpg)
 

@@ -1,4 +1,5 @@
 ---
+math: true
 title: "矩阵的最小二乘法和投影矩阵"
 date: 2024-11-12T00:00:00+08:00
 categories:
@@ -7,6 +8,7 @@ tags:
   - 线性代数
   - 数学
 ---
+math: true
 
 ![](https://www.helloimg.com/i/2024/11/12/673343d45928a.jpg)
 
