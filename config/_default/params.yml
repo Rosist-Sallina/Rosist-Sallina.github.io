@@ -107,9 +107,9 @@ footer:
   count: true
   busuanzi: false
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: "../images/teitetsu.svg"
     rotate: true
-    mask: true # whether to use the images as a mask
+    mask: false # whether to use the images as a mask
 
 # Sidebar
 # sidebar: right # deprecated, use sidebar.position instead
@@ -463,7 +463,7 @@ preloader:
     en: Loading...
     ja: 少女祈祷中...
     pt-BR: Carregando...
-  icon: # default use inline svg for fast speed, you can use a image url, like '/images/taichi.png'
+  icon: "/images/teitetsu.svg"
   rotate: true # whether to rotate the icon
 
 # see https://github.com/D-Sketon/aos.js
@@ -540,9 +540,9 @@ top:
   enable: true
   position: right # left or right
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: "../images/teitetsu.svg"
     rotate: true
-    mask: true # whether to use the images as a mask
+    mask: false
 
 # whether to display the notification when the article is outdated
 outdate:
@@ -575,9 +575,9 @@ sponsor:
     ja: コーヒーを買ってください
     pt-BR: Compre-me um café
   icon:
-    url: "../images/taichi.png" # this path is relative to the css/main.css, so it needs to go up one level to reach the images folder
+    url: "../images/teitetsu.svg"
     rotate: true
-    mask: true # whether to use the images as a mask
+    mask: false
   qr:
     # - name: 支付宝
     #   src: "sponsor/alipay.jpg"
