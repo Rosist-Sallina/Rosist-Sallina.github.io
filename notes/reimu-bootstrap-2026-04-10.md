@@ -41,3 +41,5 @@
 - 使用分类：`General`
 - 映射方式：`pathname`
 - 由于上游主题当前把 `giscus.mapping` 错写成了 `strict`，已在站点侧通过 `layouts/partials/post/comment.html` 做本地覆盖修复
+- 实测线上脚本已正确注入，但仓库尚未安装 `Giscus` GitHub App，因此评论框当前会报 `giscus is not installed on this repository`
+- 安装入口：`https://github.com/apps/giscus/installations/new`
