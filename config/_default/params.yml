@@ -168,11 +168,11 @@ tagcloud_limits: 20
 only_show_capsule_in_index: false # If you have hugo amounts of tags and categories, you can set this to true to only show the capsule in the index page for better performance
 uppercase_capsule: true # If you want to keep taxonomic capsule unchanged, please set this to false
 
-show_update_time: false # If you want to show the update time, please set this to true
+show_update_time: true # If you want to show the update time, please set this to true
 
 # Summary content
 summary:
-  enable: false
+  enable: true
   style: 'subtitle' # 'subtitle' or 'blockquote'
 
 # RSS output
@@ -279,7 +279,7 @@ clarity: false
 
 # mermaid url https://github.com/mermaid-js/mermaid
 mermaid:
-  zoom: false # whether to enable zoom for mermaid diagrams
+  zoom: true # whether to enable zoom for mermaid diagrams
 
 code_block:
   # whether to expand the code block by default
@@ -528,7 +528,7 @@ firework:
 
 # show the copyright below each article
 article_copyright:
-  enable: false
+  enable: true
   content:
     author: true
     link: true
@@ -627,7 +627,7 @@ pjax:
 # Experimental
 # https://github.com/GoogleChromeLabs/quicklink
 quicklink:
-  enable: false
+  enable: true
   # The `requestIdleCallback` timeout, in milliseconds.
   timeout: 3000
   # Whether or not the URLs within the options.el container should be treated as high priority.
@@ -691,8 +691,8 @@ player:
 ########################################
 
 pangu:
-  # more information: https://github.com/vinta/pangu.js 
-  enable: false  # enable pangu.js to add space between Chinese and English
+  # more information: https://github.com/vinta/pangu.js
+  enable: true  # enable pangu.js to add space between Chinese and English
 
 ########################################
 # Theme
