@@ -14,13 +14,13 @@
   -webkit-mask: url(/images/teitetsu.svg) no-repeat center / contain;
   mask: url(/images/teitetsu.svg) no-repeat center / contain;
   /* 默认 -45deg，让蹄铁开口朝上 */
-  transform: rotate(-45deg) !important;
+  transform: rotate(135deg) !important;
   transition: transform 0.3s !important;
 }
 
 /* hover 时在 -45 基础上再转 90deg */
 .main-nav-link-wrap:hover .main-nav-icon.rotate {
-  transform: rotate(45deg) !important;
+  transform: rotate(225deg) !important;
 }
 
 /* ========================================
