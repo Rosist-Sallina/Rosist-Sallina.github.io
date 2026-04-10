@@ -347,11 +347,11 @@ comment:
   # comment system title
   title:
     en: Leave a comment
-    zh-CN: 说些什么吧！
+    zh-CN: 留个评论吧
     zh-TW: 說些什麼吧！
     ja: コメントを残す
     pt-BR: Deixe um comentário
-  default: waline # default comment system, when you enable multiple comment systems
+  default: giscus # default comment system, when you enable multiple comment systems
 
 # valine comment system. https://valine.js.org
 # version 1.5.1
@@ -412,12 +412,12 @@ gitalk:
 
 # https://giscus.app/zh-CN
 giscus:
-  enable: false
-  repo:
-  repoId:
-  category:
-  categoryId:
-  mapping: mapping
+  enable: true
+  repo: "Rosist-Sallina/Rosist-Sallina.github.io"
+  repoId: "R_kgDOKq9Pug"
+  category: "General"
+  categoryId: "DIC_kwDOKq9Pus4C6h_G"
+  mapping: pathname
   strict: 0
   reactionsEnabled: 1
   emitMetadata: 0

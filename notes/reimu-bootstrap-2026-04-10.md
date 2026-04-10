@@ -32,3 +32,11 @@
 - GitHub Pages 已切换到 `workflow` 发布模式
 - `Deploy Hugo Site` 首次构建已成功
 - 线上地址：`https://rosist-sallina.github.io/`
+
+## 评论系统
+
+- 已启用 GitHub Discussions
+- 已接入 `Giscus`
+- 使用仓库：`Rosist-Sallina/Rosist-Sallina.github.io`
+- 使用分类：`General`
+- 映射方式：`pathname`
