@@ -513,9 +513,10 @@
       // 检查是否需要加载默认评论系统
       if (defaultComment) {
         const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
-        if (!defaultSelectorItem) return;
-        defaultSelectorItem.style.display = 'block';
-        defaultSelectorItem.classList.add('active');
+        if (defaultSelectorItem) {
+          defaultSelectorItem.style.display = 'block';
+          defaultSelectorItem.classList.add('active');
+        }
         loadCommentSystem(defaultComment);
       }
     }
