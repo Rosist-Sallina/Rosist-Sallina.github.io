@@ -40,3 +40,4 @@
 - 使用仓库：`Rosist-Sallina/Rosist-Sallina.github.io`
 - 使用分类：`General`
 - 映射方式：`pathname`
+- 由于上游主题当前把 `giscus.mapping` 错写成了 `strict`，已在站点侧通过 `layouts/partials/post/comment.html` 做本地覆盖修复
