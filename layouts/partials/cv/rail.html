@@ -1,0 +1,38 @@
+{{- $ic := partialCached "cv/icon.html" "" "" -}}
+<aside class="rail">
+  <div class="rail-inner">
+    <div class="rail-id">
+      <img class="rail-photo" src="{{ "avatar/avatar.jpg" | relURL }}" alt="刘宇轩" />
+      <h1 class="rail-name">刘宇轩</h1>
+      <p class="rail-name-en">Yuxuan Liu</p>
+      <p class="rail-role">清华大学 计算机系<br />计算机科学与技术 · 经济与金融（双学位）</p>
+    </div>
+
+    <ul class="rail-contact">
+      <li>{{ partial "cv/icon.html" "mail" }}<a href="mailto:l-yx23@mails.tsinghua.edu.cn">l-yx23@mails.tsinghua.edu.cn</a></li>
+      <li>{{ partial "cv/icon.html" "phone" }}<span>139-0923-7776</span></li>
+      <li>{{ partial "cv/icon.html" "github" }}<a href="https://github.com/Rosist-Sallina" target="_blank" rel="noopener">Rosist-Sallina</a></li>
+    </ul>
+
+    <nav class="rail-nav" aria-label="简历章节">
+      <a href="#focus"><span class="n">01</span>研究方向</a>
+      <a href="#edu"><span class="n">02</span>教育背景</a>
+      <a href="#pub"><span class="n">03</span>论文与专利</a>
+      <a href="#proj"><span class="n">04</span>项目经历</a>
+      <a href="#work"><span class="n">05</span>实习经历</a>
+      <a href="#service"><span class="n">06</span>社会工作</a>
+      <a href="#award"><span class="n">07</span>荣誉奖励</a>
+      <a href="#skill"><span class="n">08</span>技能特长</a>
+    </nav>
+
+    <div class="rail-actions">
+      <a class="btn btn-ghost" href="{{ "blog/" | relURL }}">{{ partial "cv/icon.html" "pen" }}博客</a>
+      <button class="btn btn-icon" id="theme-toggle" type="button" aria-label="切换深浅色">
+        {{ partial "cv/icon.html" "moon" }}{{ partial "cv/icon.html" "sun" }}
+      </button>
+      <button class="btn btn-icon" id="print-btn" type="button" aria-label="打印或导出 PDF">
+        {{ partial "cv/icon.html" "print" }}
+      </button>
+    </div>
+  </div>
+</aside>
