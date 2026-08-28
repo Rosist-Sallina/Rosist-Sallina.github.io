@@ -1,0 +1,37 @@
+{{- define "main" -}}
+  {{- $ctx := . -}}
+  {{- $pageSize := 0 -}}
+  {{- with $.Site.Params.paginate.post -}}
+    {{- $pageSize = . -}}
+  {{- end -}}
+  {{- $posts := where .Site.RegularPages "Section" "in" .Site.Params.mainSections -}}
+  {{- $paginator := "" -}}
+  {{- if gt $pageSize 0 -}}
+    {{- $paginator = .Paginate $posts $pageSize -}}
+  {{- else -}}
+    {{- $paginator = .Paginate $posts -}}
+  {{- end -}}
+  {{- $sort_config := .Site.Params.sort_order.home -}}
+  {{- if eq $sort_config "weight" -}}
+    {{- range $k, $v := $paginator.Pages.ByWeight -}}
+      {{- partial "post.html" (dict "index" $k "ctx" $ctx "page" $v) -}}
+    {{- end -}}
+  {{- else if eq $sort_config "weight-reverse" -}}
+    {{- range $k, $v := $paginator.Pages.ByWeight.Reverse -}}
+      {{- partial "post.html" (dict "index" $k "ctx" $ctx "page" $v) -}}
+    {{- end -}}
+  {{- else if eq $sort_config "date" -}}
+    {{- range $k, $v := $paginator.Pages.ByDate -}}
+      {{- partial "post.html" (dict "index" $k "ctx" $ctx "page" $v) -}}
+    {{- end -}}
+  {{- else if eq $sort_config "date-reverse" -}}
+    {{- range $k, $v := $paginator.Pages.ByDate.Reverse -}}
+      {{- partial "post.html" (dict "index" $k "ctx" $ctx "page" $v) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- range $k, $v := $paginator.Pages -}}
+      {{- partial "post.html" (dict "index" $k "ctx" $ctx "page" $v) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- partial "pagination.html" . -}}
+{{- end -}}

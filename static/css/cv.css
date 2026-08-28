@@ -1,0 +1,271 @@
+/* CV 首页样式：复用 reimu 主题的红色系变量，自动适配暗色模式 */
+
+.cv-container {
+  background: var(--color-wrap);
+  border-radius: 10px;
+  box-shadow: var(--shadow-card);
+  padding: 32px 36px 36px;
+  margin-bottom: 20px;
+}
+
+/* ---------- 头部 ---------- */
+
+.cv-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  padding-bottom: 22px;
+  border-bottom: 2px solid var(--red-3);
+}
+
+.cv-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.cv-name {
+  margin: 0 0 12px;
+  font-size: 30px;
+  line-height: 1.2;
+  color: var(--color-default);
+}
+
+.cv-name-en {
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--grey-9);
+  margin-left: 8px;
+}
+
+.cv-affiliation {
+  margin: 12px 0 0;
+  color: var(--grey-9);
+  font-size: 14px;
+}
+
+.cv-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 14px;
+}
+
+.cv-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-default);
+}
+
+.cv-ico {
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  fill: currentColor;
+  vertical-align: -0.13em;
+}
+
+.cv-contact-item .cv-ico {
+  width: 15px;
+  height: 15px;
+  color: var(--red-1);
+}
+
+.cv-contact-item a {
+  color: var(--color-default);
+  border-bottom: 1px dashed var(--red-3);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.cv-contact-item a:hover {
+  color: var(--red-1);
+  border-bottom-color: var(--red-1);
+}
+
+.cv-photo {
+  flex: 0 0 108px;
+}
+
+.cv-photo img {
+  width: 108px;
+  height: 144px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 3px solid var(--red-4);
+  box-shadow: var(--shadow-card);
+}
+
+/* ---------- 章节 ---------- */
+
+.cv-section {
+  margin-top: 26px;
+}
+
+.cv-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  padding-bottom: 7px;
+  font-size: 19px;
+  color: var(--color-default);
+  border-bottom: 1px solid var(--red-4);
+}
+
+.cv-section-title .cv-ico {
+  width: 18px;
+  height: 18px;
+  color: var(--red-1);
+}
+
+.cv-lead {
+  margin: 0;
+  font-size: 15px;
+  color: var(--color-default);
+}
+
+/* ---------- 条目 ---------- */
+
+.cv-entry {
+  padding: 10px 0 10px 14px;
+  border-left: 2px solid var(--red-4);
+  margin-bottom: 6px;
+  transition: border-color 0.2s;
+}
+
+.cv-entry:hover {
+  border-left-color: var(--red-1);
+}
+
+.cv-entry:last-child {
+  margin-bottom: 0;
+}
+
+.cv-entry-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cv-entry-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--color-default);
+}
+
+.cv-entry-title.cv-paper {
+  font-size: 14.5px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.cv-entry-meta {
+  flex-shrink: 0;
+  font-size: 13px;
+  color: var(--grey-9);
+  white-space: nowrap;
+}
+
+.cv-entry-sub {
+  margin-top: 5px;
+  font-size: 14px;
+  color: var(--grey-9);
+}
+
+.cv-entry-sub strong {
+  color: var(--color-default);
+}
+
+/* ---------- 状态徽章 ---------- */
+
+.cv-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+
+.cv-badge-accept {
+  color: var(--red-0);
+  background: var(--red-5);
+  border: 1px solid var(--red-3);
+}
+
+.cv-badge-review {
+  color: var(--grey-9);
+  background: var(--red-5-5);
+  border: 1px solid var(--red-4);
+}
+
+/* ---------- 列表 ---------- */
+
+.cv-list {
+  margin: 6px 0 0;
+  padding-left: 20px;
+  font-size: 14px;
+  color: var(--color-default);
+}
+
+.cv-list li {
+  margin: 5px 0;
+  line-height: 1.7;
+}
+
+.cv-list li::marker {
+  color: var(--red-2);
+}
+
+.cv-list-award {
+  padding-left: 20px;
+}
+
+.cv-list-award li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ---------- 移动端 ---------- */
+
+@media screen and (max-width: 767px) {
+  .cv-container {
+    padding: 22px 18px 26px;
+  }
+
+  .cv-header {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 18px;
+  }
+
+  .cv-contact {
+    justify-content: center;
+  }
+
+  .cv-name {
+    font-size: 25px;
+  }
+
+  .cv-name-en {
+    display: block;
+    margin: 4px 0 0;
+  }
+
+  .cv-entry-head,
+  .cv-list-award li {
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .cv-section-title {
+    font-size: 17px;
+  }
+}

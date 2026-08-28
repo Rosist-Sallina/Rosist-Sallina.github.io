@@ -1,0 +1,140 @@
+{{- define "main" -}}
+<article class="cv-container">
+  <div class="cv-header">
+    <div class="cv-info">
+      <h1 class="cv-name">刘宇轩 <span class="cv-name-en">Yuxuan Liu</span></h1>
+      <div class="cv-contact">
+        <div class="cv-contact-item">
+          {{ partial "cv-icon.html" "envelope" }}
+          <a href="mailto:l-yx23@mails.tsinghua.edu.cn">l-yx23@mails.tsinghua.edu.cn</a>
+        </div>
+        <div class="cv-contact-item">
+          {{ partial "cv-icon.html" "phone" }}
+          <span>139-0923-7776</span>
+        </div>
+        <div class="cv-contact-item">
+          {{ partial "cv-icon.html" "github" }}
+          <a href="https://github.com/Rosist-Sallina" target="_blank" rel="noopener">github.com/Rosist-Sallina</a>
+        </div>
+      </div>
+      <p class="cv-affiliation">清华大学 计算机科学与技术系 · 经济与金融（双学位）</p>
+    </div>
+    <div class="cv-photo">
+      <img src="{{ "avatar/avatar.jpg" | relURL }}" alt="刘宇轩" loading="lazy" />
+    </div>
+  </div>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "bulb" }}研究方向</h2>
+    <p class="cv-lead">LLMs 高效推理；智能体记忆与自进化</p>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "cap" }}教育背景</h2>
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title">清华大学</span>
+        <span class="cv-entry-meta">2023.09 – 至今（预计 2027.07 毕业）</span>
+      </div>
+      <div class="cv-entry-sub">本科在读 · 计算机科学与技术；经济与金融（双学位） · GPA 3.3 / 4.0</div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "atom" }}论文与科研经历</h2>
+
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title cv-paper">From Cache to Belief: Online Probabilistic Memory for Long-Context Language Models</span>
+        <span class="cv-entry-meta">2026.02 – 至今</span>
+      </div>
+      <div class="cv-entry-sub">合作作者 · <strong>NeurIPS 2026</strong>（CCF-A）<span class="cv-badge cv-badge-review">在投</span></div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title cv-paper">A Scalable Benchmark Test Suite for Dynamic Multi-Objective Optimization with a Changing Number of Objectives</span>
+        <span class="cv-entry-meta">2025.09 – 2026.06</span>
+      </div>
+      <div class="cv-entry-sub">合作作者 · <strong>PPSN 2026</strong>（CCF-B）<span class="cv-badge cv-badge-accept">已录用</span></div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title cv-paper">Boosting Fine-Grained Visual Perception via Multi Granularity Data Synthesis and Local-to-Global Curriculum Learning</span>
+        <span class="cv-entry-meta">2025.08 – 2026.03</span>
+      </div>
+      <div class="cv-entry-sub">合作作者 · <strong>EMNLP 2026</strong>（CCF-B）<span class="cv-badge cv-badge-review">修改中</span></div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title cv-paper">《一种端云协同多模态推理方法及系统》</span>
+        <span class="cv-entry-meta">申请号：2026105681825</span>
+      </div>
+      <div class="cv-entry-sub"><strong>第一发明人</strong> · 中国发明专利<span class="cv-badge cv-badge-review">实质审查中</span></div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "code" }}项目经历</h2>
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title">图生成大模型与药物发现应用</span>
+        <span class="cv-entry-meta">2024.06 – 2025.06</span>
+      </div>
+      <div class="cv-entry-sub">计算机系 SRT 项目</div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "briefcase" }}实习经历</h2>
+
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title">中兴通讯股份有限公司</span>
+        <span class="cv-entry-meta">2025.08 – 2026.03</span>
+      </div>
+      <div class="cv-entry-sub">AI 算法实习生 · 多模态大模型推理加速</div>
+    </div>
+
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title">招商财富资产管理有限公司</span>
+        <span class="cv-entry-meta">2025.07 – 2025.08</span>
+      </div>
+      <div class="cv-entry-sub">股权业务总部，实习生</div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "users" }}学术服务与社会工作</h2>
+    <div class="cv-entry">
+      <div class="cv-entry-head">
+        <span class="cv-entry-title">清华大学计算机系科协</span>
+        <span class="cv-entry-meta">2025.06 – 至今</span>
+      </div>
+      <div class="cv-entry-sub">副主席（分管智能体部）</div>
+    </div>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "star" }}荣誉奖励</h2>
+    <ul class="cv-list cv-list-award">
+      <li><span>清华大学社会工作优秀奖学金</span><span class="cv-entry-meta">2024 – 2026</span></li>
+      <li><span>“北京西城 · 高校发展联盟”青年数字创新创意大赛 三等奖</span><span class="cv-entry-meta">2024</span></li>
+      <li><span>清华大学电子系拓竹杯第七届软件设计大赛 优胜奖</span><span class="cv-entry-meta">2024</span></li>
+    </ul>
+  </section>
+
+  <section class="cv-section">
+    <h2 class="cv-section-title">{{ partial "cv-icon.html" "wrench" }}技能特长</h2>
+    <ul class="cv-list">
+      <li><strong>编程语言：</strong>精通 Python；熟悉 C/C++/C#、Rust</li>
+      <li><strong>深度学习：</strong>PyTorch、Transformers，具备大模型训练、微调与评测的完整工程能力</li>
+      <li><strong>全栈开发：</strong>Wordle（Yew / WebAssembly）、yaoJ 判题框架（actix-web），详见 GitHub</li>
+      <li><strong>工程环境：</strong>Linux 多卡分布式训练与实验管理，Git 协作与代码评审</li>
+      <li><strong>语言：</strong>中文（母语）、英文（熟练学术读写，可独立完成论文撰写与投稿）</li>
+    </ul>
+  </section>
+{{- end -}}

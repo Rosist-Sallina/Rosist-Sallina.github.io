@@ -8,6 +8,9 @@ menu:
   - name: home
     url: ""
     icon: # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+  - name: blog
+    url: "blog"
+    icon:
   - name: archives
     url: "archives"
     icon:
@@ -614,7 +617,7 @@ home_categories:
 # Make sure your code snippet is safeHTML
 injector:
   head_begin: # Inject code snippet right after <head>
-  head_end: '<link rel="stylesheet" href="/css/comment-custom.css">'
+  head_end: '<link rel="stylesheet" href="/css/comment-custom.css"><link rel="stylesheet" href="/css/cv.css">'
   body_begin: # Inject code snippet right after <body>
   body_end: # Inject code snippet right before </body>
   sidebar_begin: # Inject code snippet right after <aside>
