@@ -1,179 +1,234 @@
 <header class="hero reveal">
   <p class="hero-eyebrow">Curriculum Vitae</p>
   <p class="hero-lede">
-    清华大学计算机科学与技术、经济与金融双学位本科在读。研究方向为
-    <strong>模型强化学习</strong>、<strong>推理优化</strong>与<strong>轨迹分析</strong>。
-    两年内参与四项科研项目，产出多篇国际会议论文（PPSN 已录用，NAACL · NeurIPS 在投）
-    与一项<strong>第一发明人</strong>国家发明专利，熟悉从问题定义、实验设计到论文撰写的完整科研流程。
+    I am an undergraduate at Tsinghua University pursuing dual degrees in Computer Science and Technology
+    and Economics and Finance, with graduation expected in July 2027. My experience spans data synthesis,
+    experimental design, evaluation, and paper writing, alongside research internships at ZTE and Meituan.
+  </p>
+  <p class="hero-lede">
+    My research interests are
+    <strong>reinforcement learning for models</strong>, <strong>inference optimization</strong>, and
+    <strong>trajectory analysis</strong>. I work on visual perception, probabilistic memory for language models,
+    and demonstration-guided GUI agents.
   </p>
 </header>
 
 <section class="sec reveal" id="focus">
-  <h2 class="sec-h"><span class="sec-n">01</span>{{ partial "cv/icon.html" "bulb" }}研究方向</h2>
+  <h2 class="sec-h"><span class="sec-n">01</span>{{ partial "cv/icon.html" "bulb" }}Research Interests</h2>
   <div class="focus-grid">
-    <div class="focus-card"><h3>模型强化学习</h3><p>RL for LLMs · 自进化</p></div>
-    <div class="focus-card"><h3>推理优化</h3><p>推理加速 · 端云协同</p></div>
-    <div class="focus-card"><h3>轨迹分析</h3><p>多模态轨迹 · 世界模型</p></div>
+    <div class="focus-card"><h3>Reinforcement Learning</h3><p>Model post-training &middot; Visual curricula</p></div>
+    <div class="focus-card"><h3>Inference Optimization</h3><p>Efficient memory &middot; Device-cloud inference</p></div>
+    <div class="focus-card"><h3>Trajectory Analysis</h3><p>GUI demonstrations &middot; World models</p></div>
   </div>
 </section>
 
 <section class="sec reveal" id="edu">
-  <h2 class="sec-h"><span class="sec-n">02</span>{{ partial "cv/icon.html" "cap" }}教育背景</h2>
+  <h2 class="sec-h"><span class="sec-n">02</span>{{ partial "cv/icon.html" "cap" }}Education</h2>
   <div class="row">
-    <div class="row-when">2023.09<span class="dash">–</span>2027.07<em>预计</em></div>
+    <div class="row-when">Sep. 2023<span class="dash">–</span>Jul. 2027<em>Expected</em></div>
     <div class="row-what">
-      <h3 class="row-t">清华大学 <span class="row-t-sub">本科在读</span></h3>
-      <p class="row-d">计算机科学与技术专业 · 经济与金融专业（双学位）</p>
+      <h3 class="row-t">Tsinghua University <span class="row-t-sub">Undergraduate</span></h3>
+      <p class="row-d">B.Eng. in Computer Science and Technology &middot; B.Econ. in Economics and Finance (dual degree)</p>
       <p class="row-meta">GPA <strong>3.3 / 4.0</strong></p>
       <div class="chips">
-        <span class="chip">软件工程 <b>A</b></span>
-        <span class="chip">计算机图形学基础 <b>A</b></span>
-        <span class="chip">SRT <b>A</b></span>
-        <span class="chip">计算机网络原理 <b>A−</b></span>
-        <span class="chip">网络安全工程与实践 <b>A−</b></span>
-        <span class="chip">机器学习在金融中应用 <b>A−</b></span>
+        <span class="chip">Software Engineering</span>
+        <span class="chip">Computer Graphics</span>
+        <span class="chip">Game Theory</span>
+        <span class="chip">Student Research Training</span>
+        <span class="chip">Machine Learning</span>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="row-when">Sep. 2020<span class="dash">–</span>Jun. 2023</div>
+    <div class="row-what">
+      <h3 class="row-t">The High School Affiliated to Northwestern Polytechnical University</h3>
+      <p class="row-d">High school</p>
     </div>
   </div>
 </section>
 
 <section class="sec reveal" id="pub">
-  <h2 class="sec-h"><span class="sec-n">03</span>{{ partial "cv/icon.html" "atom" }}论文与专利</h2>
+  <h2 class="sec-h"><span class="sec-n">03</span>{{ partial "cv/icon.html" "atom" }}Publications &amp; Patents</h2>
 
   <article class="pub">
     <div class="pub-top">
       <span class="venue">NAACL 2027</span>
-      <span class="tier">CCF-B</span>
-      <span class="stat stat-review">在投</span>
-      <span class="pub-when">2026.02 – 至今</span>
+      <span class="stat stat-review">Under review</span>
+      <span class="pub-when">Feb. 2026 – Present</span>
     </div>
     <h3 class="pub-t">Boosting Fine-Grained Visual Perception via Multi Granularity Data Synthesis and Local-to-Global Curriculum Learning</h3>
-    <p class="pub-role"><strong>共同第一作者</strong></p>
+    <p class="pub-role">W. Yan<sup>#</sup>, <strong>Y. Liu<sup>#</sup></strong>, D. Zou et al.</p>
+    <p class="row-d">Vision-language models can describe a scene while still missing object attributes or spatial
+      relationships. This work addresses that gap with a multi-granularity data pipeline and Local-to-Global
+      Curriculum Reinforcement Learning (LoGo-CRL).</p>
+    <p class="row-d">The pipeline combines object tags and grounded regions with teacher-generated questions and
+      answers, then filters examples through agreement between two teacher models and the student model's current
+      capabilities. Training progresses from object grounding and attribute recognition to relationships between
+      objects, then to counting and detailed scene understanding. Each stage uses task-specific rewards so that
+      local perceptual skills support later global reasoning.</p>
   </article>
 
   <article class="pub">
     <div class="pub-top">
-      <span class="venue venue-a">NeurIPS 2026</span>
-      <span class="tier">CCF-A</span>
-      <span class="stat stat-review">在投</span>
-      <span class="pub-when">2026.03 – 2026.08</span>
+      <span class="venue">NeurIPS 2026</span>
+      <span class="stat stat-review">Under review</span>
+      <span class="pub-when">Mar. 2026 – Aug. 2026</span>
     </div>
     <h3 class="pub-t">From Cache to Belief: Online Probabilistic Memory for Long-Context Language Models</h3>
-    <p class="pub-role"><strong>第一作者</strong>（学生作者）</p>
+    <p class="pub-role">J. Wu, <strong>Y. Liu</strong> &amp; Y. Yue<sup>*</sup> et al.</p>
+    <p class="row-d">BeliefMem studies how a language model can retain useful evidence beyond its local attention
+      window while representing uncertainty in compressed history. It adds a lightweight probabilistic memory
+      adapter to a frozen language model.</p>
+    <p class="row-d">A fixed set of Bayesian memory slots is updated online. The model reads a query-dependent
+      belief from those slots and combines it with local evidence through a product of Gaussian experts.
+      Shared responsibilities govern both reading and writing, keeping retrieval aligned with memory updates.
+      Experiments on six LongBench tasks evaluate long-context reasoning, while ablations and slot interventions
+      examine whether gains come from distributed content updates rather than a larger local window.</p>
   </article>
 
   <article class="pub">
     <div class="pub-top">
       <span class="venue">NAACL 2027</span>
-      <span class="tier">CCF-B</span>
-      <span class="stat stat-review">在投</span>
-      <span class="pub-when">2025.09 – 2026.03</span>
+      <span class="stat stat-review">Under review</span>
+      <span class="pub-when">Sep. 2025 – Mar. 2026</span>
     </div>
     <h3 class="pub-t">You Only Show Once: Robust GUI Automation via One-Shot Human Demonstration</h3>
-    <p class="pub-role"><strong>共同第一作者</strong></p>
+    <p class="pub-role">Y. Huang<sup>#</sup>, <strong>Y. Liu<sup>#</sup></strong>, W. Yan et al.</p>
+    <p class="row-d">YOSO-Agent uses a single human demonstration to guide GUI task execution. It preserves
+      action-aligned screenshots and visual references, giving the agent concrete evidence about what to do and
+      where to act when the interface differs from the demonstration.</p>
+    <p class="row-d">A Task Manager checks progress against the reference trajectory; an Action Agent grounds
+      the next interaction in the current screen; and a Reflection Agent diagnoses deviations and supports
+      recovery. The grounding model is trained with varied visual appearances. Evaluation covers both target
+      localization under interface perturbations and end-to-end task completion. The framework follows a
+      supplied demonstration for the task; selecting the appropriate demonstration is outside its scope.</p>
   </article>
 
   <article class="pub">
     <div class="pub-top">
       <span class="venue">PPSN 2026</span>
-      <span class="tier">CCF-B</span>
-      <span class="stat stat-ok">已录用</span>
-      <span class="pub-when">2025.08 – 2025.12</span>
+      <span class="stat stat-ok">Accepted</span>
+      <span class="pub-when">Aug. 2025 – Dec. 2025</span>
     </div>
     <h3 class="pub-t">A Scalable Benchmark Test Suite for Dynamic Multi-Objective Optimization with a Changing Number of Objectives</h3>
-    <p class="pub-role">合作作者</p>
+    <p class="pub-role">K. Shang, Z. Xiao, <strong>Y. Liu</strong> et al.</p>
+    <p class="row-d">Dynamic optimization benchmarks often change the objective functions themselves when the
+      number of objectives changes. This makes it difficult to isolate an algorithm's ability to adapt to adding
+      or removing evaluation criteria.</p>
+    <p class="row-d">The benchmark defines a problem with a fixed maximum set of objectives, then activates different
+      subsets over time. The underlying functions remain unchanged. Minus-DTLZ and Minus-WFG formulations avoid
+      degenerate Pareto fronts that can arise when selecting subsets of conventional benchmark objectives.
+      The resulting suite supports controlled comparisons of algorithms as objectives are added or removed.</p>
+    <p class="pub-role"><a href="https://arxiv.org/abs/2605.25785" target="_blank" rel="noopener">Read the paper on arXiv &rarr;</a></p>
   </article>
 
   <article class="pub pub-patent">
     <div class="pub-top">
-      <span class="venue venue-p">中国发明专利</span>
-      <span class="stat stat-review">实质审查中</span>
-      <span class="pub-when">申请号 2026105681825</span>
+      <span class="venue venue-p">Chinese invention patent</span>
+      <span class="stat stat-review">Under substantive examination</span>
+      <span class="pub-when">App. No. 2026105681825</span>
     </div>
-    <h3 class="pub-t">一种端云协同多模态推理方法及系统</h3>
-    <p class="pub-role"><strong>第一发明人</strong></p>
+    <h3 class="pub-t">A Device-Cloud Collaborative Multimodal Inference Method and System</h3>
+    <p class="pub-role"><strong>Y. Liu</strong></p>
+    <p class="row-d">This method dynamically allocates perception and reasoning between an on-device
+      model and cloud computation. The system targets the trade-off between local inference cost and the need to
+      protect sensitive information during multimodal processing.</p>
   </article>
 </section>
 
 <section class="sec reveal" id="proj">
-  <h2 class="sec-h"><span class="sec-n">04</span>{{ partial "cv/icon.html" "code" }}项目经历</h2>
+  <h2 class="sec-h"><span class="sec-n">04</span>{{ partial "cv/icon.html" "code" }}Research Projects</h2>
   <div class="row">
-    <div class="row-when">2024.06<span class="dash">–</span>2025.06</div>
+    <div class="row-when">Jun. 2024<span class="dash">–</span>Jun. 2025</div>
     <div class="row-what">
-      <h3 class="row-t">图生成大模型与药物发现应用</h3>
-      <p class="row-d">清华大学计算机系 SRT 项目</p>
+      <h3 class="row-t">Graph-Generating LLMs for Drug Discovery</h3>
+      <p class="row-d">Student Research Training (SRT), Department of Computer Science and Technology</p>
+      <p class="row-d">I built training-data and prompt synthesis pipelines, applied reinforcement learning to
+        post-train DeepSeek-R1 and other language models, and compared their graph-generation capabilities.
+        I also proposed a benchmark for evaluating whether generated graphs satisfy explicit rules and constraints,
+        motivated by graph-based applications in drug discovery.</p>
     </div>
   </div>
 </section>
 
 <section class="sec reveal" id="work">
-  <h2 class="sec-h"><span class="sec-n">05</span>{{ partial "cv/icon.html" "case" }}实习经历</h2>
+  <h2 class="sec-h"><span class="sec-n">05</span>{{ partial "cv/icon.html" "case" }}Internships</h2>
   <div class="row">
-    <div class="row-when">2026.06<span class="dash">–</span>2026.07</div>
+    <div class="row-when">Jun. 2026<span class="dash">–</span>Jul. 2026</div>
     <div class="row-what">
-      <h3 class="row-t">美团</h3>
-      <p class="row-d">自动驾驶业务 / 世界模型部门 · 实习生</p>
+      <h3 class="row-t">Meituan</h3>
+      <p class="row-d">World Model Intern &middot; Autonomous Vehicles</p>
+      <p class="row-d">I processed multimodal data and trained world models for autonomous driving, then
+        evaluated and optimized perception modules for robustness in complex environments.</p>
     </div>
   </div>
   <div class="row">
-    <div class="row-when">2025.08<span class="dash">–</span>2026.03</div>
+    <div class="row-when">Aug. 2025<span class="dash">–</span>Mar. 2026</div>
     <div class="row-what">
-      <h3 class="row-t">中兴通讯股份有限公司</h3>
-      <p class="row-d">AI 算法实习生 · 多模态大模型推理加速</p>
+      <h3 class="row-t">ZTE Corporation</h3>
+      <p class="row-d">AI Research Intern &middot; Multimodal LLM Inference</p>
+      <p class="row-d">I researched inference acceleration and visual perception for multimodal language models.
+        I independently built data synthesis and evaluation pipelines to support fine-tuning and repeated
+        ablation studies.</p>
     </div>
   </div>
 </section>
 
 <section class="sec reveal" id="service">
-  <h2 class="sec-h"><span class="sec-n">06</span>{{ partial "cv/icon.html" "users" }}社会工作</h2>
+  <h2 class="sec-h"><span class="sec-n">06</span>{{ partial "cv/icon.html" "users" }}Service &amp; Leadership</h2>
   <div class="row">
-    <div class="row-when">2025.06<span class="dash">–</span>至今</div>
+    <div class="row-when">Jun. 2025<span class="dash">–</span>Present</div>
     <div class="row-what">
-      <h3 class="row-t">清华大学计算机系科协</h3>
-      <p class="row-d">副主席 · 分管智能体部</p>
+      <h3 class="row-t">Student Association for Science and Technology, Department of CST</h3>
+      <p class="row-d">Vice President &middot; AI Agent Division</p>
+      <p class="row-d">I led development of the official game player and visualizer for the 29th AI Agent Contest,
+        used by participants across Tsinghua University. I also coordinated university-wide contests, including
+        problem design, scheduling, and technical support.</p>
     </div>
   </div>
   <div class="row">
     <div class="row-when"></div>
     <div class="row-what">
-      <p class="row-d">赴日本参与田野调查科研活动，赴青海参与支教志愿服务，担任通讯与教学负责人。</p>
+      <p class="row-d">I participated in research fieldwork in Japan and volunteer teaching in Qinghai,
+        with leadership responsibilities in communications and teaching activities.</p>
     </div>
   </div>
 </section>
 
 <section class="sec reveal" id="award">
-  <h2 class="sec-h"><span class="sec-n">07</span>{{ partial "cv/icon.html" "spark" }}荣誉奖励</h2>
+  <h2 class="sec-h"><span class="sec-n">07</span>{{ partial "cv/icon.html" "spark" }}Honors &amp; Awards</h2>
   <ul class="awards">
-    <li><span class="aw-t">清华大学社会工作优秀奖学金</span><span class="aw-y">2025</span></li>
-    <li><span class="aw-t">"北京西城 · 高校发展联盟"青年数字创新创意大赛 <b>三等奖</b></span><span class="aw-y">2025</span></li>
-    <li><span class="aw-t">清华大学电子系拓竹杯第七届软件设计大赛 <b>优胜奖</b></span><span class="aw-y">2024</span></li>
+    <li><span class="aw-t">Outstanding Social Work Scholarship, Tsinghua University</span><span class="aw-y">2025</span></li>
+    <li><span class="aw-t"><b>Third Prize</b>, Youth Digital Innovation Competition (Beijing Xicheng)</span><span class="aw-y">2025</span></li>
+    <li><span class="aw-t"><b>Winning Prize</b>, 7th &ldquo;Bambu Lab Cup&rdquo; Software Design Competition, Department of EE</span><span class="aw-y">2024</span></li>
   </ul>
 </section>
 
 <section class="sec reveal" id="skill">
-  <h2 class="sec-h"><span class="sec-n">08</span>{{ partial "cv/icon.html" "wrench" }}技能特长</h2>
+  <h2 class="sec-h"><span class="sec-n">08</span>{{ partial "cv/icon.html" "wrench" }}Skills</h2>
   <dl class="skills">
-    <dt>编程语言</dt>
+    <dt>Languages</dt>
     <dd><span class="tag tag-hi">Python</span><span class="tag">C / C++</span><span class="tag">C#</span><span class="tag">Rust</span></dd>
-    <dt>深度学习</dt>
-    <dd><span class="tag tag-hi">PyTorch</span><span class="tag tag-hi">Transformers</span><span class="tag">大模型训练</span><span class="tag">微调</span><span class="tag">评测</span></dd>
-    <dt>工程能力</dt>
-    <dd><span class="tag">Linux</span><span class="tag">多卡分布式训练</span><span class="tag">Git 协作</span><span class="tag">代码评审</span></dd>
-    <dt>全栈项目</dt>
+    <dt>Deep Learning</dt>
+    <dd><span class="tag tag-hi">PyTorch</span><span class="tag tag-hi">Transformers</span><span class="tag">LLM training</span><span class="tag">Fine-tuning</span><span class="tag">Evaluation</span></dd>
+    <dt>Engineering</dt>
+    <dd><span class="tag">Linux</span><span class="tag">Multi-GPU training</span><span class="tag">Experiment management</span><span class="tag">Git</span><span class="tag">Code review</span></dd>
+    <dt>Full Stack</dt>
     <dd class="dd-text">
-      Wordle 网页游戏（Yew / WebAssembly）、yaoJ 判题框架（actix-web），
-      <a href="https://github.com/Rosist-Sallina" target="_blank" rel="noopener">见 GitHub</a>
+      Wordle web game (Yew / WebAssembly) and the yaoJ online judge framework (actix-web).
+      <a href="https://github.com/Rosist-Sallina" target="_blank" rel="noopener">View on GitHub</a>
     </dd>
-    <dt>语言</dt>
-    <dd class="dd-text">中文（母语） · 英文（熟练学术读写，可独立完成论文撰写与投稿）</dd>
+    <dt>Communication</dt>
+    <dd class="dd-text">Mandarin Chinese (native); English (academic reading, writing, and paper preparation).</dd>
   </dl>
 </section>
 
 <footer class="cv-foot reveal">
-  <p>© {{ now.Year }} 刘宇轩 · Yuxuan Liu</p>
+  <p>© {{ now.Year }} Yuxuan Liu</p>
   <p class="foot-links">
-    <a href="{{ "blog/" | relURL }}">博客</a>
-    <a href="{{ "archives/" | relURL }}">归档</a>
+    <a href="{{ "blog/" | relURL }}">Blog</a>
+    <a href="{{ "archives/" | relURL }}">Archives</a>
     <a href="https://github.com/Rosist-Sallina" target="_blank" rel="noopener">GitHub</a>
   </p>
 </footer>

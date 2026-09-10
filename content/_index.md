@@ -1,4 +1,4 @@
 ---
-title: "刘宇轩 | Yuxuan Liu"
+title: "Yuxuan Liu | Research & CV"
 layout: "cv"
 ---

@@ -602,25 +602,6 @@ svg[data-ico="sun"] {
   letter-spacing: 0.02em;
 }
 
-.venue-a {
-  background: var(--ac);
-  border-color: var(--ac);
-  color: #fff;
-}
-
-[data-cv-theme="dark"] .venue-a {
-  color: #1a1113;
-}
-
-.tier {
-  padding: 2px 8px;
-  border: 1px dashed var(--ac-3);
-  border-radius: 6px;
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--ac-2);
-}
-
 .stat {
   padding: 2px 9px;
   border-radius: 20px;
@@ -719,7 +700,7 @@ svg[data-ico="sun"] {
 
 .skills {
   display: grid;
-  grid-template-columns: 82px minmax(0, 1fr);
+  grid-template-columns: max-content minmax(0, 1fr);
   gap: 12px 20px;
   align-items: start;
 }
